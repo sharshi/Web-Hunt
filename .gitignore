@@ -1,0 +1,5 @@
+node_modules/
+app/javascript/bundle.js
+app/javascript/bundle.js.map
+Gemfile.lock
+.byebug_history
