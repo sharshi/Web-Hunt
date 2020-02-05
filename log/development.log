@@ -1,0 +1,76 @@
+Started GET "/" for 127.0.0.1 at 2020-02-04 22:04:38 -0500
+
+PG::ConnectionBad - FATAL:  database "web_hunt_development" does not exist
+:
+
+Started POST "/__better_errors/a9b22548e31a47b8/variables" for 127.0.0.1 at 2020-02-04 22:04:38 -0500
+  [1m[35m (236.4ms)[0m  [1m[35mCREATE DATABASE "web_hunt_development" ENCODING = 'unicode'[0m
+  [1m[35m (93.4ms)[0m  [1m[35mCREATE DATABASE "web_hunt_test" ENCODING = 'unicode'[0m
+Started GET "/" for 127.0.0.1 at 2020-02-04 22:05:27 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/sharshiel/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/sharshiel/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 19.3ms | Allocations: 486)
+Completed 200 OK in 34ms (Views: 26.1ms | ActiveRecord: 0.0ms | Allocations: 2790)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-04 22:07:16 -0500
+
+NameError - uninitialized constant WelcomeController:
+
+Started POST "/__better_errors/657ac232030901a7/variables" for 127.0.0.1 at 2020-02-04 22:07:17 -0500
+Started GET "/" for 127.0.0.1 at 2020-02-04 22:09:21 -0500
+
+SyntaxError - syntax error, unexpected end-of-input, expecting ';' or '\n':
+  app/controllers/welcome_controller.rb:5:in `'
+
+Started POST "/__better_errors/a2f71b60931d5639/variables" for 127.0.0.1 at 2020-02-04 22:09:22 -0500
+Started GET "/" for 127.0.0.1 at 2020-02-04 22:09:46 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 90)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/sharshiel/Desktop/web-hunt/public/packs
+[Webpacker] warning ../../package.json: License should be a valid SPDX license expression
+
+[Webpacker] Hash: 32e57f147dbdcbbf0c82
+Version: webpack 4.41.5
+Time: 2466ms
+Built at: 02/04/2020 10:09:51 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-bbe9c4a129ab949e0636.js    124 KiB  application  [emitted] [immutable]  application
+js/application-bbe9c4a129ab949e0636.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-bbe9c4a129ab949e0636.js js/application-bbe9c4a129ab949e0636.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 5495ms (Views: 5493.3ms | ActiveRecord: 0.0ms | Allocations: 25722)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-04 22:10:38 -0500
+
+SyntaxError - syntax error, unexpected '{', expecting ';' or '\n'
+...licationController { def index{} }
+...                              ^:
+  app/controllers/welcome_controller.rb:1:in `'
+
+Started POST "/__better_errors/f69b151f86cdfd5f/variables" for 127.0.0.1 at 2020-02-04 22:10:39 -0500
+Started GET "/" for 127.0.0.1 at 2020-02-04 22:10:51 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 5794)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-04 22:11:02 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 5788)
+
+
