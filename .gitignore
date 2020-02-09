@@ -5,8 +5,3 @@ app/assets/javascripts/bundle.js.map
 screen_clips/
 .DS_Store
 npm-debug.log
-
-node_modules/
-.byebug_history
-.DS_Store
-npm-debug.log
