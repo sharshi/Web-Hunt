@@ -26,8 +26,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --watch --mode=development",
     "start": "webpack --mode=development --watch",
-    "postinstall": "webpack --mode=production",
-    "heroku-postbuild": "webpack --mode=production"
+    "buils": "webpack --mode=production"
   },
   "description": "Web Hunt, a Product Hunt clone, allows creators to share their products and receive feedback from tech enthusiasts.",
   "version": "1.0.0",
