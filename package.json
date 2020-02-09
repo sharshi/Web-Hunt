@@ -23,7 +23,8 @@
     "turbolinks": "^5.2.0"
   },
   "scripts": {
-    "start": "webpack --mode=development --watch"
+    "start": "webpack --mode=development --watch",
+    "postinstall": "webpack"
   },
   "description": "Web Hunt, a Product Hunt clone, allows creators to share their products and receive feedback from tech enthusiasts.",
   "version": "1.0.0",
@@ -41,5 +42,10 @@
   "bugs": {
     "url": "https://github.com/sharshi/Web-Hunt/issues"
   },
-  "homepage": "https://github.com/sharshi/Web-Hunt#readme"
+  "homepage": "https://github.com/sharshi/Web-Hunt#readme",
+  "engines": {
+    "node": "12.5.0",
+    "npm": "6.9.0"
+  }
+
 }
