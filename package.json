@@ -24,8 +24,21 @@
     "start": "webpack --mode=development --watch",
     "build": "webpack --mode=production"
   },
-  "version": "0.1.0",
-  "devDependencies": {
-    "webpack-dev-server": "^3.10.2"
-  }
+  "description": "Web Hunt, a Product Hunt clone, allows creators to share their products and receive feedback from tech enthusiasts.",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sharshi/Web-Hunt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sharshi/Web-Hunt/issues"
+  },
+  "homepage": "https://github.com/sharshi/Web-Hunt#readme"
 }

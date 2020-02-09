@@ -3,3 +3,12 @@ app/assets/javascripts/bundle.js
 app/assets/javascripts/bundle.js.map
 .byebug_history
 screen_clips/
+.DS_Store
+npm-debug.log
+
+node_modules/
+bundle.js
+bundle.js.map
+.byebug_history
+.DS_Store
+npm-debug.log
