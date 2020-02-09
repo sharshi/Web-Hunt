@@ -15,12 +15,16 @@
     "react-redux": "^7.1.3",
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.5",
-    "redux-logger": "^3.0.6",
     "turbolinks": "^5.2.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   },
+  "devDependencies": {
+    "redux-logger": "^3.0.6"
+  },
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --watch --mode=development",
     "start": "webpack --mode=development --watch",
     "postinstall": "webpack"
   },
