@@ -5,7 +5,7 @@ const NavBar = props => {
   return (
     <nav>
       <section className="logo">
-        web hunt logo
+        web-hunt logo
       </section>
       <section className="searchField">
         {/* turn into form component */}
