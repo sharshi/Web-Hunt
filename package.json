@@ -49,5 +49,6 @@
   },
   "devDependencies": {
     "redux-logger": "^3.0.6"
-  }
+  },
+  "heroku-run-build-script": true
 }
