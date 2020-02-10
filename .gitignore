@@ -1,7 +1,11 @@
+tmp/
+/tmp/
 node_modules/
 app/assets/javascripts/bundle.js
 app/assets/javascripts/bundle.js.map
 .byebug_history
-screen_clips/
 .DS_Store
+/log/*
+!/log/.keep
+!/tmp/.keep
 npm-debug.log
