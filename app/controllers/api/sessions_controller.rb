@@ -1,28 +1,18 @@
 class Api::SessionsController < ApplicationController
-  # cell
-
-  helper_method :current_user
-
-  def current_user
-    return nil unless session[:session_token]
-    User.find_by(session_token: session[:session_token])
+  before_action :ensure_logged_in, only: [:destroy]
+  def create
+    @user = User.find_by_credentials(params[:user][:username],params[:user][:password])
+    if @user
+      log_in(@user)
+      render :show
+    else
+      render json: ['invalid login'], status: 422
+    end
   end
-
-  def ensure_logged_in
-    # ... unless logged_in?
-  end
-
-  def log_in(user)
-    session[:session_token] = user.session_token
-  end
-
-  def logged_in?
-    !!self.current_user
-  end
-
-  def logout!
-    self.current_user.reset_session_token!
-    session[:session_token] = nil
+  
+  def destroy
+    logout!
+    render json: ['logout successful']
   end
 
 end
