@@ -5,7 +5,4 @@ app/assets/javascripts/bundle.js
 app/assets/javascripts/bundle.js.map
 .byebug_history
 .DS_Store
-/log/*
-!/log/.keep
-!/tmp/.keep
 npm-debug.log
