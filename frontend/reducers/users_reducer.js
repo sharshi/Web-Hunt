@@ -12,3 +12,5 @@ const usersReducer = (store = {}, action) => {
       return store;
   }
 }
+
+export default usersReducer;
