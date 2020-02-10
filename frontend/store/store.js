@@ -6,7 +6,7 @@ import RootReducer from '../reducers/root_reducer';
 
 const preferedState = {};
 
-export default createStore(
+export default () => createStore(
   RootReducer,
   preferedState,
   applyMiddleware(thunk, logger)

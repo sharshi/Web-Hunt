@@ -4,16 +4,18 @@ const NavBar = props => {
 
   return (
     <nav>
-      <span className="logo">
-
-      </span>
-      <span className="searchField">
+      <section className="logo">
+        web hunt logo
+      </section>
+      <section className="searchField">
         {/* turn into form component */}
-      </span>
+        search field
+      </section>
       <section className="navMenu">
         {/* post links and profile picture */}
         {/* split into separate component  */}
         {/* maybe put behind Auth / Protected routes  */}
+        nav menu
       </section>
     </nav>
   )
