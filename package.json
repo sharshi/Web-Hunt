@@ -6,7 +6,8 @@
     "webpack": "webpack --watch --mode=development",
     "start": "webpack --mode=development --watch",
     "build": "webpack --mode=production",
-    "heroku-postbuild": "webpack"
+    "heroku-postbuild": "webpack",
+    "postinstall": "webpack"    
   },
   "description": "Web Hunt, a Product Hunt clone, allows creators to share their products and receive feedback from tech enthusiasts.",
   "version": "1.0.0",
