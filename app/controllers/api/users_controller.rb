@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Api::UsersController < ApplicationController
   def index
     @users = User.all
   end
@@ -11,3 +11,4 @@ class UsersController < ApplicationController
     
   end
 end
+
