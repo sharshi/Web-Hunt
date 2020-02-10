@@ -27,8 +27,8 @@
   },
   "homepage": "https://github.com/sharshi/Web-Hunt#readme",
   "engines": {
-    "node": "12.5.0",
-    "npm": "6.9.0"
+    "node": "12.14.1",
+    "npm": "6.13.4"
   },
   "dependencies": {
     "@babel/core": "^7.8.4",
