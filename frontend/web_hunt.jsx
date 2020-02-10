@@ -14,10 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   const store = configureStore();
 
+  // <-- DEV
   window.getUsers = getUsers;
   window.getUser = getUser;
   window.login = login;
   window.logout = logout;
+  // DEV -->
 
   ReactDOM.render(<Root store={store}/>, root);
 })
