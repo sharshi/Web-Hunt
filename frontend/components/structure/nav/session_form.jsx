@@ -33,20 +33,43 @@ class SessionForm extends React.Component {
       </>
     ) : (null)
 
+    const errors = this.props.errors.map(error => {
+      return (
+        <li key={error}>{error}</li>
+      )
+    })
+
     return (
       <span className='modal-screen'>
         <Link className="x" to='/' >X</Link>
         <span className='session-modal'>
+
+          <ul className='errors-list'>{errors}</ul>
+
           <form onSubmit={this.handleSubmit}>
             <span className="logo">w</span>
+
             <h3>{this.props.formType}</h3>
+
             <label htmlFor='username'>Username</label>
-            <input onChange={this.handleChange('username')} id='username' type="text" />
+            <input 
+              onChange={this.handleChange('username')} 
+              id='username' 
+              type="text" 
+            />
+
             {emailField}
+
             <label htmlFor='password'>Password</label>
-            <input onChange={this.handleChange('password')}id='password' type="password" />
+            <input 
+              onChange={this.handleChange('password')}
+              id='password' 
+              type="password" 
+            />
+
             <button>{this.props.desc}</button>
           </form>
+
           <p className='other-session-link'>Did you want to {<Link to={`/${otherForm}`}>{otherForm}</Link>}?</p>
         </span>
       </span>

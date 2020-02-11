@@ -1,10 +1,11 @@
 import SessionForm from "./session_form";
 import { connect } from "react-redux";
-import { createUser } from "../../../actions/user_actions";
+import { createUser } from "../../../actions/session_actions";
 
 const mapStateToProps = state => ({
   formType: 'signup',
-  desc: 'Sign Up'
+  desc: 'Sign Up',
+  errors: state.errors.login
 })
 
 const mapDispatchToProps = dispatch => ({
