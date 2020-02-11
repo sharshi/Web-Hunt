@@ -1,22 +1,35 @@
 import React from 'react';
-
+import Search from './search';
+import SessionForm from './session_form';
+import { Route, Link, HashRouter } from 'react-router-dom';
 const NavBar = props => {
 
+  const signinModal = (
+    <h1></h1>
+  )
+
   return (
-    <nav>
-      <section className="logo">
-        web-hunt logo
-      </section>
-      <section className="searchField">
-        {/* turn into form component */}
-        search field
-      </section>
-      <section className="navMenu">
-        {/* post links and profile picture */}
-        {/* split into separate component  */}
-        {/* maybe put behind Auth / Protected routes  */}
-        nav menu
-      </section>
+    <nav className="nav-bar">
+      <main>
+        <section className="logo">
+          w
+        </section>
+        <Search />
+        <section className="userMenu">
+          <HashRouter>
+            <Link className='login nav-bar-button' to='/login'>LOG IN</Link>
+            <Link className='signup nav-bar-button' to='/signup'>SIGN UP</Link>
+            <Route 
+              path='/login' 
+              render={() => <SessionForm formType='login' />}  
+            />
+            <Route
+              path='/signup' 
+              render={() => <SessionForm formType='signup' />}  
+            />
+          </HashRouter>
+        </section>
+      </main>
     </nav>
   )
 }

@@ -1,11 +1,12 @@
 import { RECEIVE_USERS, RECEIVE_USER } from "../actions/user_actions";
 
-const usersReducer = (state = {}, action) => {
+// TODO: sessionsReducer
+const sessionsReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_USERS:
       return Object.assign({}, state, action.users);
     case RECEIVE_USER:
-      return Object.assign({}, state, { 
+      return Object.assign({}, state, {
         [action.user.id]: action.user
       });
     default:
@@ -13,4 +14,4 @@ const usersReducer = (state = {}, action) => {
   }
 }
 
-export default usersReducer;
+export default sessionsReducer;
