@@ -33,15 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-
-  // <-- DEV
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.fetchUsers = fetchUsers;
-  window.fetchUser = fetchUser;
-  window.login = login;
-  window.logout = logout;
-  // DEV -->
+  delete window.currentUser;
 
   ReactDOM.render(<Root store={store}/>, root);
 })
