@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleDemoSubmit = this.handleDemoSubmit.bind(this)
+    // this.close = this.close.bind(this);
   }
 
   handleChange(type) {
@@ -32,7 +33,10 @@ class SessionForm extends React.Component {
     });
   }
 
-  close() {
+  close(e) {
+    if (e.target.className !== 'modal-screen') {
+      return;
+    }
     window.location.hash = "#/";
   }
 
