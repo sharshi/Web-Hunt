@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
       password: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleDemoSubmit = this.handleDemoSubmit.bind(this)
   }
 
   handleChange(type) {
@@ -21,6 +22,14 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.action(this.state);
+  }
+
+  handleDemoSubmit(e) {
+    e.preventDefault();
+    this.props.action({
+      username: 'sharshi',
+      password: 'sharshi55'
+    });
   }
 
   render() {
@@ -42,13 +51,19 @@ class SessionForm extends React.Component {
     ) : (
       []
     )
-
+    
+    const submitButtons = (this.props.formType === 'signup') ? (
+      < button > { this.props.desc }</button>
+    ) : (
+      <>
+          < button >{this.props.desc}</button>
+          < button onClick={this.handleDemoSubmit}>Demo user</button>
+      </>
+    )
     return (
       <span className='modal-screen'>
         <Link className="x" to='/' >X</Link>
         <span className='session-modal'>
-
-          <ul className='errors-list'>{errors}</ul>
 
           <form onSubmit={this.handleSubmit}>
             <span className="logo">w</span>
@@ -71,7 +86,8 @@ class SessionForm extends React.Component {
               type="password" 
             />
 
-            <button>{this.props.desc}</button>
+            <ul className='errors-list'>{errors}</ul>
+            {submitButtons}
           </form>
 
           <p className='other-session-link'>Did you want to {<Link to={`/${otherForm}`}>{otherForm}</Link>}?</p>
