@@ -1,4 +1,11 @@
 footer.footer {
   height: 50px;
   color: $gray;
+  
+  section {
+    border-top: 1px solid $lightgray;
+    width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+  }
 }
