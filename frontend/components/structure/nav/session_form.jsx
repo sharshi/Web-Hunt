@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -32,9 +32,13 @@ class SessionForm extends React.Component {
     });
   }
 
+  close() {
+    window.location.hash = "#/";
+  }
+
   render() {
     const otherForm = this.props.formType === 'signup' ? 'login' : 'signup';
-
+    
     const emailField = (this.props.formType === 'signup') ? (
       <>
         <label htmlFor='email'>Email</label>
@@ -56,12 +60,13 @@ class SessionForm extends React.Component {
       < button > { this.props.desc }</button>
     ) : (
       <>
-          < button >{this.props.desc}</button>
-          < button onClick={this.handleDemoSubmit}>Demo user</button>
+        < button >{this.props.desc}</button>
+        < button onClick={this.handleDemoSubmit}>Demo user</button>
       </>
     )
+
     return (
-      <span className='modal-screen'>
+      <span onClick={this.close} className='modal-screen'>
         <Link className="x" to='/' >X</Link>
         <span className='session-modal'>
 
