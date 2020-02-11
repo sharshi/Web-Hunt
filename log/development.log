@@ -4000,3 +4000,23 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 104ms (Views: 104.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2020-02-11 13:42:15 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Undefined variable: "$sans-seri".:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2025120812224679122_70299296559740'
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/161c3acf52e8e22b/variables" for ::1 at 2020-02-11 13:42:16 -0500
+Started GET "/" for ::1 at 2020-02-11 13:42:35 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 505ms (Views: 504.4ms | ActiveRecord: 0.0ms)
+
+

@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBarContainer from "./structure/nav_bar_container";
+import NavBarContainer from "./structure/nav/nav_bar_container";
 
 class App extends React.Component {
   render() {
