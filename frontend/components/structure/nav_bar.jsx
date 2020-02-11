@@ -17,9 +17,9 @@ class NavBar extends React.Component {
 
   render() {
 
-    const sessionButtons = (this.props.currentUser.id) ? (
+    const sessionButtons = (this.props.currentUserId) ? (
       <>
-        <p>welcome user {this.props.currentUser.id}</p>
+        <p>welcome {this.props.currentUserName}</p>
         <button onClick={this.handleLogout}>logout</button>
       </> 
     ) : (
@@ -41,11 +41,11 @@ class NavBar extends React.Component {
               {sessionButtons}
               <Route 
                 path='/login' 
-                render={() => (this.props.currentUser.id ? <Redirect to="/"/> : <SessionFormContainer />) }
+                render={() => (this.props.currentUserId ? <Redirect to="/"/> : <SessionFormContainer />) }
               />
               <Route
                 path='/signup' 
-                render={() => (this.props.currentUser.id ? <Redirect to="/" />  : <UserFormContainer />)}
+                render={() => (this.props.currentUserId ? <Redirect to="/" />  : <UserFormContainer />)}
               />
             </HashRouter>
           </section>

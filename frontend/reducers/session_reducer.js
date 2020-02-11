@@ -10,7 +10,8 @@ const sessionReducer = (state = defaultState, action) => {
     case RECEIVE_USER:
       return {
         "currentUser": {
-          "id": action.user.id
+          "id": action.user.id,
+          "username": action.user.username
         }
       }
     case REMOVE_USER:
