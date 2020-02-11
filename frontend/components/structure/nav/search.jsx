@@ -20,7 +20,8 @@ class Search extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
+    // dispatch search
+    // this.state.query
   }
 
   render() {
