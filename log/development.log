@@ -4421,3 +4421,52 @@ Processing by Api::UsersController#create as JSON
 Completed 422 Unprocessable Entity in 282ms (Views: 0.1ms | ActiveRecord: 1.5ms)
 
 
+Started GET "/" for ::1 at 2020-02-11 14:49:03 -0500
+  [1m[35m (12.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/sharshiel/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 2833ms (Views: 2832.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session/" for ::1 at 2020-02-11 14:49:09 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"sharshi", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "sharshi"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+Completed 422 Unprocessable Entity in 269ms (Views: 0.2ms | ActiveRecord: 8.2ms)
+
+
+Started POST "/api/session/" for ::1 at 2020-02-11 14:49:14 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"sharshi", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "sharshi"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+Completed 422 Unprocessable Entity in 246ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/session/" for ::1 at 2020-02-11 14:49:20 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/session/" for ::1 at 2020-02-11 14:49:23 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"rerv", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "rerv"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+Completed 422 Unprocessable Entity in 2ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session/" for ::1 at 2020-02-11 14:49:27 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
