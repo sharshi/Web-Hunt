@@ -9,7 +9,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(109, 109, 109, 0.657);
+  background-color: $modal-gray;
 
   .x {
     display: block;
@@ -41,7 +41,23 @@
     padding: 20px;
 
     form {
+      // TODO: remove for production
+      background-color: antiquewhite;
 
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+
+    p.other-session-link {
+      text-align: center;
+      margin-top: 30px;
+
+      a {
+        color: $web-hunt-green;
+      }
     }
   }
 }

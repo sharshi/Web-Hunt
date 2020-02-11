@@ -1,6 +1,6 @@
 .nav-bar {
-  background-color: white;
-  border-bottom: 1px solid gray;
+  background-color: $white;
+  border-bottom: 1px solid $gray;
   padding: 10px;
   
   main {
@@ -13,11 +13,11 @@
     .logo {
       width: 57px;
       height: 50px;
-      background: cadetblue;
+      background: $web-hunt-green;
       border-radius: 50%;
       line-height: 47px;
       text-align: center;
-      color: white;
+      color: $white;
       font-size: 33px;
       font-weight: 400;
     }
@@ -45,12 +45,12 @@
         text-align: center;
       }
       .login {
-        background-color: white;
-        border: 1px solid lightgray;
+        background-color: $white;
+        border: 1px solid $lightgray;
       }
       .signup {
-        background-color: cadetblue;
-        color: white;
+        background-color: $web-hunt-green;
+        color: $white;
       }
     }
   }

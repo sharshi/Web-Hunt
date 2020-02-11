@@ -10,26 +10,28 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
+ 
+ /* app academy css reset */
+ html, body, section, article,
+ h1, h2, p, strong, em, a {
+   margin: 0;
+   border: 0;
+   padding: 0;
+   outline: 0;
+   box-sizing: inherit;
+   font: inherit;
+   text-decoration: inherit;
+   text-align: inherit;
+   color: inherit;
+   background: transparent;
+  }
+  
+  #root {
+    width: 100%;
+  }
 
-/* app academy css reset */
-html, body, section, article,
-h1, h2, p, strong, em, a {
-  margin: 0;
-  border: 0;
-  padding: 0;
-  outline: 0;
-  box-sizing: inherit;
-  font: inherit;
-  text-decoration: inherit;
-  text-align: inherit;
-  color: inherit;
-  background: transparent;
-}
+  @import "base/colors.scss";
 
-
-#root {
-  width: 100%;
-}
+  @import "components/*";

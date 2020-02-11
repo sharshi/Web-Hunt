@@ -2528,3 +2528,323 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 2793ms (Views: 2792.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2020-02-11 09:27:52 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/sharshiel/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 2891ms (Views: 2890.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 09:30:27 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 467ms (Views: 467.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 09:32:19 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 531ms (Views: 530.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 09:33:54 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 629ms (Views: 628.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 09:39:35 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 106ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Undefined variable: "$white".:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___865662921161093791_70235182340640'
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/1769bec8f0a03923/variables" for ::1 at 2020-02-11 09:39:35 -0500
+Started GET "/" for ::1 at 2020-02-11 09:40:48 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Undefined variable: "$white".:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___865662921161093791_70235194093840'
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/8ca61fa60a2ee6de/variables" for ::1 at 2020-02-11 09:40:49 -0500
+Started GET "/" for ::1 at 2020-02-11 09:52:14 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Undefined variable: "$white".:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___865662921161093791_70235157480580'
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/8b2a2ee384739a6f/variables" for ::1 at 2020-02-11 09:52:15 -0500
+Started GET "/" for ::1 at 2020-02-11 09:52:16 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Undefined variable: "$white".:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___865662921161093791_70235146488460'
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/07947a8e87a1901d/variables" for ::1 at 2020-02-11 09:52:16 -0500
+Started GET "/" for ::1 at 2020-02-11 09:52:27 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Undefined variable: "$white".:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___865662921161093791_70235141509740'
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/a8833d6848a3b573/variables" for ::1 at 2020-02-11 09:52:27 -0500
+Started GET "/" for ::1 at 2020-02-11 09:52:28 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Undefined variable: "$white".:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___865662921161093791_70235194321920'
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/3104e351df10e0e5/variables" for ::1 at 2020-02-11 09:52:29 -0500
+Started GET "/" for ::1 at 2020-02-11 09:52:51 -0500
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/sharshiel/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 251ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Undefined variable: "$white".:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1738661043524720176_70117200265300'
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/19dcb3424ad69aca/variables" for ::1 at 2020-02-11 09:52:52 -0500
+Started GET "/" for ::1 at 2020-02-11 09:54:38 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Undefined variable: "$white".:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1738661043524720176_70117214914040'
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/6a8fea6cb020c6be/variables" for ::1 at 2020-02-11 09:54:38 -0500
+Started GET "/" for ::1 at 2020-02-11 09:54:40 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Undefined variable: "$white".:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1738661043524720176_70117169613520'
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/9a5698df77b1ecd5/variables" for ::1 at 2020-02-11 09:54:41 -0500
+Started POST "/__better_errors/9a5698df77b1ecd5/variables" for ::1 at 2020-02-11 09:54:42 -0500
+Started GET "/" for ::1 at 2020-02-11 09:56:32 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 281ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Undefined variable: "$white".:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1738661043524720176_70117220222380'
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/6f5dc866531a7944/variables" for ::1 at 2020-02-11 09:56:32 -0500
+Started GET "/" for ::1 at 2020-02-11 10:00:33 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Undefined variable: "$white".:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1738661043524720176_70117176003460'
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/42d2eb05de96c071/variables" for ::1 at 2020-02-11 10:00:34 -0500
+Started GET "/" for ::1 at 2020-02-11 10:01:12 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Undefined variable: "$white".:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1738661043524720176_70117199970480'
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/16815961a3e4acda/variables" for ::1 at 2020-02-11 10:01:12 -0500
+Started GET "/" for ::1 at 2020-02-11 10:01:51 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/sharshiel/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 239ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Undefined variable: "$white".:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___2149705607209012726_70202327364560'
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/4afbf561bc1b3e31/variables" for ::1 at 2020-02-11 10:01:52 -0500
+Started GET "/" for ::1 at 2020-02-11 10:02:26 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Undefined variable: "$white".:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___2149705607209012726_70202371026120'
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/cb381a55feef7780/variables" for ::1 at 2020-02-11 10:02:26 -0500
+Started GET "/" for ::1 at 2020-02-11 10:02:37 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Undefined variable: "$white".:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___2149705607209012726_70202350940020'
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/f6f78363aae7280b/variables" for ::1 at 2020-02-11 10:02:38 -0500
+Started GET "/" for ::1 at 2020-02-11 10:03:30 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2294ms (Views: 2293.9ms | ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/partials/colors"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.1) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.1) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.1) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-02-11 10:04:12 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Undefined variable: "$white".:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___2149705607209012726_70202339976500'
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/f373603020180825/variables" for ::1 at 2020-02-11 10:04:12 -0500
+Started GET "/" for ::1 at 2020-02-11 10:12:28 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 379ms (Views: 378.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 10:12:30 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 45ms (Views: 44.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 10:12:50 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 502ms (Views: 501.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 10:12:53 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 35ms (Views: 34.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 10:13:14 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 486ms (Views: 486.0ms | ActiveRecord: 0.0ms)
+
+

@@ -19,21 +19,17 @@ class SessionForm extends React.Component {
         <span className='session-modal'>
           <span className="logo">w</span>
           <form>
-            {this.props.formType}
+            <h3>{this.props.formType}</h3>
             <br/>
-            <label>Username
-              <input type="text" />
-            </label>
-            <br />
-            <label>Email
-              <input type="email" />
-            </label>
-            <br />
-            <label>Password
-              <input type="password" />
-            </label>
+            <label htmlFor='password'>Username</label>
+            <input id='password' type="text" />
+            <label htmlFor='email'>Email</label>
+            <input id='email' type="email" />
+            <label htmlFor='password'>Password</label>
+            <input id='password' type="password" />
+            
           </form>
-          <p>Did you want to {otherSessionLink}?</p>
+          <p className='other-session-link'>Did you want to {otherSessionLink}?</p>
         </span>
       </span>
     )
