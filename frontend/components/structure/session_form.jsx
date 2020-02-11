@@ -17,7 +17,7 @@ class SessionForm extends React.Component {
       <span className='modal-screen'>
         <Link className="x" to='/' >X</Link>
         <span className='session-modal'>
-          <span className="logo"> w </span>
+          <span className="logo">w</span>
           <form>
             {this.props.formType}
             <br/>

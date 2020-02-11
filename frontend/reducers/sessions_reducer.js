@@ -1,5 +1,6 @@
 import { RECEIVE_USERS, RECEIVE_USER } from "../actions/user_actions";
 
+// TODO: sessionsReducer
 const sessionsReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_USERS:
