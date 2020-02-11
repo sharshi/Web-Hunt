@@ -20,6 +20,18 @@ export const getUser = id => (
 )
 
 /**
+ * #signup:user
+ * signs up and returns user
+ */
+export const signup = user => (
+  $.ajax({
+    method: 'post',
+    url: `api/users/`,
+    data: { user }
+  })
+)
+
+/**
  * #login:user
  * logs in and returns user
  */
