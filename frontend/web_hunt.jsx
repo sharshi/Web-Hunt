@@ -13,16 +13,27 @@ import {
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  const store = configureStore();
+  let store;
 
-  // <-- DEV
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.fetchUsers = fetchUsers;
-  window.fetchUser = fetchUser;
-  window.login = login;
-  window.logout = logout;
-  // DEV -->
+  if (window.currentUser) {
+    const preloadedState = {
+      entities: {
+        users: {
+          [currentUser.id]: currentUser
+        }
+      },
+      session: {
+        "currentUser": {
+          id: currentUser.id,
+          username: currentUser.username
+        }
+      }
+    };
+    store = configureStore(preloadedState);
+  } else {
+    store = configureStore();
+  }
+  delete window.currentUser;
 
   ReactDOM.render(<Root store={store}/>, root);
 })
