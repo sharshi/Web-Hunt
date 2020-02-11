@@ -33,11 +33,15 @@ class SessionForm extends React.Component {
       </>
     ) : (null)
 
-    const errors = this.props.errors.map(error => {
-      return (
-        <li key={error}>{error}</li>
-      )
-    })
+    const errors = this.props.errors ? (
+      this.props.errors.map(error => {
+        return (
+          <li key={error}>{error}</li>
+        )
+      })
+    ) : (
+      []
+    )
 
     return (
       <span className='modal-screen'>
