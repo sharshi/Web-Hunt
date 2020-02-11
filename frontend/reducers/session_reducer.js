@@ -1,17 +1,29 @@
-import { RECEIVE_USERS, RECEIVE_USER } from "../actions/user_actions";
+import { RECEIVE_USER, REMOVE_USER } from "../actions/session_actions";
 
-// TODO: sessionsReducer
-const sessionsReducer = (state = {}, action) => {
+const defaultState = {"currentUser": {
+    "id": null
+  }
+}
+
+const sessionReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case RECEIVE_USERS:
-      return Object.assign({}, state, action.users);
     case RECEIVE_USER:
-      return Object.assign({}, state, {
-        [action.user.id]: action.user
-      });
+      return {
+        "currentUser": {
+          "id": action.user.id
+        }
+      }
+    case REMOVE_USER:
+      return defaultState;
     default:
       return state;
   }
 }
 
-export default sessionsReducer;
+export default sessionReducer;
+
+// "session": {
+//   "currentUser": {
+//     "id": 25,
+//       "name": "heyo cool"
+//   }

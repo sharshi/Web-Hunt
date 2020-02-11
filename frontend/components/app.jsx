@@ -1,12 +1,11 @@
 import React from 'react';
-import NavBar from "./structure/nav_bar";
+import NavBarContainer from "./structure/nav_bar_container";
 
 class App extends React.Component {
   render() {
     return (
       <>
-        <NavBar />
-        
+        <NavBarContainer />
       </>
     )
   }
