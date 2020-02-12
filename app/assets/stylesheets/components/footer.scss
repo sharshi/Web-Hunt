@@ -8,5 +8,9 @@ footer.footer {
     width: 1100px;
     margin: 0 auto;
     padding: 20px;
+
+    a:hover {
+      color: $web-hunt-green;
+    }
   }
 }

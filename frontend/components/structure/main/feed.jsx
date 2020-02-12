@@ -1,13 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 class Feed extends React.Component {
   render() {
     return (
       <section className="feed">
         <span>
-          <Link to='/' >POPULAR</Link>
-          <Link to='/newest' >NEWEST</Link>
+          <NavLink exact to='/' activeClassName="active">POPULAR</NavLink>
+          <span> | </span>
+          <NavLink to='/newest' activeClassName="active">NEWEST</NavLink>
         </span>
         {/* feedListItems */}
       </section>

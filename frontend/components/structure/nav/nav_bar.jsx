@@ -32,7 +32,7 @@ class NavBar extends React.Component {
     return (
       <nav className="nav-bar">
         <main>
-          <section className="logo">
+          <section alt='home' onClick={() => window.location.hash = "#/"} className="logo">
             w
           </section>
           <Search />

@@ -15,8 +15,8 @@ class Footer extends React.Component {
     return (
       <footer className="footer">
         <section>
-          &copy; 2020 {links}
-          <br/>
+          &copy; 2020 Shersheial Borisute {links}
+          <br /><br />
           Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
         </section>
       </footer>

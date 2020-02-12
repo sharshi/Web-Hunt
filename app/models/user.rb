@@ -14,7 +14,10 @@
 
 class User < ApplicationRecord
   validates :username, :email, :password_digest, :session_token, presence: true
-  validates :username, :email, uniqueness: true
+  validates :email, uniqueness: true
+  validates :username, format: { with: /\A(?=.*[a-z])[a-z\d]+\Z/i,
+    message: "can only be alphanumeric."  }, exclusion: { in: %w(settings app profile index),
+    message: "%{value} is reserved." }
   validates :password, length: {minimum: 6, allow_nil: true }
   attr_reader :password
   before_validation :ensure_session_token
@@ -46,5 +49,11 @@ class User < ApplicationRecord
   def is_password?(password)
     digest = BCrypt::Password.new(self.password_digest)
     digest.is_password?(password)
+  end
+
+  ##
+  # returns true if passed-in username is valid
+  def self.allowed_usernames(username)
+    !User.find_by(username: username) && !%w(settings app profile index username).include?(username)
   end
 end

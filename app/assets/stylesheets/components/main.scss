@@ -2,7 +2,7 @@ html {
   height: 100%;
   body {
     font-family: $sans-serif;
-    background-color: #e9e9e9;
+    background-color: #f1f1f1;
   }
 }
 
@@ -11,6 +11,19 @@ html {
   margin: 0 auto;
   min-height: 600px;
   .feed {
-    color: $red;
+    padding: 20px;
+
+    span {
+      font-size: 12px;;
+
+      span {
+        color: $lightgray;
+      }
+
+      a.active {
+        font-weight: bold;
+      }
+    }
+
   }
 }
