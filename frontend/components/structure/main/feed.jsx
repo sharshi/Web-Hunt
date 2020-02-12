@@ -1,16 +1,22 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import FeedListContainer from "./feed_list_container"
 
 class Feed extends React.Component {
   render() {
+
+    const sortButtons = (
+      <span>
+        <NavLink exact to='/' activeClassName="active">POPULAR</NavLink>
+        <span> | </span>
+        <NavLink to='/newest' activeClassName="active">NEWEST</NavLink>
+      </span>
+    )
+
     return (
       <section className="feed">
-        <span>
-          <NavLink exact to='/' activeClassName="active">POPULAR</NavLink>
-          <span> | </span>
-          <NavLink to='/newest' activeClassName="active">NEWEST</NavLink>
-        </span>
-        {/* feedListItems */}
+        {sortButtons}
+        <FeedListContainer />
       </section>
     )
   }

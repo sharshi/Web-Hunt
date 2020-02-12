@@ -11,6 +11,7 @@
     align-items: center;
 
     .logo {
+      margin-left: 10px;
       height: 50px;
       min-width: 50px;
       background-color: $web-hunt-green;
@@ -37,6 +38,9 @@
         padding-left: 25px;
         background-size: 25px;
       }
+      input::placeholder {
+        font-size: 13px;
+      }
     }
 
     .userMenu {
@@ -59,7 +63,7 @@
       }
 
       .login:hover {
-        background-color: $web-hunt-green;
+        background-color: $lightgray;
       }
 
       .signup {

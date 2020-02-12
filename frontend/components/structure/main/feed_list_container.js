@@ -1,17 +1,17 @@
-import NavBar from "./nav_bar";
+import FeedList from "./feed_list";
 import { connect } from "react-redux";
-import { logoutUser } from "../../../actions/session_actions";
+import { fetchPopularProducts, fetchNewestProducts } from "../../../actions/products_actions";
 
 const mapStateToProps = state => ({
-  currentUserId: state.session.currentUser.id,
-  currentUserName: state.session.currentUser.username
+  hi: 'hi'
 })
 
 const mapDispatchToProps = dispatch => ({
-  logout: user => dispatch(logoutUser(user))
+  fetchPopularProducts: () => dispatch(fetchPopularProducts()),
+  fetchNewestProducts: () => dispatch(fetchNewestProducts())
 })
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(NavBar)
+)(FeedList)

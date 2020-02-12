@@ -13,11 +13,11 @@
 #
 
 class User < ApplicationRecord
-  validates :username, :email, :password_digest, :session_token, presence: true
+  validates :email, :password_digest, :session_token, presence: true
   validates :email, uniqueness: true
   validates :username, format: { with: /\A(?=.*[a-z])[a-z\d]+\Z/i,
     message: "can only be alphanumeric."  }, exclusion: { in: %w(settings app profile index),
-    message: "%{value} is reserved." }
+    message: "%{value} is reserved." }, presence: true
   validates :password, length: {minimum: 6, allow_nil: true }
   attr_reader :password
   before_validation :ensure_session_token
