@@ -27,7 +27,7 @@ class SessionForm extends React.Component {
 
   handleDemoSubmit(e) {
     e.preventDefault();
-    this.props.action({
+    this.props.loginUser({
       username: 'sharshi',
       password: 'sharshi55'
     });
@@ -58,16 +58,7 @@ class SessionForm extends React.Component {
       })
     ) : (
       []
-    )
-    
-    const submitButtons = (this.props.formType === 'signup') ? (
-      < button > { this.props.desc }</button>
-    ) : (
-      <>
-        < button >{this.props.desc}</button>
-        < button onClick={this.handleDemoSubmit}>Demo user</button>
-      </>
-    )
+    );
 
     return (
       <span onClick={this.close} className='modal-screen'>
@@ -77,7 +68,7 @@ class SessionForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <span className="logo">w</span>
 
-            <h3>{this.props.formType}</h3>
+            <h3>{this.props.title}</h3>
 
             <label htmlFor='username'>Username</label>
             <input 
@@ -96,7 +87,10 @@ class SessionForm extends React.Component {
             />
 
             <ul className='errors-list'>{errors}</ul>
-            {submitButtons}
+            <section className="submitbuttons">
+              < button >{this.props.desc}</button>
+              < button onClick={this.handleDemoSubmit}>Demo user</button>
+            </section>
           </form>
 
           <p className='other-session-link'>Did you want to {<Link to={`/${otherForm}`}>{otherForm}</Link>}?</p>

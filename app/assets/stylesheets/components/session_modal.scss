@@ -20,10 +20,11 @@
     width: 50px;
     border-radius: 50%;
     line-height: 47px;
-    background: white;
+    background: $white;
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
     cursor: pointer;
+    color: gray;
   }
   
   .x:hover {
@@ -51,6 +52,7 @@
 
     h3 {
       text-align: center;
+      font-weight: bold;
     }
 
     .errors-list li {
@@ -73,16 +75,25 @@
       input {
         line-height: 20px;
       }
-
-      button {
-        margin-top: 10px;
-        background-color: $web-hunt-green;
-        cursor: pointer;
+      
+      .submitbuttons {
         height: 30px;
-        width: 70px;
-        color: $white;
         align-self: center;
-        border-radius: 4px;
+        display: flex;
+        width: 450px;
+        justify-content: space-evenly;
+
+        button {
+          font-weight: 900;
+          width: 200px;
+          height: 30px;
+          font-size: 13px;
+          border: 0;
+        }
+
+        button:hover {
+          color: black;
+        }
       }
     }
 

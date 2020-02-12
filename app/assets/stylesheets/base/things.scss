@@ -1,0 +1,14 @@
+button {
+  margin-top: 10px;
+  background-color: $web-hunt-green;
+  cursor: pointer;
+  width: 80px;
+  color: $white;
+  border-radius: 4px;
+  height: 25px;
+  transition: color 0.5s;
+}
+
+input {
+  line-height: 20px;
+}
