@@ -37,17 +37,15 @@ class NavBar extends React.Component {
           </section>
           <Search />
           <section className="userMenu">
-            <HashRouter>
-              {sessionButtons}
-              <Route 
-                path='/login' 
-                render={() => (this.props.currentUserId ? <Redirect to="/"/> : <SessionFormContainer />) }
-              />
-              <Route
-                path='/signup' 
-                render={() => (this.props.currentUserId ? <Redirect to="/" />  : <UserFormContainer />)}
-              />
-            </HashRouter>
+            {sessionButtons}
+            <Route 
+              path='/login' 
+              render={() => (this.props.currentUserId ? <Redirect to="/"/> : <SessionFormContainer />) }
+            />
+            <Route
+              path='/signup' 
+              render={() => (this.props.currentUserId ? <Redirect to="/" />  : <UserFormContainer />)}
+            />
           </section>
         </main>
       </nav>

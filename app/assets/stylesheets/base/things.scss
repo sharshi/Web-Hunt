@@ -10,5 +10,8 @@ button {
 }
 
 input {
-  line-height: 20px;
+  line-height: 25px;
+  height: 25px;
+  border-radius: 3px;
+  border: 1px solid $lightgray;
 }

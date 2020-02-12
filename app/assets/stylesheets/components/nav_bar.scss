@@ -28,9 +28,13 @@
       input {
         width: 300px;
         height: 25px;
-        margin-left: 15px;
-        border-radius: 3px;
+        margin-left: 20px;
+        border-radius: 4px;
         border: 1px solid $lightgray;
+        background: white url('search.png') left no-repeat;
+        padding: 3px;
+        padding-left: 25px;
+        background-size: 25px;
       }
     }
 

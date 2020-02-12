@@ -5,7 +5,7 @@ import { createUser, loginUser } from "../../../actions/session_actions";
 const mapStateToProps = state => ({
   formType: 'signup',
   desc: 'Sign Up',
-  title: 'Sign Up for Webhunt',
+  title: 'Sign up on Web Hunt',
   errors: state.errors.login
 })
 
