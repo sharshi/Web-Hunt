@@ -41,7 +41,7 @@
     margin-right: auto;
     background-color: white;
     border-radius: 4px;
-    padding: 30px;
+    padding: 20px;
     border: 20px solid $lightlightgray; 
     min-height: 392px;
     box-sizing: border-box;
@@ -53,7 +53,8 @@
     h3 {
       text-align: center;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 19px;
+      margin-top: 10px;
     }
 
     .errors-list li {
@@ -69,8 +70,8 @@
       padding: 10px;
 
       label {
-        margin-top: 10px;
-        font-size: 14px;
+        margin-top: 12px;
+        font-size: 13px;
       }
 
       input {
@@ -85,23 +86,52 @@
         justify-content: space-evenly;
 
         button {
-          font-weight: 900;
+          font-weight: 600;
           width: 200px;
           height: 30px;
-          font-size: 13px;
+          font-size: 12px;
           border: 0;
+        }
+
+        // login / signup modal buttons
+        button:first-child {
+          background-color: $white;
+          color: black;
+          box-sizing: border-box;
+          border: 1px solid $lightlightgray;
+          transition: border 0.5s, color 0.5s ;
+        }
+
+        button:first-child:hover {
+          border: 1px solid $web-hunt-green;
+          color: $web-hunt-green;
         }
 
         button:hover {
           color: black;
         }
       }
+
+      .errors-list {
+        height: 40px;
+        overflow: scroll;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
+
+      .errors-list li {
+        list-style: none;
+        font-size: 14px;
+        text-align: center;
+      }
     }
 
     p.other-session-link {
       text-align: center;
       margin-top: 20px;
-
+      font-size: 13px;
+      color: $gray;
       a {
         color: $web-hunt-green;
       }

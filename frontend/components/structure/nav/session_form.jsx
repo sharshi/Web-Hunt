@@ -33,6 +33,11 @@ class SessionForm extends React.Component {
     });
   }
 
+  componentWillUnmount() {
+    // clear errors
+    this.props.clearErrors()
+  }
+
   close(e) {
     if (e.target.className !== 'modal-screen') {
       return;
@@ -89,7 +94,7 @@ class SessionForm extends React.Component {
             <ul className='errors-list'>{errors}</ul>
             <section className="submitbuttons">
               < button >{this.props.desc}</button>
-              < button onClick={this.handleDemoSubmit}>Demo user</button>
+              < button onClick={this.handleDemoSubmit}>DEMO USER</button>
             </section>
           </form>
 
