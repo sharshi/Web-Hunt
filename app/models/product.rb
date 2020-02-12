@@ -22,5 +22,5 @@ class Product < ApplicationRecord
   belongs_to :hunter,
     class_name: :User,
     foreign_key: :hunter_id
-  
+  has_one_attached :logo
 end
