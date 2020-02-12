@@ -1,8 +1,15 @@
 class Api::ProductsController < ApplicationController
   def index
-    @products = Product.all
+    # adjust this to show all
+    @products = Product.limit(20)
+    @popular = Product.get_popular_product_ids
     render :index
-  end
+  end 
+  
+  # def recent
+  #   @products = Product.limit(20).order(id: :desc)
+  #   render :index
+  # end
   
   def create
     @product = Product.new(product_params)
@@ -23,17 +30,18 @@ class Api::ProductsController < ApplicationController
   end
 
   def update
-    # probably should first che
-    @product = Product.update(product_params)
-    if @product.save
+    @product = Product.find_by(id: params[:id])
+    if @product.update(product_params)
       render :show
     else
       render json: @product.errors.messages, status: 422
     end
   end
 
-  def delete
-  
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    render :show
   end
 
   private

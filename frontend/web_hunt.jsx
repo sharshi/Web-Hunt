@@ -2,10 +2,27 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./components/root";
 import configureStore from "./store/store";
+import {
+  fetchPopularProducts,
+  fetchRecentProducts,
+  fetchProduct,
+  createProduct,
+  updateProduct,
+  deleteProduct
+} from "./utils/products_api_util";
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   let store;
+
+  // DEV
+  window.fetchPopularProducts = fetchPopularProducts;
+  window.fetchRecentProducts = fetchRecentProducts;
+  window.fetchProduct = fetchProduct;
+  window.createProduct = createProduct;
+  window.updateProduct = updateProduct;
+  window.deleteProduct = deleteProduct;
+  // DEV
 
   if (window.currentUser) {
     const preloadedState = {

@@ -23,4 +23,8 @@ class Product < ApplicationRecord
     class_name: :User,
     foreign_key: :hunter_id
   has_one_attached :logo
+
+  def self.get_popular_product_ids(num = 20)
+    Product.limit(num).pluck(:id)
+  end
 end
