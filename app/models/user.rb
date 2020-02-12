@@ -18,6 +18,8 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 6, allow_nil: true }
   attr_reader :password
   before_validation :ensure_session_token
+  has_many :products, 
+    foreign_key: :hunter_id
 
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)

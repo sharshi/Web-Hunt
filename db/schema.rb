@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_10_184727) do
+ActiveRecord::Schema.define(version: 2020_02_12_014200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "products", force: :cascade do |t|
+    t.datetime "launch_date"
+    t.string "title"
+    t.string "tagline"
+    t.text "description"
+    t.string "website"
+    t.string "thumbnail"
+    t.boolean "status", default: true
+    t.string "youtube"
+    t.string "twitter"
+    t.integer "hunter_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hunter_id"], name: "index_products_on_hunter_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
