@@ -23,7 +23,8 @@
 
     li.feed-list-item {
       position: relative;
-      background-color: $white;
+      // background-color: $white;
+      // border-radius: 5px;
     }
 
     li.feed-list-item > section {
@@ -41,11 +42,17 @@
       }
 
       a.title {
+        font-weight: bold;
+      }
 
+      a.title:visited {
+        // color: $gray;
       }
 
       p.tagline {
-
+        margin-top: 5px;
+        color: $gray;
+        font-size: 13px;
       }
 
       a.website-link {
@@ -60,8 +67,6 @@
       position: absolute;
       right: 28px;
       top: 28px;
-      margin-left: auto;
-      align-self: center;
       height: 60px;
       width: 50px;
       border: 1px solid $lightgray;
