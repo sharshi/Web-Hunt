@@ -1,3 +1,4 @@
+master.key
 tmp/
 /tmp/
 node_modules/
@@ -11,4 +12,4 @@ log/development.log
 log/
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-master.key
+*.key
