@@ -9,6 +9,5 @@ npm-debug.log
 log/development.log
 /log/
 log/
-config/master.key
 # Ignore master key for decrypting credentials and more.
 /config/master.key
