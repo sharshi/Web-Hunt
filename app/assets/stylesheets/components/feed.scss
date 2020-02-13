@@ -1,5 +1,6 @@
 .feed {
   padding: 20px;
+  width: 730px;
 
   span {
     font-size: 12px;;
@@ -10,6 +11,72 @@
 
     a.active {
       font-weight: bold;
+    }
+  }
+
+  .feed-list {
+    margin-top: 20px;
+    background-color: $white;
+    border-radius: 5px;
+    list-style: none;
+    border: 1px solid $lightlightgray;
+
+    li.feed-list-item {
+      position: relative;
+      background-color: $white;
+    }
+
+    li.feed-list-item > section {
+      display: flex;
+      padding: 20px;
+      border-bottom: 1px solid $lightgray;
+      align-content: stretch;
+      cursor: pointer;
+
+      img {
+        background-color: $lightgray;
+        width: 80px;
+        height: 80px;
+        margin-right: 10px;
+      }
+
+      a.title {
+
+      }
+
+      p.tagline {
+
+      }
+
+      a.website-link {
+
+      }
+    }
+
+    li.feed-list-item:last-child > section {
+      border: 0;
+    }
+    span.upvote {
+      position: absolute;
+      right: 28px;
+      top: 28px;
+      margin-left: auto;
+      align-self: center;
+      height: 60px;
+      width: 50px;
+      border: 1px solid $lightgray;
+      border-radius: 4px;
+      background-color: $white;
+      text-align: center;
+      line-height: 60px;
+    }
+
+    span.upvote:hover {
+      background-color: $lllgray;
+    }
+
+    li.feed-list-item > section:hover {
+      background-color: $lllgray;
     }
   }
 }

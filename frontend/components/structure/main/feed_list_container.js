@@ -1,14 +1,14 @@
 import FeedList from "./feed_list";
 import { connect } from "react-redux";
-import { fetchPopularProducts, fetchRecentProducts } from "../../../actions/products_actions";
+import { fetchPopularProducts } from "../../../actions/products_actions";
 
 const mapStateToProps = state => ({
-  hi: 'hi'
+  products: Object.keys(state.entities.products)
+    .map(key => state.entities.products[key])
 })
 
 const mapDispatchToProps = dispatch => ({
-  fetchPopularProducts: () => dispatch(fetchPopularProducts()),
-  fetchRecentProducts: () => dispatch(fetchRecentProducts())
+  fetchPopularProducts: () => dispatch(fetchPopularProducts())
 })
 
 export default connect(

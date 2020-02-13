@@ -32,13 +32,6 @@ export const fetchPopularProducts = () => dispatch => (
   )
 )
 
-export const fetchRecentProducts = () => dispatch => (
-  ProductsUtil.fetchRecentProducts().then(
-    products => dispatch(receiveProducts(products)),
-    errors => dispatch(productErrors(errors))
-  )
-)
-
 export const fetchProduct = id => dispatch => (
   ProductsUtil.fetchProduct(id).then(
     product => dispatch(receiveProduct(product)),

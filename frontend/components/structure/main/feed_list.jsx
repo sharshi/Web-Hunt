@@ -1,15 +1,24 @@
 import React from "react";
+import FeedListItem from "./feed_list_items";
 
 class FeedList extends React.Component {
   componentDidMount() {
-    // fetch products based on query
+    this.props.fetchPopularProducts();
   }
 
   render() {
+    if (this.props.products.length === 2) return null
+
+    const feedListItems = this.props.products.map(product => {
+      const { title, id} = product;
+      if (!title) return null;
+      return <FeedListItem key={`${id}-${title}`} product={product} />
+    })
+
     return (
-      <section className="feed-list">
-        {/* feedListItems */}
-      </section>
+      <ul className="feed-list">
+        {feedListItems}
+      </ul>
     )
   }
 }

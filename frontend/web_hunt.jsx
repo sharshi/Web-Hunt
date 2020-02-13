@@ -4,7 +4,6 @@ import Root from "./components/root";
 import configureStore from "./store/store";
 import {
   fetchPopularProducts,
-  fetchRecentProducts,
   fetchProduct,
   createProduct,
   updateProduct,
@@ -17,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // DEV
   window.fetchPopularProducts = fetchPopularProducts;
-  window.fetchRecentProducts = fetchRecentProducts;
   window.fetchProduct = fetchProduct;
   window.createProduct = createProduct;
   window.updateProduct = updateProduct;
