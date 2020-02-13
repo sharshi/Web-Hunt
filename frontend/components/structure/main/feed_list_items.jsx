@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 class FeedListItem extends React.Component {
   render() {
-    const { id, title, tagline, website } = this.props.product;
+    const { id, title, tagline, website, logoUrl } = this.props.product;
     
     return (
       <li className="feed-list-item">
         <section>
-          <img src="" alt="" />
+          <img src={logoUrl} alt="" />
           <section>
             <Link className='title' to={`/products/${id}`} >{title}</Link>
             
