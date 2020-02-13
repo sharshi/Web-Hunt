@@ -23,7 +23,10 @@ class NavBar extends React.Component {
     const sessionButtons = (currentUserId) ? (
       <>
         <button onClick={this.handleLogout}>templogout</button>
-        <Link to='/posts/new' className='new-post-link' >Post</Link>
+        <Link 
+          to='/posts/new' 
+          className='new-post-link' 
+        >Post</Link>
         <section alt='user' onClick={() => alert('show menu')} className={`logo pastel-color-${color}`}>{currentUserName[0]}</section>
       </> 
     ) : (

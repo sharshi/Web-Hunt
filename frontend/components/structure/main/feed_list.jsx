@@ -9,16 +9,16 @@ class FeedList extends React.Component {
   }
 
   render() {
-    const placeholders = [...new Array(8)].map(i => {
+    const placeholders = [...new Array(8)].map((undef,i) => {
       return (
-        <li className="feed-list-item">
-          <section>
+        <li key={`placeholder-${i}`} className="feed-list-item">
+          <a className='feed-list-item-container'>
             <img src="" className='placeholder' alt="" />
             <section>
-              <a className="title-placeholder pulse-width"></a>
+              <h3 className="title-placeholder pulse-width"></h3>
               <p className="tagline-placeholder pulse-width"></p>
             </section>
-          </section>
+          </a>
         </li>
       )
     })
@@ -33,7 +33,7 @@ class FeedList extends React.Component {
     const feedListItems = this.props.products.map(product => {
       const { title, id} = product;
       if (!title) return null;
-      return <FeedListItem key={`${id}-${title}`} product={product} />
+      return <FeedListItem key={`${id}-${title}`} openModal={() => this.props.openModal} product={product} />
     })
 
     return (

@@ -29,7 +29,7 @@
       position: relative;
     }
 
-    li.feed-list-item > section {
+    li.feed-list-item > a.feed-list-item-container {
       display: flex;
       padding: 20px;
       border-bottom: 1px solid $lightgray;
@@ -42,11 +42,11 @@
         margin-right: 10px;
       }
 
-      a.title {
+      h3.title {
         font-weight: bold;
       }
 
-      a.title:visited {
+      h3.title:visited {
         // color: $gray;
       }
 
@@ -68,7 +68,7 @@
         background-color: $lightlightgray;
         border-radius: 5px;
       }
-      a.title-placeholder {
+      h3.title-placeholder {
         font-weight: bold;
         background-color: $lightlightgray;
         height: 19px;
@@ -84,32 +84,29 @@
         width: 250px;
         border-radius: 3px;
       }
-      // @keyframes pulse-title {
-      //   0%, 100% {
-      //     width: 400px;
-      //   }
-      //   50% {
-      //     width: 380px;
-      //   }
-      // }
-      // @keyframes pulse-tagline {
-      //   0%, 100% {
-      //     width: 300px;
-      //   }
-      //   50% {
-      //     width: 280px;
-      //   }
-      // }
-      // a.pulse-width {
-      //   animation: pulse-title 0.5s ease infinite;
-      //       animation-timing-function: ease-in-out;
+      @keyframes load-title {
+        0%{
+          width: 330px;
+        }
+        100% {
+          width: 350px;
+        }
+      }
+      @keyframes load-tagline {
+        0%{
+          width: 230px;
+        }
+        100% {
+          width: 250px;
+        }
+      }
+      h3.pulse-width {
+        animation: load-title 1.5s ease infinite;
+      }
+      p.pulse-width {
+        animation: load-tagline 1.5s ease infinite;
 
-      // }
-      // p.pulse-width {
-      //   animation: pulse-tagline 0.5s (random(10) * .1 )  ease infinite;
-      //       animation-timing-function: ease-in-out;
-
-      // }
+      }
     }
 
     li.feed-list-item:last-child > section {
@@ -132,7 +129,7 @@
       background-color: $lllgray;
     }
 
-    li.feed-list-item > section:hover {
+    li.feed-list-item > a:hover {
       background-color: $lllgray;
     }
   }
