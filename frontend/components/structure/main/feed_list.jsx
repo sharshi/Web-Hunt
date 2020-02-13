@@ -3,11 +3,32 @@ import FeedListItem from "./feed_list_items";
 
 class FeedList extends React.Component {
   componentDidMount() {
-    this.props.fetchPopularProducts();
+    setTimeout( () => 
+      this.props.fetchPopularProducts(), 
+    1000);
   }
 
   render() {
-    if (this.props.products.length === 2) return null
+    const placeholders = [...new Array(8)].map(i => {
+      return (
+        <li className="feed-list-item">
+          <section>
+            <img src="" className='placeholder' alt="" />
+            <section>
+              <a className="title-placeholder pulse-width"></a>
+              <p className="tagline-placeholder pulse-width"></p>
+            </section>
+          </section>
+        </li>
+      )
+    })
+    if (this.props.products.length === 2) return (
+      <ul className="feed-list">
+        <section>
+          {placeholders}
+        </section>
+      </ul>
+    )
 
     const feedListItems = this.props.products.map(product => {
       const { title, id} = product;

@@ -27,8 +27,6 @@
 
     li.feed-list-item {
       position: relative;
-      // background-color: $white;
-      // border-radius: 5px;
     }
 
     li.feed-list-item > section {
@@ -61,6 +59,57 @@
       a.website-link {
 
       }
+
+      // placeholder stuff
+      img.placeholder {
+        width: 80px;
+        height: 80px;
+        margin-right: 10px;
+        background-color: $lightlightgray;
+        border-radius: 5px;
+      }
+      a.title-placeholder {
+        font-weight: bold;
+        background-color: $lightlightgray;
+        height: 19px;
+        width: 350px;
+        display: block;
+        border-radius: 3px;
+      }
+
+      p.tagline-placeholder {
+        margin-top: 5px;
+        background-color: $lightlightgray;
+        height: 13px;
+        width: 250px;
+        border-radius: 3px;
+      }
+      // @keyframes pulse-title {
+      //   0%, 100% {
+      //     width: 400px;
+      //   }
+      //   50% {
+      //     width: 380px;
+      //   }
+      // }
+      // @keyframes pulse-tagline {
+      //   0%, 100% {
+      //     width: 300px;
+      //   }
+      //   50% {
+      //     width: 280px;
+      //   }
+      // }
+      // a.pulse-width {
+      //   animation: pulse-title 0.5s ease infinite;
+      //       animation-timing-function: ease-in-out;
+
+      // }
+      // p.pulse-width {
+      //   animation: pulse-tagline 0.5s (random(10) * .1 )  ease infinite;
+      //       animation-timing-function: ease-in-out;
+
+      // }
     }
 
     li.feed-list-item:last-child > section {
