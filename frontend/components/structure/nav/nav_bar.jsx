@@ -16,12 +16,15 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const { currentUserId } = this.props;
+    const { currentUserId, currentUserName } = this.props;
+    const colors = ['red', 'orange', 'yellow', 'green', 'blue'];
+    const color = colors[Math.floor(Math.random() * colors.length)  ]
+
     const sessionButtons = (currentUserId) ? (
       <>
         <button onClick={this.handleLogout}>templogout</button>
         <Link to='/posts/new' className='new-post-link' >Post</Link>
-        <section alt='user' onClick={() => alert('show menu')} className="logo">s</section>
+        <section alt='user' onClick={() => alert('show menu')} className={`logo pastel-color-${color}`}>{currentUserName[0]}</section>
       </> 
     ) : (
       <>
