@@ -9,7 +9,7 @@ import {
   createProduct,
   updateProduct,
   deleteProduct
-} from "./utils/products_api_util";
+} from "./actions/products_actions";
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -43,6 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   delete window.currentUser;
+
+  // DEV
+  window.dispatch = store.dispatch;
+  // DEV
 
   ReactDOM.render(<Root store={store}/>, root);
 })

@@ -4,5 +4,5 @@
     #json.logoUrl url_for(product.logo)
   end
 end
-json.newestIds Product.order(created_at: :desc).pluck(:id)
+json.recentIds Product.order(created_at: :desc).pluck(:id)
 json.popularIds @popular

@@ -1,0 +1,15 @@
+.feed {
+  padding: 20px;
+
+  span {
+    font-size: 12px;;
+
+    span {
+      color: $lightgray;
+    }
+
+    a.active {
+      font-weight: bold;
+    }
+  }
+}

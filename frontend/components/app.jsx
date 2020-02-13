@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBarContainer from "./structure/nav/nav_bar_container";
-import Feed from "./structure/main/feed";
+import Main from "./structure/main/main";
 import Footer from './structure/footer/footer';
 
 class App extends React.Component {
@@ -8,9 +8,7 @@ class App extends React.Component {
     return (
       <>
         <NavBarContainer />
-        <main className='main-content'>
-          <Feed />
-        </main>
+        <Main />
         <Footer />
       </>
     )

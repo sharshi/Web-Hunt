@@ -1,29 +1,15 @@
 html {
   height: 100%;
+  
   body {
     font-family: $sans-serif;
     background-color: #f1f1f1;
   }
-}
 
-.main-content {
-  width: 1100px;
-  margin: 0 auto;
-  min-height: 600px;
-  .feed {
-    padding: 20px;
-
-    span {
-      font-size: 12px;;
-
-      span {
-        color: $lightgray;
-      }
-
-      a.active {
-        font-weight: bold;
-      }
-    }
-
+  .main-content {
+    width: 1100px;
+    margin: 0 auto;
+    min-height: 600px;
   }
 }
+
