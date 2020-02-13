@@ -59,6 +59,29 @@
         transition: background-color 0.5s, color 0.5s ;
       }
 
+      section.logo {
+        color: $black;
+      }
+
+      .pastel-color-red {
+        background-color: #ffb3ba;
+      }
+      .pastel-color-orange {
+        background-color: #ffdfba;
+      }
+
+      .pastel-color-yellow {
+        background-color: #ffffba;
+      }
+
+      .pastel-color-green {
+        background-color: #baffc9;
+      }
+
+      .pastel-color-blue {
+        background-color: #bae1ff;
+      }
+
       .login {
         background-color: $white;
         border: 1px solid $lightgray;
