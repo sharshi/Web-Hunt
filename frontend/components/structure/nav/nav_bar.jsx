@@ -2,7 +2,7 @@ import React from 'react';
 import Search from './search';
 import SessionFormContainer from './session_form_container';
 import UserFormContainer from './user_form_container';
-import { Route, Link, HashRouter, Redirect } from 'react-router-dom';
+import { Route, Link, Redirect } from 'react-router-dom';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -16,11 +16,12 @@ class NavBar extends React.Component {
   }
 
   render() {
-
-    const sessionButtons = (this.props.currentUserId) ? (
+    const { currentUserId } = this.props;
+    const sessionButtons = (currentUserId) ? (
       <>
-        <p>welcome {this.props.currentUserName}</p>
-        <button onClick={this.handleLogout}>logout</button>
+        <button onClick={this.handleLogout}>templogout</button>
+        <Link to='/posts/new' className='new-post-link' >Post</Link>
+        <section alt='user' onClick={() => alert('show menu')} className="logo">s</section>
       </> 
     ) : (
       <>
@@ -40,11 +41,11 @@ class NavBar extends React.Component {
             {sessionButtons}
             <Route 
               path='/login' 
-              render={() => (this.props.currentUserId ? <Redirect to="/"/> : <SessionFormContainer />) }
+              render={() => (currentUserId ? <Redirect to="/"/> : <SessionFormContainer />) }
             />
             <Route
               path='/signup' 
-              render={() => (this.props.currentUserId ? <Redirect to="/" />  : <UserFormContainer />)}
+              render={() => (currentUserId ? <Redirect to="/" />  : <UserFormContainer />)}
             />
           </section>
         </main>

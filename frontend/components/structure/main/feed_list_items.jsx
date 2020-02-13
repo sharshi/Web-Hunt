@@ -18,7 +18,7 @@ class FeedListItem extends React.Component {
           </section>
         </section>
         
-        <span className="upvote">^</span>
+        <span className="upvote">▲</span>
       </li>
     )
   }

@@ -76,6 +76,12 @@
       .signup:hover {
         color: black
       }
+
+      .new-post-link {
+        line-height: 50px;
+        color: $gray;
+        padding-left: 20px;
+      }
     }
   }
 }
