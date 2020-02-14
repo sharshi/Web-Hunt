@@ -10,7 +10,7 @@ function Modal({ modal, closeModal }) {
   let component;
   switch (modal) {
     case 'product':
-      component = <ProductContainer />
+      component = <ProductContainer  />
       break;
     default:
       return null;

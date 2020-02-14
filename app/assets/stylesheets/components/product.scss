@@ -1,18 +1,17 @@
 .product {
   width: 1100px;
-  // min-height: 1000px;
-  position: absolute;
   top: 10%;
   left: 0;
-  margin-bottom: 5%;
+  bottom: 50px;
   border-radius: 5px;
   background-color: #f1f1f1;
   box-sizing: border-box;
   padding: 30px;
   display: flex;
-  //flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-content: baseline;
+  min-height: 1000px;
 
   header {
     display: flex;
