@@ -2,8 +2,10 @@
   padding: 20px;
   width: 730px;
 
-  span {
-    font-size: 12px;;
+  span.feed-sort-container {
+    font-size: 12px;
+    margin-top: 22px;
+    display: block;
 
     span {
       color: $lightgray;

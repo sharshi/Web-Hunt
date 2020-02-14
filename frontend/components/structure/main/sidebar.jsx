@@ -3,7 +3,7 @@ import React from 'react';
 class SideBar extends React.Component {
   render() {
     return (
-      <aside>
+      <aside className='feed'>
         <h3>Current Users</h3>
         <section>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur incidunt dolorem error quaerat! Eius rem totam magnam suscipit iste. Animi nesciunt laudantium necessitatibus dolorem ut nisi ducimus id distinctio eaque!</p>

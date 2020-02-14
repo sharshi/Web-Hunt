@@ -6,7 +6,7 @@ class Feed extends React.Component {
   render() {
 
     const sortButtons = (
-      <span>
+      <span className='feed-sort-container'>
         <NavLink exact to='/' activeClassName="active">POPULAR</NavLink>
         <span> | </span>
         <NavLink to='/newest' activeClassName="active">NEWEST</NavLink>
