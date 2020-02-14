@@ -27,13 +27,15 @@ export const fetchProduct = id => (
 
 // create product
 
-export const createProduct = product => (
-  $.ajax({
+export const createProduct = product => {
+  return $.ajax({
     method: 'post',
-    url: `api/products/`,
-    data: { product }
-  })
-)
+    url: `/api/products/`,
+    data:  product ,
+    contentType: false,
+    processData: false
+  }
+)}
 
 
 // update product
