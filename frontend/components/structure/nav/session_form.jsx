@@ -33,9 +33,16 @@ class SessionForm extends React.Component {
     });
   }
 
+  componentDidMount() {
+    const body = document.getElementsByTagName('body')[0]
+    body.classList.add('no-scroll')
+  }
+
+
   componentWillUnmount() {
-    // clear errors
     this.props.clearErrors()
+    const body = document.getElementsByTagName('body')[0]
+    body.classList.remove('no-scroll')
   }
 
   close(e) {

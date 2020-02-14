@@ -8,9 +8,19 @@ footer.footer {
     width: 1100px;
     margin: 0 auto;
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
 
     a:hover {
       color: $web-hunt-green;
+    }
+    
+    a:after {
+      content: "  |  ";
+    }
+    
+    span:last-child a:after {
+      content: "";
     }
   }
 }

@@ -14,10 +14,10 @@
     position: absolute;
     top: 30px;
     left: 30px;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
-    line-height: 47px;
+    line-height: 39px;
     background: $white;
     text-align: center;
     font-size: 20px;
@@ -147,6 +147,7 @@
       margin-top: 20px;
       font-size: 13px;
       color: $gray;
+
       a {
         color: $web-hunt-green;
       }
