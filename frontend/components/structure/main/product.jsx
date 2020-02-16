@@ -2,9 +2,11 @@ import React from 'react';
 
 class Product extends React.Component {
   componentWillUnmount() {
-    window.location.hash = "#/";
-    const body = document.getElementsByTagName('body')[0]
-    body.classList.remove('no-scroll')
+    if (this.props.inModal) {
+      window.location.hash = "#/";
+      const body = document.getElementsByTagName('body')[0]
+      body.classList.remove('no-scroll')
+    }
   }
 
   componentDidMount() {
