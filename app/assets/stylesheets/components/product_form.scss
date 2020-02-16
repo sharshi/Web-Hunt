@@ -1,4 +1,117 @@
+main.product-form.section-1 {
+  display: flex;
+  justify-content: center;
+
+  h1 {
+    text-align: center;
+  }
+
+  section.input {
+    
+    form {
+
+      section.nav-buttons {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+
 main.product-form {
   display: flex;
-  flex-direction: column;
+  // flex-direction: row;
+  width: 100%;
+
+  section.product-preview {
+    align-self: center;
+
+    width: 100%;
+
+    p {
+      font-size: 11px;
+      padding: 10px 20px;
+      color: $gray;
+    }
+
+    li.feed-list-item {
+      list-style: none;
+      background-color: $white;
+      border-radius: 5px;
+      margin-left: 20px;
+    }
+
+  }
+
+  section.input {
+  
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      padding: 28px 0;
+    }
+  
+    form {
+      background-color: white;
+      width: 480px;
+      padding: 20px;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+  
+      .form-group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+  
+        label {
+          font-size: 13px;
+          font-weight: bold;
+          margin: 10px 0;
+        }
+  
+        input {
+          padding: 3px;
+          padding-left: 10px;
+          margin: 10px 0;
+        }
+  
+        input::placeholder {
+          font-size: 13px;
+        }
+      }
+
+      section.nav-buttons {
+        display: flex;
+        justify-content: space-between;
+
+        button {
+          height: 34px;
+          padding: 0 13px;
+        }
+      }
+  
+      section.schedule-notice {
+        font-size: 13px;
+        margin-top: 20px;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+  
+        strong, a {
+          font-weight: 500;
+        }
+  
+        p {
+          line-height: 20px;
+          font-weight: normal;
+          align-self: center;
+        }
+  
+        a {
+          color: $web-hunt-green;
+        }
+      }
+    }
+  }
 }

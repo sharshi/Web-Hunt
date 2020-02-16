@@ -3,6 +3,7 @@ import Website from './website';
 import Details from './details';
 import Galery from './galery';
 import Hunter from './hunter';
+import ProductPreview from "./product_preview";
 
 class ProductForm extends React.Component {
   constructor(props) {
@@ -89,7 +90,7 @@ class ProductForm extends React.Component {
         <button
           className=""
           onClick={this._prev}>
-          Previous
+          PREVIOUS
         </button>
       )
     }
@@ -104,8 +105,25 @@ class ProductForm extends React.Component {
         <button
           className=""
           onClick={this._next}>
-          Next
+          NEXT
         </button>
+      )
+    }
+
+    //shouldnt we call handleSubmit?
+    return null;
+  }
+  get scheduleNotice() {
+    let currentStep = this.state.currentStep;
+
+    if (currentStep === 1) {
+      return (
+        <section className="schedule-notice">
+          <p>
+            <strong>Not ready to post today?</strong>
+          </p>
+          <p>You can schedule your launch. <a>Learn more</a></p>
+        </section>
       )
     }
 
@@ -120,46 +138,62 @@ class ProductForm extends React.Component {
       'Let’s make this tool look nice',
       'Who made this tool?'
     ][this.state.currentStep - 1]
+    
     return (
-      <main className='product-form'>
+      <main className={`section-${this.state.currentStep} product-form`}>
         <React.Fragment>
-          <h1>{title}</h1>
+          
+          <section className="input">
+            
+            <h1>{title}</h1>
+            
+            <form onSubmit={this.handleSubmit}>
 
-          <form onSubmit={this.handleSubmit}>
+              <Website
+                currentStep={this.state.currentStep}
+                handleChange={this.handleChange}
+                website={this.state.product.website}
+              />
 
-            <Website
-              currentStep={this.state.currentStep}
-              handleChange={this.handleChange}
-              website={this.state.product.website}
-            />
+              <Details
+                currentStep={this.state.currentStep}
+                handleChange={this.handleChange}
+                title={this.state.product.title}
+                tagline={this.state.product.tagline}
+                logo={this.state.product.logo}
+                status={this.state.product.status}
+              />
 
-            <Details
-              currentStep={this.state.currentStep}
-              handleChange={this.handleChange}
-              title={this.state.product.title}
-              tagline={this.state.product.tagline}
-              logo={this.state.product.logo}
-              status={this.state.product.status}
-            />
+              <Galery
+                currentStep={this.state.currentStep}
+                handleChange={this.handleChange}
+                screenshots={this.state.product.screenshots}
+                youtube={this.state.product.youtube}
+                description={this.state.product.description}
+              />
 
-            <Galery
-              currentStep={this.state.currentStep}
-              handleChange={this.handleChange}
-              screenshots={this.state.product.screenshots}
-              youtube={this.state.product.youtube}
-              description={this.state.product.description}
-            />
+              <Hunter
+                currentStep={this.state.currentStep}
+                handleChange={this.handleChange}
+                twitter={this.state.product.twitter}
+                review={this.state.product.review}
+              />
 
-            <Hunter
-              currentStep={this.state.currentStep}
-              handleChange={this.handleChange}
-              twitter={this.state.product.twitter}
-              review={this.state.product.review}
-            />
+              <section className="nav-buttons">
+                {this.prevButton}
+                {this.nextButton}
+              </section>
 
-            {this.prevButton}
-            {this.nextButton}
-          </form>
+              {this.scheduleNotice}
+            </form>
+          </section>
+
+          <ProductPreview 
+            currentStep={this.state.currentStep}
+            product={this.state.product}
+            // disable clicking somehow...
+          />
+
         </React.Fragment>
 
       </main>

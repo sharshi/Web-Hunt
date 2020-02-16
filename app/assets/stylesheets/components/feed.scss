@@ -27,166 +27,170 @@
     list-style: none;
     border: 1px solid $lightlightgray;
 
-    li.feed-list-item {
-      position: relative;
+
+  }
+}
+
+// feed-list-item
+
+li.feed-list-item {
+  position: relative;
+}
+
+li.feed-list-item > a.feed-list-item-container {
+  display: flex;
+  padding: 20px;
+  border-bottom: 1px solid $lightgray;
+  align-content: stretch;
+  cursor: pointer;
+
+  img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+  }
+
+  h3.title {
+    font-weight: bold;
+  }
+
+  h3.title:visited {
+    // color: $gray;
+  }
+
+  p.tagline {
+    margin-top: 5px;
+    color: $gray;
+    font-size: 13px;
+  }
+
+  // placeholder stuff
+  img.placeholder {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    background-color: $lightlightgray;
+    border-radius: 5px;
+  }
+  h3.title-placeholder {
+    font-weight: bold;
+    background-color: $lightlightgray;
+    height: 19px;
+    width: 350px;
+    display: block;
+    border-radius: 3px;
+  }
+
+  p.tagline-placeholder {
+    margin-top: 5px;
+    background-color: $lightlightgray;
+    height: 13px;
+    width: 250px;
+    border-radius: 3px;
+  }
+  @keyframes load-title {
+    0%{
+      width: 330px;
     }
-
-    li.feed-list-item > a.feed-list-item-container {
-      display: flex;
-      padding: 20px;
-      border-bottom: 1px solid $lightgray;
-      align-content: stretch;
-      cursor: pointer;
-
-      img {
-        width: 80px;
-        height: 80px;
-        margin-right: 10px;
-      }
-
-      h3.title {
-        font-weight: bold;
-      }
-
-      h3.title:visited {
-        // color: $gray;
-      }
-
-      p.tagline {
-        margin-top: 5px;
-        color: $gray;
-        font-size: 13px;
-      }
-
-      // placeholder stuff
-      img.placeholder {
-        width: 80px;
-        height: 80px;
-        margin-right: 10px;
-        background-color: $lightlightgray;
-        border-radius: 5px;
-      }
-      h3.title-placeholder {
-        font-weight: bold;
-        background-color: $lightlightgray;
-        height: 19px;
-        width: 350px;
-        display: block;
-        border-radius: 3px;
-      }
-
-      p.tagline-placeholder {
-        margin-top: 5px;
-        background-color: $lightlightgray;
-        height: 13px;
-        width: 250px;
-        border-radius: 3px;
-      }
-      @keyframes load-title {
-        0%{
-          width: 330px;
-        }
-        100% {
-          width: 350px;
-        }
-      }
-      @keyframes load-tagline {
-        0%{
-          width: 230px;
-        }
-        100% {
-          width: 250px;
-        }
-      }
-      h3.pulse-width {
-        animation: load-title 1.5s ease infinite;
-      }
-      p.pulse-width {
-        animation: load-tagline 1.5s ease infinite;
-
-      }
-    }
-
-    li.feed-list-item:last-child > a.feed-list-item-container {
-      border: 0;
-    }
-
-    section.links {
-      position: absolute;
-      bottom: 30px;
-      left: 200px;
-      bottom: 16px;
-      left: 116px;
-      display: flex;
-      align-items: center;
-      height: 25px;
-
-      a {
-        background-color: $white;
-        margin-right: 8px;
-      }
-
-      a.comments {
-        font-size: 14px;
-        height: 20px;
-        width: fit-content;
-        border: 1px solid $lightgray;
-        border-radius: 3px;
-        color: $gray;
-      }
-
-      a.website-link {
-        height: 20px;
-        width: 20px;
-        border: 1px solid $lightgray;
-        border-radius: 3px;
-        text-align: center;
-        display: none;
-        background-color: transparent;
-      }
-
-      a.first-topic {
-        font-size: 10px;
-        line-height: 30px;
-        background-color: transparent;
-      }
-
-      a:hover {
-        background-color: $lightlightgray;
-      }
-
-      a.first-topic:hover {
-        background-color: transparent;
-        cursor: pointer;
-        text-decoration: underline;
-      }
-    }
-
-    li.feed-list-item:hover {
-      a.website-link {
-        display: block;
-      }
-    }
-
-    span.upvote {
-      position: absolute;
-      right: 28px;
-      top: 28px;
-      height: 60px;
-      width: 50px;
-      border: 1px solid $lightgray;
-      border-radius: 4px;
-      background-color: $white;
-      text-align: center;
-      line-height: 60px;
-    }
-
-    span.upvote:hover {
-      background-color: $lllgray;
-    }
-
-    li.feed-list-item > a:hover {
-      background-color: $lllgray;
+    100% {
+      width: 350px;
     }
   }
+  @keyframes load-tagline {
+    0%{
+      width: 230px;
+    }
+    100% {
+      width: 250px;
+    }
+  }
+  h3.pulse-width {
+    animation: load-title 1.5s ease infinite;
+  }
+  p.pulse-width {
+    animation: load-tagline 1.5s ease infinite;
+
+  }
+}
+
+li.feed-list-item:last-child > a.feed-list-item-container {
+  border: 0;
+}
+
+section.links {
+  position: absolute;
+  bottom: 30px;
+  left: 200px;
+  bottom: 16px;
+  left: 116px;
+  display: flex;
+  align-items: center;
+  height: 25px;
+
+  a {
+    background-color: $white;
+    margin-right: 8px;
+  }
+
+  a.comments {
+    font-size: 14px;
+    height: 20px;
+    width: fit-content;
+    border: 1px solid $lightgray;
+    border-radius: 3px;
+    color: $gray;
+  }
+
+  a.website-link {
+    height: 20px;
+    width: 20px;
+    border: 1px solid $lightgray;
+    border-radius: 3px;
+    text-align: center;
+    display: none;
+    background-color: transparent;
+  }
+
+  a.first-topic {
+    font-size: 10px;
+    line-height: 30px;
+    background-color: transparent;
+  }
+
+  a:hover {
+    background-color: $lightlightgray;
+  }
+
+  a.first-topic:hover {
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+li.feed-list-item:hover {
+  a.website-link {
+    display: block;
+  }
+}
+
+span.upvote {
+  position: absolute;
+  right: 28px;
+  top: 28px;
+  height: 60px;
+  width: 50px;
+  border: 1px solid $lightgray;
+  border-radius: 4px;
+  background-color: $white;
+  text-align: center;
+  line-height: 60px;
+}
+
+span.upvote:hover {
+  background-color: $lllgray;
+}
+
+li.feed-list-item > a:hover {
+  background-color: $lllgray;
 }
