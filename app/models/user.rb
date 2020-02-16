@@ -23,6 +23,12 @@ class User < ApplicationRecord
   before_validation :ensure_session_token
   has_many :products, 
     foreign_key: :hunter_id
+  has_many :reviews, 
+    foreign_key: :reviewer_id
+  has_many :upvoted_products,
+    foreign_key: :user_id,
+    class_name: :Upvote
+
 
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)

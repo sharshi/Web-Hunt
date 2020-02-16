@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_16_073213) do
+ActiveRecord::Schema.define(version: 2020_02_16_080111) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,10 +52,40 @@ ActiveRecord::Schema.define(version: 2020_02_16_073213) do
     t.index ["hunter_id"], name: "index_products_on_hunter_id"
   end
 
+  create_table "products_topics", id: false, force: :cascade do |t|
+    t.bigint "product_id"
+    t.bigint "topic_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["topic_id", "product_id"], name: "index_products_topics_on_topic_id_and_product_id", unique: true
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "reviewer_id", null: false
+    t.integer "product_id", null: false
+    t.string "title", null: false
+    t.text "body", null: false
+    t.integer "parent_review_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_reviews_on_product_id"
+    t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id"
+  end
+
   create_table "topics", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "upvotes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "upvoteable_type"
+    t.bigint "upvoteable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["upvoteable_id", "upvoteable_type", "user_id"], name: "index_upvotes_on_upvoteable_id_and_upvoteable_type_and_user_id", unique: true
+    t.index ["upvoteable_type", "upvoteable_id"], name: "index_upvotes_on_upvoteable_type_and_upvoteable_id"
   end
 
   create_table "users", force: :cascade do |t|

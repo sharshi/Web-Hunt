@@ -23,10 +23,13 @@ class Product < ApplicationRecord
   belongs_to :hunter,
     class_name: :User,
     foreign_key: :hunter_id
-
   has_one_attached :logo
-
   has_many_attached :screenshots
+  has_many :reviews,
+    foreign_key: :product_id
+  has_many :upvotes, as: :upvoteable
+  has_many :products_topics
+  has_many :topics, through: :products_topics
 
   def self.get_popular_product_ids(num = 20)
     Product.limit(num).pluck(:id)

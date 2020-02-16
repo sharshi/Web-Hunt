@@ -1,11 +1,13 @@
 # == Schema Information
 #
-# Table name: topics
+# Table name: upvotes
 #
-#  id         :bigint           not null, primary key
-#  name       :string           not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id              :bigint           not null, primary key
+#  user_id         :integer          not null
+#  upvoteable_type :string
+#  upvoteable_id   :bigint
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
