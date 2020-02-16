@@ -144,9 +144,7 @@ class ProductForm extends React.Component {
         <React.Fragment>
           
           <section className="input">
-            
             <h1>{title}</h1>
-            
             <form onSubmit={this.handleSubmit}>
 
               <Website
@@ -188,12 +186,13 @@ class ProductForm extends React.Component {
             </form>
           </section>
 
-          <ProductPreview 
+          <ProductPreview
             currentStep={this.state.currentStep}
             product={this.state.product}
-            // disable clicking somehow...
+            fromPreview={true}
+            urlFromPreview={(this.state.product.logo) ? this.state.product.logo :  null   }
           />
-
+ 
         </React.Fragment>
 
       </main>

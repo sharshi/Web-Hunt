@@ -3,18 +3,26 @@ import React from "react";
 class FeedListItem extends React.Component {
   
   clickHandler() {
-    const { openModal } = this.props;
-    openModal('product', this.props.product.id)
+    if (!this.props.fromPreview) {
+      const { openModal } = this.props;
+      openModal('product', this.props.product.id)
+    }
   }
 
   render() {
     const { id, title, tagline, website, logoUrl } = this.props.product;
     
+    let logoUrlPreview;
+    if (this.props.fromPreview && this.props.urlFromPreview) {
+      logoUrlPreview = URL.createObjectURL(this.props.urlFromPreview)
+    } else {
+      logoUrlPreview = logoUrl
+    }
 
     return (
       <li className="feed-list-item" >
         <a className='feed-list-item-container' onClick={this.clickHandler.bind(this)} >
-          <img src={logoUrl} alt="" />
+          <img src={logoUrlPreview} alt="" />
           <section>
             <h3 className='title' >{title}</h3> 
             

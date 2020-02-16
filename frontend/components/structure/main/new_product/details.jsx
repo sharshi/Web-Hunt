@@ -5,6 +5,11 @@ class Details extends React.Component {
     if (this.props.currentStep !== 2) {
       return null;
     }
+    const previewImage = (this.props.logo) ? (
+      <img src={URL.createObjectURL(this.props.logo)} />
+    ) : (
+      <img />
+    );  
 
     return (
       <section className="form-group">
@@ -38,15 +43,16 @@ class Details extends React.Component {
           value={this.props.topic}
           onChange={this.props.handleChange}
         />
-        <label htmlFor="logo">Logo</label>
+        <label htmlFor="logo"><button >Logo Upload</button></label>
         <input
-          className='form-control'
+          className='form-control logo'
           type="file" 
           id="logo"
           name='logo'
           files={this.props.logo}
           onChange={this.props.handleChange}
         />
+        {previewImage}
         <label htmlFor="status">This tool hasn't been released yet</label>
         <input 
           className='form-control'

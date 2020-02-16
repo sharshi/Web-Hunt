@@ -79,6 +79,16 @@ main.product-form {
         input::placeholder {
           font-size: 13px;
         }
+
+        img {
+          width: 80px;
+          height: 80px;
+          background: white image-url('Mountain.png') ;
+          background-size: cover;
+        }
+        img[src] {
+          background-size: 0;
+        }
       }
 
       section.nav-buttons {

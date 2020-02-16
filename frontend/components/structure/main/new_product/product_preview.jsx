@@ -8,7 +8,11 @@ class ProductPreview extends React.Component {
     const preview = (currentStep === 2) ? (
         <section className="product-preview">
           <p>PREVIEW</p>
-          <FeedListItem product={this.props.product} />
+          <FeedListItem 
+            product={this.props.product} 
+            fromPreview={this.props.fromPreview}
+            urlFromPreview={this.props.urlFromPreview}
+          />
         </section>
       ) : (currentStep === 3) ? (
         <section className="product-preview">

@@ -48,6 +48,12 @@ li.feed-list-item > a.feed-list-item-container {
     width: 80px;
     height: 80px;
     margin-right: 10px;
+    background: white image-url('Mountain.png') ;
+    background-size: cover;
+  }
+  
+  img[src] {
+    background-size: 0;
   }
 
   h3.title {
