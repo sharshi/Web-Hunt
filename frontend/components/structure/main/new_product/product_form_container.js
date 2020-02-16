@@ -10,7 +10,7 @@ const mapStateToProps = state => ({
     topics: [],
     logo: '',
     status: true,
-    //screenshots: [],
+    screenshots: [],
     youtube: '',
     description: '',
     twitter: '',

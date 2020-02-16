@@ -24,8 +24,11 @@ class ProductForm extends React.Component {
     const { name, value } = e.target;
     
     let product = this.state.product;
-    if (name == 'logo' ) {
+
+    if ( name == 'logo' ) {
       product[name] = e.target.files[0]
+    } else if ( name == 'screenshots' ) {
+      product[name] = e.target.files
     } else {
       product[name] = value;
     }
@@ -48,7 +51,9 @@ class ProductForm extends React.Component {
     formData.append('product[logo]', logo);
     formData.append('product[status]', status);
     // formData.append('product[topics]', topics);
-    // formData.append('product[screenshots]', screenshots);
+    for (let i = 0; i < screenshots.length; i++) {
+      formData.append("product[screenshots][]", screenshots[i]);
+    }
     formData.append('product[youtube]', youtube);
     formData.append('product[description]', description);
     formData.append('product[twitter]', twitter);

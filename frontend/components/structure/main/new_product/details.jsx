@@ -5,7 +5,7 @@ class Details extends React.Component {
     if (this.props.currentStep !== 2) {
       return null;
     }
-debugger
+
     return (
       <section className="form-group">
         <label htmlFor="title">Name of the tool</label>

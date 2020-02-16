@@ -6,19 +6,18 @@ class Galery extends React.Component {
       return null;
     }
 
-    // Let’s make this tool look nice
     return (
       <section className="form-group">
-        {/* <label htmlFor="screenshots">Screenshots</label>
+        <label htmlFor="screenshots">Screenshots</label>
         <input
           className='form-control'
           type="file"
           id="screenshots"
           multiple
           name='screenshots'
-          value={this.props.screenshots}
+          files={this.props.screenshots}
           onChange={this.props.handleChange}
-        /> */}
+        />
         <label htmlFor="youtube">YouTube video</label>
         <input
           className='form-control'

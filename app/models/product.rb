@@ -19,6 +19,7 @@
 
 class Product < ApplicationRecord
   validates :launch_date, :title, :tagline, :website, :status, :hunter_id, presence: true
+  # validate twitter, youtube, facebook no spaces, allow_nil: true
 
   belongs_to :hunter,
     class_name: :User,

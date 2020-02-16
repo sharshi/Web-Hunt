@@ -21,7 +21,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find_by(id: params[:id])
+    @product = Product.with_attached_screenshots.find_by(id: params[:id])
     if @product
       render :show
     else
@@ -30,7 +30,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def update
-    @product = Product.find_by(id: params[:id])
+    @product = Product.with_attached_screenshots.find_by(id: params[:id])
     if @product.update(product_params)
       render :show
     else
@@ -47,6 +47,6 @@ class Api::ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:launch_date, :title, :tagline, :description, :website, :status, :youtube, :twitter, :hunter_id, :logo, :screenshots)
+    params.require(:product).permit(:launch_date, :title, :tagline, :description, :website, :status, :youtube, :twitter, :hunter_id, :logo, screenshots: [])
   end
 end
