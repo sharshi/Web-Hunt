@@ -8,11 +8,17 @@ class Product extends React.Component {
   }
 
   componentDidMount() {
-    const body = document.getElementsByTagName('body')[0]
-    body.classList.add('no-scroll')
+    if (this.props.inModal) {
+      const body = document.getElementsByTagName('body')[0]
+      body.classList.add('no-scroll')
+    }
+    this.props.fetchProduct(this.props.productId)
   }
 
   render() {
+    if (!this.props.product) {
+      return null; 
+    }
     const { id, title, tagline, website, logoUrl, launch_date, description, status, hunter_id } = this.props.product;
     
     return (

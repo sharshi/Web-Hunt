@@ -24,7 +24,7 @@ class ProductForm extends React.Component {
     
     let product = this.state.product;
     if (name == 'logo' ) {
-      debugger
+      
       product[name] = e.target.files[0]
     } else {
       product[name] = value;
