@@ -75,12 +75,22 @@ main.product-form {
           padding-left: 10px;
           margin: 10px 0;
         }
+
+        input.logo {
+          width: 80px;
+          height: 80px;
+          box-sizing: border-box;
+          z-index: 1000;
+          opacity: 0;
+        }
   
         input::placeholder {
           font-size: 13px;
         }
 
         img {
+          position: absolute;
+          top: 489px;
           width: 80px;
           height: 80px;
           background: white image-url('Mountain.png') ;

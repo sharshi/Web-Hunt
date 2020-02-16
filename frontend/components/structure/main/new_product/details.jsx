@@ -43,12 +43,13 @@ class Details extends React.Component {
           value={this.props.topic}
           onChange={this.props.handleChange}
         />
-        <label htmlFor="logo"><button >Logo Upload</button></label>
+        <label htmlFor="logo">Logo Upload</label>
         <input
           className='form-control logo'
           type="file" 
           id="logo"
           name='logo'
+          accept="image/gif, image/jpeg, image/png"
           files={this.props.logo}
           onChange={this.props.handleChange}
         />
