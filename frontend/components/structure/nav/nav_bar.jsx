@@ -31,8 +31,8 @@ class NavBar extends React.Component {
       </> 
     ) : (
       <>
-        <Link className='login nav-bar-button' to='/login'>LOG IN</Link>
-        <Link className='signup nav-bar-button' to='/signup'>SIGN UP</Link>
+          <a className='login nav-bar-button' onClick={() => this.props.openModal('login')}>LOG IN</a>
+          <a className='signup nav-bar-button' onClick={() => this.props.openModal('signup')}>SIGN UP</a>
       </> 
     );
 
@@ -45,14 +45,14 @@ class NavBar extends React.Component {
           <Search />
           <section className="userMenu">
             {sessionButtons}
-            <Route 
+            {/* <Route 
               path='/login' 
               render={() => (currentUserId ? <Redirect to="/"/> : <SessionFormContainer />) }
             />
             <Route
               path='/signup' 
               render={() => (currentUserId ? <Redirect to="/" />  : <UserFormContainer />)}
-            />
+            /> */}
           </section>
         </main>
       </nav>

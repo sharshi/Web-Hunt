@@ -10,7 +10,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchPopularProducts: () => dispatch(fetchPopularProducts()),
-  openModal: id => dispatch(openModal('product', id))
+  openModal: (modal, id) => dispatch(openModal(modal, id))
 })
 
 export default connect(

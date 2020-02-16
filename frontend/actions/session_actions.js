@@ -5,6 +5,7 @@ export const RECEIVE_USER = 'RECEIVE_USER';
 export const REMOVE_USER = 'REMOVE_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const OPEN_MODAL = 'OPEN_MODAL';
 
 const receiveUsers = users => ({
   type: RECEIVE_USERS,
@@ -29,6 +30,11 @@ const receiveErrors = errors => ({
 export const clearErrors = () => ({
   type: CLEAR_ERRORS
 })
+
+export const openModal = modal => ({
+  type: OPEN_MODAL,
+  modal
+});
 
 export const fetchUsers = () => dispatch => {
   getUsers().then(

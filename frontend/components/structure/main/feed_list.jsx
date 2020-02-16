@@ -33,7 +33,7 @@ class FeedList extends React.Component {
     const feedListItems = this.props.products.map(product => {
       const { title, id} = product;
       if (!title) return null;
-      return <FeedListItem key={`${id}-${title}`} openModal={() => this.props.openModal} product={product} />
+      return <FeedListItem key={`${id}-${title}`} openModal={this.props.openModal} product={product} />
     })
 
     return (

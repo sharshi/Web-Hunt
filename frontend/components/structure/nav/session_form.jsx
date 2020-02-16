@@ -73,40 +73,37 @@ class SessionForm extends React.Component {
     );
 
     return (
-      <span onClick={this.close} className='modal-screen'>
-        <Link className="x" to='/' >X</Link>
-        <span className='session-modal'>
+      <span className='session-modal'>
 
-          <form onSubmit={this.handleSubmit}>
-            <span className="logo">w</span>
+        <form onSubmit={this.handleSubmit}>
+          <span className="logo">w</span>
 
-            <h3>{this.props.title}</h3>
+          <h3>{this.props.title}</h3>
 
-            <label htmlFor='username'>Username</label>
-            <input 
-              onChange={this.handleChange('username')} 
-              id='username' 
-              type="text" 
-            />
+          <label htmlFor='username'>Username</label>
+          <input 
+            onChange={this.handleChange('username')} 
+            id='username' 
+            type="text" 
+          />
 
-            {emailField}
+          {emailField}
 
-            <label htmlFor='password'>Password</label>
-            <input 
-              onChange={this.handleChange('password')}
-              id='password' 
-              type="password" 
-            />
+          <label htmlFor='password'>Password</label>
+          <input 
+            onChange={this.handleChange('password')}
+            id='password' 
+            type="password" 
+          />
 
-            <ul className='errors-list'>{errors}</ul>
-            <section className="submitbuttons">
-              < button >{this.props.desc}</button>
-              < button onClick={this.handleDemoSubmit}>DEMO USER</button>
-            </section>
-          </form>
+          <ul className='errors-list'>{errors}</ul>
+          <section className="submitbuttons">
+            < button >{this.props.desc}</button>
+            < button onClick={this.handleDemoSubmit}>DEMO USER</button>
+          </section>
+        </form>
 
-          <p className='other-session-link'>Did you want to {<Link to={`/${otherForm}`}>{otherForm}</Link>}?</p>
-        </span>
+        <p className='other-session-link'>Did you want to {<Link onClick={() => this.props.openModal(otherForm)}>{otherForm}</Link>}?</p>
       </span>
     )
   }

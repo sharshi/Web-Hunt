@@ -2,6 +2,8 @@ import React from 'react';
 import { closeModal } from "../../../actions/modal_actions";
 import { connect } from "react-redux";
 import ProductContainer from "./product_container";
+import SessionFormContainer from "../nav/session_form_container";
+import UserFormContainer from "../nav/user_form_container";
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -10,7 +12,13 @@ function Modal({ modal, closeModal }) {
   let component;
   switch (modal) {
     case 'product':
-      component = <ProductContainer  />
+      component = <ProductContainer />
+      break;
+    case 'login':
+      component = <SessionFormContainer />
+      break;
+    case 'signup':
+      component = <UserFormContainer />
       break;
     default:
       return null;
@@ -26,7 +34,7 @@ function Modal({ modal, closeModal }) {
 }
 
 const mapStateToProps = state => ({
-  modal: state.ui.modal
+  modal: state.ui.modal[0]
 });
 
 const mapDispatchToProps = dispatch => ({

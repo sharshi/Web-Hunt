@@ -12,7 +12,10 @@ class Product extends React.Component {
       const body = document.getElementsByTagName('body')[0]
       body.classList.add('no-scroll')
     }
-    this.props.fetchProduct(this.props.productId)
+    const { productId } = this.props;
+
+    window.location.hash = `#/products/${productId}`
+    this.props.fetchProduct(productId)
   }
 
   render() {

@@ -1,23 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 class FeedListItem extends React.Component {
   
+  clickHandler() {
+    const { openModal } = this.props;
+    openModal('product', this.props.product.id)
+  }
+
   render() {
     const { id, title, tagline, website, logoUrl } = this.props.product;
     
-    const { openModal } = this.props;
 
     return (
       <li className="feed-list-item" >
-        <Link className='feed-list-item-container'  onClick={() => dispatch(openModal(id))} to={`/products/${id}`} >
+        <a className='feed-list-item-container' onClick={this.clickHandler.bind(this)} >
           <img src={logoUrl} alt="" />
           <section>
             <h3 className='title' >{title}</h3> 
             
             <p className='tagline'>{tagline}</p>
           </section>
-        </Link>
+        </a>
         
         <section className="links">
           <a className="comments">&#128172; 34</a>

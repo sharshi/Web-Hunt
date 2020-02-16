@@ -1,6 +1,6 @@
 import SessionForm from "./session_form";
 import { connect } from "react-redux";
-import { loginUser, clearErrors } from "../../../actions/session_actions";
+import { loginUser, clearErrors, openModal } from "../../../actions/session_actions";
 
 const mapStateToProps = state => ({
   formType: 'login',
@@ -12,7 +12,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   action: user => dispatch(loginUser(user)),
   loginUser: user => dispatch(loginUser(user)),
-  clearErrors: () => dispatch(clearErrors())
+  clearErrors: () => dispatch(clearErrors()),
+  openModal: modal => dispatch(openModal(modal))
 })
 
 
