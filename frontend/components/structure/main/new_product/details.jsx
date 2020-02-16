@@ -22,6 +22,7 @@ class Details extends React.Component {
           placeholder='Name of the tool'
           value={this.props.title}
           onChange={this.props.handleChange}
+          required
         />
         <label htmlFor="tagline">Tagline</label>
         <input
@@ -32,6 +33,7 @@ class Details extends React.Component {
           placeholder='Short catchy tagline for the tool'
           value={this.props.tagline}
           onChange={this.props.handleChange}
+          required
         />
         <label htmlFor="topics">Topics</label>
         <input
@@ -43,18 +45,23 @@ class Details extends React.Component {
           value={this.props.topic}
           onChange={this.props.handleChange}
         />
-        <label htmlFor="logo">Logo Upload</label>
-        <input
-          className='form-control logo'
-          type="file" 
-          id="logo"
-          name='logo'
-          accept="image/gif, image/jpeg, image/png"
-          files={this.props.logo}
-          onChange={this.props.handleChange}
-        />
-        {previewImage}
-        <label htmlFor="status">This tool hasn't been released yet</label>
+        <section className="logo-section">
+          <label htmlFor="logo">Logo Upload</label>
+          <input
+            className='form-control logo'
+            type="file" 
+            id="logo"
+            name='logo'
+            accept="image/gif, image/jpeg, image/png"
+            files={this.props.logo}
+            onChange={this.props.handleChange}
+            required
+            />
+          {previewImage} 
+            <p>Recommended size: 240x240 <br/>
+            JPG, PNG, GIF. Max size: 2MB</p>
+        </section>
+        <label htmlFor="status">Status</label>
         <input 
           className='form-control'
           type="checkbox" 
@@ -62,7 +69,7 @@ class Details extends React.Component {
           name='status'
           value={!this.props.submit}
           onChange={this.props.handleChange}
-        />
+        /><p className='status'>This tool hasn't been released yet</p>
       </section>
     )
   }

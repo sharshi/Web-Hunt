@@ -6,18 +6,30 @@ class Galery extends React.Component {
       return null;
     }
 
+    // loop over screenshots
+    let previewImage = new Array(this.props.screenshots.length);
+    debugger
+    const previewImages = previewImage.map((_,idx) => {
+      return <img src={URL.createObjectURL(this.props.screenshots[idx])} />
+    });
+
     return (
       <section className="form-group">
-        <label htmlFor="screenshots">Screenshots</label>
-        <input
-          className='form-control'
-          type="file"
-          id="screenshots"
-          multiple
-          name='screenshots'
-          files={this.props.screenshots}
-          onChange={this.props.handleChange}
-        />
+        <section className="screenshots-section">
+          <label htmlFor="screenshots">Screenshots</label>
+          <input
+            className='form-control screenshots'
+            type="file"
+            id="screenshots"
+            multiple
+            name='screenshots'
+            files={this.props.screenshots}
+            onChange={this.props.handleChange}
+            accept="image/gif, image/jpeg, image/png"
+            required
+          />
+          {previewImages}
+        </section>
         <label htmlFor="youtube">YouTube video</label>
         <input
           className='form-control'

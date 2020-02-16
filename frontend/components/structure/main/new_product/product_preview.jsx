@@ -7,7 +7,7 @@ class ProductPreview extends React.Component {
     const { currentStep } = this.props;
     const preview = (currentStep === 2) ? (
         <section className="product-preview">
-          <p>PREVIEW</p>
+          <p className='preview'>PREVIEW</p>
           <FeedListItem 
             product={this.props.product} 
             fromPreview={this.props.fromPreview}

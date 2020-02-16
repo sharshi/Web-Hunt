@@ -17,6 +17,7 @@ class Website extends React.Component {
           placeholder='Website of the tool'
           value={this.props.website}
           onChange={this.props.handleChange}
+          required
         />
       </section>
     )

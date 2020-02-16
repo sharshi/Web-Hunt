@@ -29,10 +29,12 @@ class ProductForm extends React.Component {
     if ( name == 'logo' ) {
       product[name] = e.target.files[0]
     } else if ( name == 'screenshots' ) {
-      product[name] = e.target.files
+      product[name] = product[name] || [];
+      product[name].concat(e.target.files);
     } else {
       product[name] = value;
     }
+    debugger
     this.setState({
       product
     });

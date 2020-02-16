@@ -28,7 +28,7 @@ main.product-form {
 
     width: 100%;
 
-    p {
+    p.preview {
       font-size: 11px;
       padding: 10px 20px;
       color: $gray;
@@ -63,41 +63,67 @@ main.product-form {
         width: 100%;
         display: flex;
         flex-direction: column;
-  
+        position: relative;
+
         label {
           font-size: 13px;
           font-weight: bold;
           margin: 10px 0;
         }
-  
+        
         input {
           padding: 3px;
           padding-left: 10px;
           margin: 10px 0;
         }
 
-        input.logo {
-          width: 80px;
-          height: 80px;
-          box-sizing: border-box;
-          z-index: 1000;
-          opacity: 0;
+        .logo-section {
+          display: flex;
+          flex-direction: column;
+          position: relative;
+
+          input.logo {
+            width: 80px;
+            height: 80px;
+            box-sizing: border-box;
+            z-index: 1000;
+            opacity: 0;
+            cursor: pointer;
+          }
+
+          input::placeholder {
+            font-size: 11px;
+          }
+
+          p {
+            padding-left: 100px;
+            color: $gray;
+            position: absolute;
+            font-size: 13px;
+            color: gray;
+            top: 92px;
+          }
+  
+          img {
+            position: absolute;
+            top: 46px;
+            width: 80px;
+            height: 80px;
+            background: white image-url('Mountain.png') ;
+            background-size: cover;
+          }
+
+          img[src] {
+            background-size: 0;
+          }
         }
   
-        input::placeholder {
+        p.status {
           font-size: 13px;
-        }
-
-        img {
+          color: gray;
           position: absolute;
-          top: 489px;
-          width: 80px;
-          height: 80px;
-          background: white image-url('Mountain.png') ;
-          background-size: cover;
-        }
-        img[src] {
-          background-size: 0;
+          top: 455px;
+          left: 26px;
         }
       }
 
