@@ -4,7 +4,7 @@ import { createProduct } from "../../../../actions/products_actions";
 
 const mapStateToProps = state => ({
   product: {
-    website: '',
+    website: 'https://',
     title: '',
     tagline: '',
     topics: [],

@@ -5,7 +5,7 @@ class Details extends React.Component {
     if (this.props.currentStep !== 2) {
       return null;
     }
-
+debugger
     return (
       <section className="form-group">
         <label htmlFor="title">Name of the tool</label>
@@ -44,7 +44,7 @@ class Details extends React.Component {
           type="file" 
           id="logo"
           name='logo'
-          value={this.props.logo}
+          files={this.props.logo}
           onChange={this.props.handleChange}
         />
         <label htmlFor="status">This tool hasn't been released yet</label>

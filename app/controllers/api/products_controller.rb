@@ -47,6 +47,6 @@ class Api::ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:launch_date, :title, :tagline, :description, :website, :status, :youtube, :twitter, :hunter_id, :logo)
+    params.require(:product).permit(:launch_date, :title, :tagline, :description, :website, :status, :youtube, :twitter, :hunter_id, :logo, :screenshots)
   end
 end

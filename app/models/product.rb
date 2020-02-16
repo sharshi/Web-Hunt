@@ -19,10 +19,14 @@
 
 class Product < ApplicationRecord
   validates :launch_date, :title, :tagline, :website, :status, :hunter_id, presence: true
+
   belongs_to :hunter,
     class_name: :User,
     foreign_key: :hunter_id
+
   has_one_attached :logo
+
+  has_many_attached :screenshots
 
   def self.get_popular_product_ids(num = 20)
     Product.limit(num).pluck(:id)

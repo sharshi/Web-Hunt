@@ -17,6 +17,7 @@ class ProductForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this._next = this._next.bind(this)
     this._prev = this._prev.bind(this)
+
   }
   
   handleChange(e) {
@@ -24,7 +25,6 @@ class ProductForm extends React.Component {
     
     let product = this.state.product;
     if (name == 'logo' ) {
-      
       product[name] = e.target.files[0]
     } else {
       product[name] = value;
@@ -109,44 +109,47 @@ class ProductForm extends React.Component {
   }
 
   render() {
+    const title = [
+      'Submit a cool tool',
+      'Tell us more about this tool',
+      'Let’s make this tool look nice',
+      'Who made this tool?'
+    ][this.state.currentStep - 1]
     return (
       <main className='product-form'>
         <React.Fragment>
-          <h1>Submit a cool tool</h1>
-
-          {/* currentStep {i} should be used to determine the h1 above*/}
-          <p>Step {this.state.currentStep}</p>
+          <h1>{title}</h1>
 
           <form onSubmit={this.handleSubmit}>
 
             <Website
               currentStep={this.state.currentStep}
               handleChange={this.handleChange}
-              website={this.state.website}
+              website={this.state.product.website}
             />
 
             <Details
               currentStep={this.state.currentStep}
               handleChange={this.handleChange}
-              title={this.state.title}
-              tagline={this.state.tagline}
-              logo={this.state.logo}
-              status={this.state.status}
+              title={this.state.product.title}
+              tagline={this.state.product.tagline}
+              logo={this.state.product.logo}
+              status={this.state.product.status}
             />
 
             <Galery
               currentStep={this.state.currentStep}
               handleChange={this.handleChange}
-              screenshots={this.state.screenshots}
-              youtube={this.state.youtube}
-              description={this.state.description}
+              screenshots={this.state.product.screenshots}
+              youtube={this.state.product.youtube}
+              description={this.state.product.description}
             />
 
             <Hunter
               currentStep={this.state.currentStep}
               handleChange={this.handleChange}
-              twitter={this.state.twitter}
-              review={this.state.review}
+              twitter={this.state.product.twitter}
+              review={this.state.product.review}
             />
 
             {this.prevButton}
