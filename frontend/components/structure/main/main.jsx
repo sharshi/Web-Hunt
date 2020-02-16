@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Feed from "./feed";
+import FeedContainer from "./feed_container";
 import SideBar from "./sidebar";
 import ProductContainer from "./product_container";
 
@@ -24,7 +24,7 @@ class Main extends React.Component {
             <Route
               path='/'
               render={() => (<>
-                <Feed />
+                <FeedContainer />
                 <SideBar />
               </>)}
               />

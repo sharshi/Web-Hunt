@@ -3,10 +3,12 @@ import { connect } from "react-redux";
 import { fetchPopularProducts } from "../../../actions/products_actions";
 import { openModal } from '../../../actions/modal_actions';
 
-const mapStateToProps = state => ({
-  products: Object.keys(state.entities.products)
-    .map(key => state.entities.products[key])
-})
+const mapStateToProps = state => {
+  return ({
+    products: state.entities.products,
+    sort: state.entities.products[state.ui.feedSort],
+    order: state.ui.feedSort
+})}
 
 const mapDispatchToProps = dispatch => ({
   fetchPopularProducts: () => dispatch(fetchPopularProducts()),

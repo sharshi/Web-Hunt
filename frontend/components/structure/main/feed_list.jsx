@@ -22,16 +22,22 @@ class FeedList extends React.Component {
         </li>
       )
     })
-    if (this.props.products.length === 2) return (
+    
+    if (this.props.products.popularIds.length <= 2) return (
       <ul className="feed-list">
         <section>
           {placeholders}
         </section>
       </ul>
     )
+    
+    if (this.props.order === 'recentIds') {
+      window.location.hash = "#/newest"
+    }
 
-    const feedListItems = this.props.products.map(product => {
-      const { title, id} = product;
+    const feedListItems = this.props.sort.map(sortedid => {
+      const product = this.props.products[sortedid];
+      const { title, id } = product;
       if (!title) return null;
       return <FeedListItem key={`${id}-${title}`} openModal={this.props.openModal} product={product} />
     })
