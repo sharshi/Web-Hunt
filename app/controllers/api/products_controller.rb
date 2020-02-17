@@ -30,7 +30,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def update
-    @product = Product.with_attached_screenshots.find_by(id: params[:id])
+    @product = current_user.products.with_attached_screenshots.find_by(id: params[:id])
     if @product.update(product_params)
       render :show
     else
