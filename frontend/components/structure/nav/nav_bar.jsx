@@ -27,7 +27,7 @@ class NavBar extends React.Component {
           className='new-post-link' 
         >Post</Link>
         <span className='bell'>
-          🔔
+          <i className="fas fa-bell fa-sm"></i>
         </span>
         <section alt='user' className={`logo pastel-color-${color} usermenu-logo`}>{currentUserName[0]}
           <ul className="usermenu">
