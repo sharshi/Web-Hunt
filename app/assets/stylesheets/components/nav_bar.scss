@@ -46,8 +46,8 @@
     }
 
     .bell {
-      margin-left: 25px;
-      margin-right: 15px;
+      margin-left: 20px;
+      margin-right: 10px;
       height: 30px;
       min-width: 30px;
       background-color: $gray;
@@ -60,6 +60,7 @@
       cursor: pointer;
       align-self: center;
       color: white;
+      transform: scale(0.7);
     }
 
     .userMenu {

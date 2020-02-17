@@ -6,7 +6,7 @@ import {  clearErrors } from "../../../../actions/session_actions";
 const mapStateToProps = state => {
   return({
   product: {
-    website: '',
+    website: 'https://',
     title: '',
     tagline: '',
     topics: [],

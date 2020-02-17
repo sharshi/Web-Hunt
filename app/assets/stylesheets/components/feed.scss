@@ -150,12 +150,14 @@ section.links {
   }
 
   a.comments {
-    font-size: 14px;
+    font-size: 12px;
     height: 20px;
     width: fit-content;
     border: 1px solid $lightgray;
     border-radius: 3px;
     color: $gray;
+    padding: 3px;
+    box-sizing: border-box;
   }
 
   a.website-link {
@@ -166,6 +168,8 @@ section.links {
     text-align: center;
     display: none;
     background-color: transparent;
+    color: $gray;
+    box-sizing: border-box;
   }
 
   a.first-topic {
@@ -202,6 +206,7 @@ span.upvote {
   background-color: $white;
   text-align: center;
   line-height: 60px;
+  cursor: pointer;
 }
 
 span.upvote:hover {

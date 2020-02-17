@@ -88,7 +88,7 @@ class Product extends React.Component {
             
             <section className="website-link">
               <h4>Website</h4>
-              <a href={website}>{website}</a>
+              <a href={website} target="_blank">{website}</a>
             </section>
           </aside>
         </section>
