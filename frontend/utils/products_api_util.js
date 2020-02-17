@@ -56,3 +56,12 @@ export const deleteProduct = productId => (
     url: `api/products/${productId}`
   })
 )
+
+// url exists?
+
+export const urlProduct = productUrl => (
+  $.ajax({
+    method: 'get',
+    url: `api/products/hasurl?url=${productUrl}`,
+  })
+)

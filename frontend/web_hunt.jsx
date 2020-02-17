@@ -10,6 +10,10 @@ import {
   deleteProduct
 } from "./actions/products_actions";
 
+import {
+  urlProduct
+} from "./utils/products_api_util";
+
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   let store;
@@ -20,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.createProduct = createProduct;
   window.updateProduct = updateProduct;
   window.deleteProduct = deleteProduct;
+  window.urlProduct = urlProduct;
   // DEV
 
   if (window.currentUser) {

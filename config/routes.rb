@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
-    get 'products/recent', to: 'products#recent'
+    # get 'products/recent', to: 'products#recent'
+    get 'products/hasurl', to: 'products#hasurl'
     resources :users, only: [:index, :create, :show]
     resource :session, only: [:create, :destroy]
     resources :products, only: [:create, :index, :show, :update, :destroy]

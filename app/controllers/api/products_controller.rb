@@ -44,6 +44,11 @@ class Api::ProductsController < ApplicationController
     render :show
   end
 
+  def hasurl
+    bool = !!Product.find_by(website: params[:url])
+    render json: bool
+  end
+
   private
 
   def product_params

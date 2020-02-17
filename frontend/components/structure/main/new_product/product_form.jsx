@@ -4,6 +4,7 @@ import Details from './details';
 import Gallery from './gallery';
 import Hunter from './hunter';
 import ProductPreview from "./product_preview";
+import {urlProduct} from '../../../../utils/products_api_util';
 
 class ProductForm extends React.Component {
   constructor(props) {
@@ -48,6 +49,8 @@ class ProductForm extends React.Component {
     
     const { website, title, tagline, logo, status, topics, screenshots, youtube, description, twitter, review, hunter_id } = this.state.product;
 
+    website = this.cleanUrl(website);
+
     const formData = new FormData();
     formData.append('product[launch_date]', new Date());
     formData.append('product[hunter_id]', hunter_id);
@@ -71,11 +74,41 @@ class ProductForm extends React.Component {
   _next(e) {
     e.preventDefault();
     let currentStep = this.state.currentStep;
-    // if currentStep more than or equal to 3 return 4, else return currentStep + 1
-    currentStep = currentStep >= 3 ? 4 : currentStep + 1;
-    this.setState({
-      currentStep: currentStep
-    })
+
+    if (currentStep === 1) {
+      const url = this.cleanUrl(this.state.product.website);
+      urlProduct(this.state.product.website).then(bool => {
+          if (!this.isUrl(url)) {
+            alert('please enter a valid url')
+          } else if (bool) {
+            alert('please enter a unique url')
+          } else {
+            this.setState({
+              currentStep: currentStep + 1
+            })
+          }
+        }
+      )
+    } else {
+      // if currentStep more than or equal to 3 return 4, else return currentStep + 1
+      currentStep = currentStep >= 3 ? 4 : currentStep + 1;
+      this.setState({
+        currentStep: currentStep
+      })
+    }
+  }
+
+  cleanUrl(url) {
+    url = url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "");
+    return url;
+  }
+
+  isUrl(url) {
+    // https://stackoverflow.com/a/3809435/2140793
+    var expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+    var regex = new RegExp(expression);
+
+    return !!url.match(regex)
   }
 
   _prev(e) {
@@ -107,14 +140,14 @@ class ProductForm extends React.Component {
     let clickAction;
     let check;
     const next = this._next;
-    // const alertWarning = () => alert('please fill out the required fields');
+
     const alertWarning = () => {};
     switch (currentStep) {
       case 1:
+        
         check = 
           this.state.product.website !== '';
-          // this.state.product.website.match(/^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/);
-
+        
         clickAction = check ? next : alertWarning;
         break;
       case 2:
