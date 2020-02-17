@@ -21,7 +21,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.with_attached_screenshots.find_by(id: params[:id])
+    @product = Product.with_attached_screenshots.includes(:hunter).find_by(id: params[:id])
     if @product
       render :show
     else

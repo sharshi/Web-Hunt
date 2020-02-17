@@ -27,7 +27,7 @@ class Product extends React.Component {
     if (!this.props.product) {
       return null; 
     }
-    const { id, title, tagline, website, logoUrl, launch_date, description, status, hunter_id, topics, screenshotUrls, reviews, youtube } = this.props.product;
+    const { id, title, tagline, website, logoUrl, launch_date, description, status, hunter_id, topics, screenshotUrls, reviews, youtube, hunter } = this.props.product;
 
     return (
       <>
@@ -36,8 +36,10 @@ class Product extends React.Component {
             <section className='main-info'>
               <img src={logoUrl} alt="" />
               <section className='title-tagline'>
-                <h3 className='title' >{title}</h3>
-
+                <a href={website} target="_blank">
+                  <h3 className='title' >{title}</h3>
+                  <i className="fas fa-external-link-alt"></i>
+                </a>
                 <p className='tagline'>{tagline}</p>
 
                 <ul>
@@ -59,6 +61,7 @@ class Product extends React.Component {
             </section>
 
             {/* itterate through all reviews  */}
+            <h4>REVIEWS</h4>
             <section className="discussion">
               <section className="review-input">
                 <ReviewInput />
@@ -75,20 +78,28 @@ class Product extends React.Component {
             <div className='upvote-section'>
               <span className="upvote-button">▲ UPVOTE <div>123</div></span>
               <div className='product-upvoters'>
-                <span className='upvoter-picture'>
+                <span className='ppr upvoter-picture'>
                 </span>
-                <span className='upvoter-picture'>
+                <span className='ppr upvoter-picture'>
                 </span>
-                <span className='upvoter-picture'>
+                <span className='ppr upvoter-picture'>
                 </span>
               </div>
             </div>
 
-            <hr/>
-            
+            <hr />
+
             <section className="website-link">
               <h4>Website</h4>
               <a href={website} target="_blank">{website}</a>
+            </section>
+
+            <hr />
+
+            <section className="hunter-link">
+              <h4>Hunter</h4>
+              <span className="profile-picture-round"></span>
+              <a href={`/api/users/${hunter_id}`} target="_blank">{hunter.username}</a>
             </section>
           </aside>
         </section>

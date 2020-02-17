@@ -37,13 +37,35 @@ section.product-main {
           width: inherit;
         }
 
-        h3.title {
-          font-weight: bold;
+        a {
+          h3.title {
+            font-weight: bold;
+          }
+          h3.title:hover {
+            text-decoration: underline;
+          }
+
+          i {
+            display: none;
+          }
+
+          h3.title:visited {
+            // color: $gray;
+          }
         }
 
-        h3.title:visited {
-          // color: $gray;
+        a:hover {
+
+          h3 {
+            display: inline-block;
+          }
+
+          i {
+            margin-left: 10px;
+            display: inline-block;
+          }
         }
+
 
         p.tagline {
           margin-top: 5px;
@@ -85,18 +107,20 @@ section.product-main {
     
     section.main-image, section.discussion {
       background-color: $white;
-      padding: 20px;
+      // padding: 20px;
       border-radius: 5px;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
 
     section.main-image {
-
+      padding: 20px;
+      
       img.carousel-main {
         display: block;
         margin-left: auto;
         margin-right: auto;
         height: 100%;
+
       }
 
       p.description {
@@ -110,6 +134,36 @@ section.product-main {
           padding-bottom: 10px;
           color: $gray;
           display: block;
+        }
+      }
+    }
+    
+    // reviews
+    section.discussion {
+      padding: 20px;
+
+      section.review-input {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        border-bottom: 1px solid $lightgray;
+        padding-bottom: 20px;
+
+        form {
+          display: inherit;
+          width: 100%;
+          align-items: inherit;
+          margin-left: 10px;
+
+          input {
+            flex-grow: 1;
+          }
+
+          button {
+            margin: 10px;
+            padding: 8px;
+            height: fit-content;
+          }
         }
       }
     }
@@ -143,6 +197,16 @@ section.product-main {
           color: $lllgray;
         }
       }
+      
+      span.upvote-button:hover {
+        background-color: lighten($web-hunt-green, 5%)
+      }
+      
+      span.upvote-button:active {
+        background-color: lighten($web-hunt-green, 5%);
+        margin-top: 2px;
+        margin-bottom: -2px;
+      }
 
       section.website-link {
         border-top: 1px solid $lightlightgray;
@@ -153,20 +217,10 @@ section.product-main {
 
         span.upvoter-picture {
           background-color: lightcoral;
-          border: 1px solid $lightgray;
           margin-left: -10px;
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          display: inline-block;
-          cursor: pointer;
         }
       }
 
-    }
-
-    span.upvote-button:hover {
-      background-color: lighten($web-hunt-green, 5%)
     }
 
     section {
@@ -174,9 +228,16 @@ section.product-main {
       padding: 20px;
       background-color: $white;
       border-radius: 5px;
+    }
 
+    section.hunter-link {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
 
+      a {
+        margin-left: 10px;
+      }
     }
   }
-  
 }

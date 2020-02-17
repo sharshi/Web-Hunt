@@ -12,7 +12,8 @@ class ProductForm extends React.Component {
     // should make a container
     this.state = {
       currentStep: 1,
-      product: this.props.product
+      product: this.props.product,
+      screenshot_preview_urls: []
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -24,19 +25,22 @@ class ProductForm extends React.Component {
   
   handleChange(e) {
     const { name, value } = e.target;
-    
+
     let product = this.state.product;
+    let screenshot_preview_urls = this.state.screenshot_preview_urls;
 
     if ( name === 'logo' ) {
       product[name] = e.target.files[0]
     } else if ( name === 'screenshots' ) {
       product[name] = product[name].concat(e.target.files);
+      screenshot_preview_urls = screenshot_preview_urls.concat(URL.createObjectURL(e.target.files[0]))
     } else {
       product[name] = value;
     }
     
     this.setState({
-      product
+      product,
+      screenshot_preview_urls
     });
   }
 
@@ -252,6 +256,7 @@ class ProductForm extends React.Component {
                 screenshots={this.state.product.screenshots}
                 youtube={this.state.product.youtube}
                 description={this.state.product.description}
+                screenshot_preview_urls={this.state.screenshot_preview_urls}
               />
 
               <Hunter

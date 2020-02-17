@@ -14,4 +14,25 @@ input {
   height: 25px;
   border-radius: 3px;
   border: 1px solid $lightgray;
+  padding-left: 10px;
+}
+
+
+.profile-picture-round, .ppr {
+  background-color: $web-hunt-green;
+  border: 1px solid $lightgray;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+
+h4 {
+  color: $gray;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: small;
+  width: 100%;
 }

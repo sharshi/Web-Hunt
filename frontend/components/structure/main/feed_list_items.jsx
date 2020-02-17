@@ -32,7 +32,7 @@ class FeedListItem extends React.Component {
         
         <section className="links">
           <a className="comments"><i className="fas fa-comment"></i> 34</a>
-          <a className="website-link" target="_blank" href={website}><i class="fas fa-external-link-alt fa-xs"></i></a>
+          <a className="website-link" target="_blank" href={website}><i className="fas fa-external-link-alt fa-xs"></i></a>
           <a className="first-topic">Technology</a>
         </section>
         <span className="upvote">▲</span>

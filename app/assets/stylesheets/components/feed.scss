@@ -173,9 +173,10 @@ section.links {
   }
 
   a.first-topic {
-    font-size: 10px;
-    line-height: 30px;
+    font-size: 12px;
     background-color: transparent;
+    align-self: flex-end;
+    padding-bottom: 2px;
   }
 
   a:hover {
@@ -211,6 +212,8 @@ span.upvote {
 
 span.upvote:hover {
   background-color: $lllgray;
+  border: 1px solid $web-hunt-green;
+  color: $web-hunt-green;
 }
 
 li.feed-list-item > a:hover {

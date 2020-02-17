@@ -1,4 +1,5 @@
 import React from "react";
+import DescriptionInput from "./description_input";
 
 class Gallery extends React.Component {
   render() {
@@ -6,11 +7,20 @@ class Gallery extends React.Component {
       return null;
     }
 
-    let previewImage = new Array(this.props.screenshots.length);
+    // let previewImage = new Array(this.props.screenshots.length);
+    // let previewImages;
+    // if (previewImage.length > 0 ) {
+    //   previewImages = this.props.screenshots.map((i) => {
+    //     const url = URL.createObjectURL(i[0]);
+    //     return <img key={url} src={url} />
+    //   });
+    // } else {
+    //   previewImages = []
+    // }
+
     let previewImages;
-    if (previewImage.length > 0 ) {
-      previewImages = this.props.screenshots.map((i) => {
-        const url = URL.createObjectURL(i[0]);
+    if (this.props.screenshot_preview_urls.length > 0) {
+      previewImages = this.props.screenshot_preview_urls.map(url => {
         return <img key={url} src={url} />
       });
     } else {
@@ -46,17 +56,12 @@ class Gallery extends React.Component {
           value={this.props.youtube}
           onChange={this.props.handleChange}
         />
+        {/* separate component for description */}
         <label htmlFor="description">Description</label>
-        <textarea
-          className='form-control'
-          id='description'
-          type='text'
-          name='description'
-          placeholder='Description of the tool'
-          value={this.props.description}
-          onChange={this.props.handleChange}
-          required
-        ></textarea>
+        <DescriptionInput
+          description={this.props.description}
+          handleChange={this.props.handleChange} 
+        />
       </section>
     )
   }
