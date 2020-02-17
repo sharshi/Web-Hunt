@@ -1,7 +1,7 @@
 import React from "react";
 import Website from './website';
 import Details from './details';
-import Galery from './galery';
+import Gallery from './gallery';
 import Hunter from './hunter';
 import ProductPreview from "./product_preview";
 
@@ -34,7 +34,7 @@ class ProductForm extends React.Component {
     } else {
       product[name] = value;
     }
-    debugger
+    
     this.setState({
       product
     });
@@ -164,7 +164,7 @@ class ProductForm extends React.Component {
                 status={this.state.product.status}
               />
 
-              <Galery
+              <Gallery
                 currentStep={this.state.currentStep}
                 handleChange={this.handleChange}
                 screenshots={this.state.product.screenshots}

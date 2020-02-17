@@ -16,7 +16,7 @@ class ProductPreview extends React.Component {
         </section>
       ) : (currentStep === 3) ? (
         <section className="product-preview">
-          'galery'
+          gallery
         </section>
       ) : (currentStep === 4) ? (
         <section className="product-preview">

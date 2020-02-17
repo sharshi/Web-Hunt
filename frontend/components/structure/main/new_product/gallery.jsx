@@ -1,14 +1,13 @@
 import React from "react";
 
-class Galery extends React.Component {
+class Gallery extends React.Component {
   render() {
     if (this.props.currentStep !== 3) {
       return null;
     }
 
-    // loop over screenshots
     let previewImage = new Array(this.props.screenshots.length);
-    debugger
+
     const previewImages = previewImage.map((_,idx) => {
       return <img src={URL.createObjectURL(this.props.screenshots[idx])} />
     });
@@ -55,4 +54,4 @@ class Galery extends React.Component {
   }
 }
 
-export default Galery;
+export default Gallery;

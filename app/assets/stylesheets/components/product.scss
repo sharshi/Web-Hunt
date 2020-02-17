@@ -1,4 +1,4 @@
-.product {
+section.product-main {
   width: 1100px;
   top: 10%;
   left: 0;
@@ -36,6 +36,46 @@
         h3, p {
           width: inherit;
         }
+
+        h3.title {
+          font-weight: bold;
+        }
+
+        h3.title:visited {
+          // color: $gray;
+        }
+
+        p.tagline {
+          margin-top: 5px;
+          color: $gray;
+          font-size: 13px;
+        }
+
+        ul {
+          display: flex;
+          margin-top: 20px;
+
+          li {
+            list-style: none;
+            font-size: 11px;
+            text-transform: uppercase;
+            border: 1px solid $lightgray;
+            border-radius: 3px;
+            margin-right: 5px;
+            cursor: pointer;
+            color: $gray;
+            background-color: $white;
+            padding: 3px;
+            position: relative;
+            z-index: 3;
+            min-width: 20px;
+          }
+
+          li:hover {
+            background-color: $lightlightgray;
+            text-decoration: underline;
+          }
+        }
       }
     }
   }
@@ -43,20 +83,92 @@
   main {
     width: 700px;
     
-    section {
-      padding: 20px;
+    section.main-image, section.discussion {
       background-color: $white;
+      padding: 20px;
       border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    section.main-image {
+
+      img.carousel-main {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100%;
+      }
+
+      p.description {
+        border-top: 1px solid $lightgray;
+        padding-top: 20px;
+        font-size: 14px;
+        line-height: 1.5em;
+      }
     }
   }
 
-  aside {
+  aside.product {
     width: 320px;
 
+    hr {
+      margin: 20px 0;
+      border: 1px solid $lightgray;
+    }
+
+    div.upvote-section {
+      display: flex;
+      
+      span.upvote-button {
+        background-color: $web-hunt-green;
+        width: 170px;
+        padding: 12px;
+        display: block;
+        text-align: center;
+        color: $white;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 500;
+
+        div {
+          display: inline-block;
+          color: $lllgray;
+        }
+      }
+
+      section.website-link {
+        border-top: 1px solid $lightlightgray;
+      }
+
+      div.product-upvoters {
+        margin-left: 25px;
+
+        span.upvoter-picture {
+          background-color: lightcoral;
+          border: 1px solid $lightgray;
+          margin-left: -10px;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          display: inline-block;
+          cursor: pointer;
+        }
+      }
+
+    }
+
+    span.upvote-button:hover {
+      background-color: lighten($web-hunt-green, 5%)
+    }
+
     section {
+      margin-bottom: 20px;
       padding: 20px;
       background-color: $white;
       border-radius: 5px;
+
+
     }
   }
   
