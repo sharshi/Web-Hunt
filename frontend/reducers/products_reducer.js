@@ -1,4 +1,4 @@
-import { RECEIVE_PRODUCTS, RECEIVE_PRODUCT, PRODUCT_ERRORS, REMOVE_PRODUCT } from "../actions/products_actions";
+import { RECEIVE_PRODUCTS, RECEIVE_PRODUCT, RECEIVE_NEW_PRODUCT, PRODUCT_ERRORS, REMOVE_PRODUCT } from "../actions/products_actions";
 
 const preState = {
   recentIds: [],
@@ -24,6 +24,8 @@ const productsReducer = (state = preState, action) => {
 
       return newS;
     case RECEIVE_PRODUCT:
+      return Object.assign({}, state, { [action.product.id]: action.product })
+    case RECEIVE_NEW_PRODUCT:
       return Object.assign({}, state, { [action.product.id]: action.product })
     case REMOVE_PRODUCT:
       newS = Object.assign({}, state)

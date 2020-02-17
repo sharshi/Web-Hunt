@@ -12,16 +12,17 @@ footer.footer {
     display: flex;
     justify-content: space-between;
 
+    span > a  {
+      border-right: 1px solid $gray;
+      padding: 0 10px;
+    }
+
     a:hover {
       color: $web-hunt-green;
     }
     
-    a:after {
-      content: "  |  ";
-    }
-    
-    span:last-child a:after {
-      content: "";
+    span:last-child a {
+      border-right: 0;
     }
   }
 }

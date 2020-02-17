@@ -45,6 +45,23 @@
       }
     }
 
+    .bell {
+      margin-left: 30px;
+      margin-right: 20px;
+      height: 30px;
+      min-width: 30px;
+      background-color: $gray;
+      border-radius: 50%;
+      line-height: 25px;
+      text-align: center;
+      color: $white;
+      font-size: 20px;
+      font-weight: 400;
+      cursor: pointer;
+      align-self: center;
+      color: white;
+    }
+
     .userMenu {
       display: flex;
 
@@ -107,4 +124,45 @@
       }
     }
   }
+}
+
+
+
+section.usermenu-logo {
+  position: relative;
+
+  ul.usermenu {
+    position: absolute;
+    display: none;
+    width: 120px;
+    background-color: $white;
+    border: 1px solid $lightgray;
+    font-size: 13px;
+    color: $gray;
+    list-style: none;
+    left: -35px;
+    top: 52px;
+    text-transform: uppercase;
+    border-radius: 5px;
+
+    li {
+      height: 20px;
+      line-height: normal;
+      padding: 10px;
+      font-weight: bold;
+
+      a {
+
+
+      }
+
+      a:hover {
+        color: $web-hunt-green;
+      }
+    }
+  }
+}
+
+section.usermenu-logo:hover ul.usermenu {
+  display: block;
 }

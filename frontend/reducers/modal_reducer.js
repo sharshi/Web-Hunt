@@ -1,5 +1,6 @@
 import { OPEN_MODAL, CLOSE_MODAL } from "../actions/modal_actions";
 import { RECEIVE_USER } from "../actions/session_actions";
+import { RECEIVE_NEW_PRODUCT } from "../actions/products_actions";
 
 const modalReducer = (state = [], action) => {
   switch (action.type) {
@@ -9,6 +10,8 @@ const modalReducer = (state = [], action) => {
       } else {
         return [action.modal];
       }
+    case RECEIVE_NEW_PRODUCT:
+      return ['product', action.product.id]
     case CLOSE_MODAL:
       return [];
     case RECEIVE_USER:

@@ -2,6 +2,7 @@ import * as ProductsUtil from "../utils/products_api_util";
 
 export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
 export const RECEIVE_PRODUCT = 'RECEIVE_PRODUCT';
+export const RECEIVE_NEW_PRODUCT = 'RECEIVE_PRODUCT';
 export const PRODUCT_ERRORS = 'PRODUCT_ERRORS';
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
 
@@ -12,6 +13,11 @@ const receiveProducts = products => ({
 
 const receiveProduct = product => ({
   type: RECEIVE_PRODUCT,
+  product
+})
+
+const receiveNewProduct = product => ({
+  type: RECEIVE_NEW_PRODUCT,
   product
 })
 
@@ -41,14 +47,14 @@ export const fetchProduct = id => dispatch => (
 
 export const createProduct = product => dispatch => (
   ProductsUtil.createProduct(product).then(
-    product => dispatch(receiveProduct(product)),
+    product => dispatch(receiveNewProduct(product)),
     errors => dispatch(productErrors(errors))
   )
 )
 
 export const updateProduct = product => dispatch => (
   ProductsUtil.updateProduct(product).then(
-    product => dispatch(receiveProduct(product)),
+    product => dispatch(receiveNewProduct(product)),
     errors => dispatch(productErrors(errors))
   )
 )
