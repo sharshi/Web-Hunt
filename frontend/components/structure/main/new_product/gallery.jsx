@@ -7,10 +7,15 @@ class Gallery extends React.Component {
     }
 
     let previewImage = new Array(this.props.screenshots.length);
-
-    const previewImages = previewImage.map((_,idx) => {
-      return <img src={URL.createObjectURL(this.props.screenshots[idx])} />
-    });
+    let previewImages;
+    if (previewImage.length > 0 ) {
+      previewImages = this.props.screenshots.map((i) => {
+        const url = URL.createObjectURL(i[0]);
+        return <img key={url} src={url} />
+      });
+    } else {
+      previewImages = []
+    }
 
     return (
       <section className="form-group">
@@ -20,14 +25,16 @@ class Gallery extends React.Component {
             className='form-control screenshots'
             type="file"
             id="screenshots"
-            multiple
             name='screenshots'
             files={this.props.screenshots}
             onChange={this.props.handleChange}
             accept="image/gif, image/jpeg, image/png"
             required
           />
-          {previewImages}
+          <span className='product-form-gallery-preview' >
+            {previewImages.length ? previewImages : <img/>  }
+          </span>
+          
         </section>
         <label htmlFor="youtube">YouTube video</label>
         <input
@@ -48,6 +55,7 @@ class Gallery extends React.Component {
           placeholder='Description of the tool'
           value={this.props.description}
           onChange={this.props.handleChange}
+          required
         ></textarea>
       </section>
     )

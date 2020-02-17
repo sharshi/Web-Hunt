@@ -12,13 +12,14 @@ class Product extends React.Component {
   }
 
   componentDidMount() {
+    const { productId } = this.props;
+
     if (this.props.inModal) {
       const body = document.getElementsByTagName('body')[0]
       body.classList.add('no-scroll')
+      window.location.hash = `#/products/${productId}?from-feed`
     }
-    const { productId } = this.props;
 
-    window.location.hash = `#/products/${productId}`
     this.props.fetchProduct(productId)
   }
 
@@ -52,6 +53,7 @@ class Product extends React.Component {
                 <GalleryDisplay youtube={youtube} screenshots={screenshotUrls} />
               </section>
               <p className='description'>
+                <span>DESCRIPTION</span>
                 {description}
               </p>
             </section>

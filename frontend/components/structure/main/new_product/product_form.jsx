@@ -26,11 +26,10 @@ class ProductForm extends React.Component {
     
     let product = this.state.product;
 
-    if ( name == 'logo' ) {
+    if ( name === 'logo' ) {
       product[name] = e.target.files[0]
-    } else if ( name == 'screenshots' ) {
-      product[name] = product[name] || [];
-      product[name].concat(e.target.files);
+    } else if ( name === 'screenshots' ) {
+      product[name] = product[name].concat(e.target.files);
     } else {
       product[name] = value;
     }
@@ -38,6 +37,10 @@ class ProductForm extends React.Component {
     this.setState({
       product
     });
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors()
   }
 
   handleSubmit(e) {
@@ -55,7 +58,7 @@ class ProductForm extends React.Component {
     formData.append('product[status]', status);
     // formData.append('product[topics]', topics);
     for (let i = 0; i < screenshots.length; i++) {
-      formData.append("product[screenshots][]", screenshots[i]);
+      formData.append("product[screenshots][]", screenshots[i][0]);
     }
     formData.append('product[youtube]', youtube);
     formData.append('product[description]', description);
@@ -101,12 +104,48 @@ class ProductForm extends React.Component {
 
   get nextButton() {
     let currentStep = this.state.currentStep;
+    let clickAction;
+    let check;
+    const next = this._next;
+    // const alertWarning = () => alert('please fill out the required fields');
+    const alertWarning = () => {};
+    switch (currentStep) {
+      case 1:
+        check = 
+          this.state.product.website !== '';
+          // this.state.product.website.match(/^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/);
+
+        clickAction = check ? next : alertWarning;
+        break;
+      case 2:
+        check = 
+          this.state.product.title != '' && 
+          this.state.product.tagline != '' && 
+          this.state.product.logo != '';
+
+        clickAction = check ? next : alertWarning;
+        break;
+      case 3:
+        check =
+          this.state.product.screenshots != '' &&
+          this.state.product.description != '';
+
+        clickAction = check != '' ? next : alertWarning;
+        break;
+      case 4:
+        // no check
+        clickAction = true ? next : alertWarning;
+        break;
+      default:
+        clickAction = next;
+        break;
+    }
 
     if (currentStep < 4) {
       return (
         <button
           className=""
-          onClick={this._next}>
+          onClick={clickAction}>
           NEXT
         </button>
       )
@@ -115,6 +154,7 @@ class ProductForm extends React.Component {
     //shouldnt we call handleSubmit?
     return null;
   }
+  
   get scheduleNotice() {
     let currentStep = this.state.currentStep;
 
@@ -140,7 +180,16 @@ class ProductForm extends React.Component {
       'Let’s make this tool look nice',
       'Who made this tool?'
     ][this.state.currentStep - 1]
-    
+
+    const errors = this.props.errors ? (
+      this.props.errors.map(error => {
+        return (
+          <li key={error}>{error}</li>
+        )
+      })
+    ) : (
+      []
+    );
     return (
       <main className={`section-${this.state.currentStep} product-form`}>
         <React.Fragment>
@@ -194,7 +243,8 @@ class ProductForm extends React.Component {
             fromPreview={true}
             urlFromPreview={(this.state.product.logo) ? this.state.product.logo :  null   }
           />
- 
+
+          <ul className='errors-list'>{errors}</ul>
         </React.Fragment>
 
       </main>

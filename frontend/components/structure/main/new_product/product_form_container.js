@@ -1,8 +1,10 @@
 import ProductForm from "./product_form";
 import { connect } from "react-redux";
 import { createProduct } from "../../../../actions/products_actions";
+import {  clearErrors } from "../../../../actions/session_actions";
 
-const mapStateToProps = state => ({
+const mapStateToProps = state => {
+  return({
   product: {
     website: '',
     title: '',
@@ -16,11 +18,13 @@ const mapStateToProps = state => ({
     twitter: '',
     //review: '',
     hunter_id: state.session.currentUser.id
-  }
-})
+  },
+  errors: state.errors.product
+})}
 
 const mapDispatchToProps = dispatch => ({
-  createProduct: product => dispatch(createProduct(product))
+  createProduct: product => dispatch(createProduct(product)),
+  clearErrors: () => dispatch(clearErrors()),
 })
 
 export default connect(

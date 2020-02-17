@@ -104,6 +104,13 @@ section.product-main {
         padding-top: 20px;
         font-size: 14px;
         line-height: 1.5em;
+
+        span {
+          font-size: 11px;
+          padding-bottom: 10px;
+          color: $gray;
+          display: block;
+        }
       }
     }
   }

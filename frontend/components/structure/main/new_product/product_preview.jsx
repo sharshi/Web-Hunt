@@ -4,6 +4,7 @@ import FeedListItem from '../feed_list_items';
 
 class ProductPreview extends React.Component {
   render() {
+
     const { currentStep } = this.props;
     const preview = (currentStep === 2) ? (
         <section className="product-preview">
@@ -15,13 +16,12 @@ class ProductPreview extends React.Component {
           />
         </section>
       ) : (currentStep === 3) ? (
-        <section className="product-preview">
-          gallery
-        </section>
+        // <section className="product-preview">
+        //   gallery
+        // </section>
+        null
       ) : (currentStep === 4) ? (
-        <section className="product-preview">
-          'hunter'
-        </section>
+        null
       ) : null;
 
     return (

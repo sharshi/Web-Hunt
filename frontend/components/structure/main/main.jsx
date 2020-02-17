@@ -17,6 +17,14 @@ class Main extends React.Component {
               path={'/products/:id'}
               render={() => <ProductContainer />}
             />
+            {/* <Route
+              path={'/profile'}
+              render={() => <ProfileContainer />}
+            />
+            <Route
+              path={'/@:username'}
+              render={() => <UserContainer />}
+            /> */}
             <Route
               path='/posts/new'
               render={() => <ProductFormContainer />}

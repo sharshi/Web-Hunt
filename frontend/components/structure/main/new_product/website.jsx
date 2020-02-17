@@ -12,11 +12,12 @@ class Website extends React.Component {
         <input 
           className='form-control'
           id='website'
-          type='text'
+          type='url'
           name='website'
           placeholder='Website of the tool'
           value={this.props.website}
           onChange={this.props.handleChange}
+          pattern="https://.*"
           required
         />
       </section>
