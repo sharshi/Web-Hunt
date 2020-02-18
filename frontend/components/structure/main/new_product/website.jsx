@@ -8,7 +8,7 @@ class Website extends React.Component {
 
     return (
       <section className="form-group website">
-        <label htmlFor="website">Website</label>
+        <label htmlFor="website">Website <span>- required</span></label>
         <input 
           className='form-control'
           id='website'

@@ -30,7 +30,7 @@ class Product extends React.Component {
       return null;
     }
     const { id, title, tagline, website, logoUrl, launch_date, description, status, hunter_id, topics, screenshotUrls, reviews, youtube, hunter } = this.props.product;
-debugger
+
     if (!screenshotUrls) {
       return null; 
     }

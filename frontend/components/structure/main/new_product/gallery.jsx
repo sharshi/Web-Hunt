@@ -30,7 +30,7 @@ class Gallery extends React.Component {
     return (
       <section className="form-group">
         <section className="screenshots-section">
-          <label htmlFor="screenshots">Screenshots</label>
+          <label htmlFor="screenshots">Screenshots <span>- at least one required</span></label>
           <input
             className='form-control screenshots'
             type="file"
@@ -56,8 +56,7 @@ class Gallery extends React.Component {
           value={this.props.youtube}
           onChange={this.props.handleChange}
         />
-        {/* separate component for description */}
-        <label htmlFor="description">Description</label>
+        <label htmlFor="description">Description <span>- required</span></label>
         <DescriptionInput
           description={this.props.description}
           handleChange={this.props.handleChange} 

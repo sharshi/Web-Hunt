@@ -13,7 +13,7 @@ class Details extends React.Component {
 
     return (
       <section className="form-group">
-        <label htmlFor="title">Name of the tool</label>
+        <label htmlFor="title">Name of the tool <span>- required</span></label>
         <input
           className='form-control'
           id='title'
@@ -24,7 +24,7 @@ class Details extends React.Component {
           onChange={this.props.handleChange}
           required
         />
-        <label htmlFor="tagline">Tagline</label>
+        <label htmlFor="tagline">Tagline <span>- required</span></label>
         <input
           className='form-control'
           id='tagline'
@@ -35,7 +35,7 @@ class Details extends React.Component {
           onChange={this.props.handleChange}
           required
         />
-        <label htmlFor="topics">Topics</label>
+        <label htmlFor="topics">Topics <span></span></label>
         <input
           className='form-control'
           id='topics'
@@ -46,7 +46,7 @@ class Details extends React.Component {
           onChange={this.props.handleChange}
         />
         <section className="logo-section">
-          <label htmlFor="logo">Logo Upload</label>
+          <label htmlFor="logo">Logo Upload <span>- required</span></label>
           <input
             className='form-control logo'
             type="file" 
