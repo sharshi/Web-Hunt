@@ -10,7 +10,7 @@ class FeedListItem extends React.Component {
   }
 
   render() {
-    const { id, title, tagline, website, logoUrl } = this.props.product;
+    const { id, title, tagline, website, logoUrl, upvote_ids, review_ids, topics } = this.props.product;
     
     let logoUrlPreview;
     if (this.props.fromPreview && this.props.urlFromPreview) {
@@ -31,11 +31,13 @@ class FeedListItem extends React.Component {
         </a>
         
         <section className="links">
-          <a className="comments"><i className="fas fa-comment"></i> 34</a>
+          <a className="comments"><i className="fas fa-comment"></i> {
+            review_ids && review_ids.length >= 0 ? review_ids.length : 8
+          }</a>
           <a className="website-link" target="_blank" href={website}><i className="fas fa-external-link-alt fa-xs"></i></a>
-          <a className="first-topic">Technology</a>
+          <a className="first-topic">{topics && topics.length > 0 ? topics[0] : 'Technology'}</a>
         </section>
-        <span className="upvote">▲</span>
+        <span className="upvote">▲ {upvote_ids && upvote_ids.length >= 0 ? upvote_ids.length : 74 }</span>
       </li>
     )
   }

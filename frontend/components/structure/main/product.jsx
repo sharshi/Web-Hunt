@@ -1,10 +1,11 @@
 import React from 'react';
 import GalleryDisplay from './gallery_display';
 import ReviewInput from './review_input';
+import { Link } from 'react-router-dom';
 
 class Product extends React.Component {
   componentWillUnmount() {
-    if (this.props.inModal) {
+    if (this.props.inModal && !window.location.hash.includes('@')) {
       window.location.hash = "#/";
       const body = document.getElementsByTagName('body')[0]
       body.classList.remove('no-scroll')
@@ -24,10 +25,15 @@ class Product extends React.Component {
   }
 
   render() {
+
     if (!this.props.product) {
-      return null; 
+      return null;
     }
     const { id, title, tagline, website, logoUrl, launch_date, description, status, hunter_id, topics, screenshotUrls, reviews, youtube, hunter } = this.props.product;
+debugger
+    if (!screenshotUrls) {
+      return null; 
+    }
 
     return (
       <>
@@ -99,7 +105,7 @@ class Product extends React.Component {
             <section className="hunter-link">
               <h4>Hunter</h4>
               <span className="profile-picture-round"></span>
-              <a href={`#/@${hunter.username}`} target="_blank">@{hunter.username}</a>
+              <Link to={`/@${hunter.username}`}>@{hunter.username}</Link>
             </section>
           </aside>
         </section>

@@ -5,7 +5,6 @@
 #  id              :bigint           not null, primary key
 #  username        :string           not null
 #  email           :string           not null
-#  profile_picture :string
 #  password_digest :string           not null
 #  session_token   :string           not null
 #  created_at      :datetime         not null
@@ -29,6 +28,8 @@ class User < ApplicationRecord
   has_many :upvoted_products,
     foreign_key: :user_id,
     class_name: :Upvote
+
+  has_one_attached :profile_picture
 
 
   def self.generate_session_token

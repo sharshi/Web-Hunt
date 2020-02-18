@@ -19,9 +19,9 @@ class Api::UsersController < ApplicationController
   end
 
   def show_name
-    @user = User.find_by(username: params[:username])
+    @user = User.includes(:products, :upvoted_products, :reviews).find_by(username: params[:username])
     if @user
-      render :show
+      render :show_full_user
     else
       render json: ['username not found'], status: 404
     end

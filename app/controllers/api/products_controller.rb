@@ -21,9 +21,9 @@ class Api::ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.with_attached_screenshots.includes(:hunter).find_by(id: params[:id])
+    @product = Product.with_attached_screenshots.includes(:hunter, :topics, :reviews).find_by(id: params[:id])
     if @product
-      render :show
+      render :show_full_product
     else
       render json: ['product not found'], status: 404
     end

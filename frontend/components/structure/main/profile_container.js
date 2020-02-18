@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => {
     username: ownProps.url,
     profileNotFound: state.errors.login.length > 0,
     user: state.ui.profileUser,
-    errors: state.errors.login
+    errors: state.errors.login,
+    currentUser: state.session.currentUser.username
   })
 }
 

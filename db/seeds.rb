@@ -3,11 +3,12 @@ require 'open-uri'
 User.delete_all
 Product.delete_all
 
-sharshi = User.create(username: 'sharshi', password: 'sharshi55', email: 'sharshi@')
+sharshi = User.create(username: 'sharshi', password: 'sharshi55', email: 'sharshi@gmail.html')
 mushky = User.create(username: 'mushky', password: 'mushky55', email: 'mushky@gmail.html')
 rivky = User.create(username: 'rivky', password: 'rivky55', email: 'rivky@gmail.html')
 leah = User.create(username: 'leah', password: 'leah55', email: 'leah@gmail.html')
 berel = User.create(username: 'berel', password: 'berel55', email: 'berel@gmail.html')
+demo = User.create(username: 'demo', password: 'demo55', email: 'demo@gmail.html')
 
 slack = Product.create!(launch_date: DateTime.new(2013,8) , title: 'Slack' , tagline: 'where work happens' , description: 'Teamwork in Slack happens in channels — a single place for messaging, tools and files — helping everyone save time and collaborate together.' , website: 'slack.com/' , thumbnail: '' , status: true , youtube: '' , twitter: '' , hunter_id: sharshi.id)
 vs_code = Product.create!(launch_date: DateTime.new(5015,11,18) , title: 'Visual Studio Code' , tagline: 'Free. Built on open source. Runs everywhere.' , description: 'Visual Studio Code is a source-code editor developed by Microsoft for Windows, Linux and macOS. It includes support for debugging, embedded Git control and GitHub, syntax highlighting, intelligent code completion, snippets, and code refactoring.' , website: 'code.visualstudio.com/' , thumbnail: '' , status: true , youtube: '' , twitter: '' , hunter_id: mushky.id)

@@ -1,0 +1,1 @@
+json.partial! '/api/products/product_full', product: @product

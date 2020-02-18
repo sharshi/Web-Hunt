@@ -10,6 +10,8 @@
 
 class Topic < ApplicationRecord
   validates :name, presence: true 
+  validates :name, inclusion: { in: ['technology', 'git', 'code', 'internet', 'gaming', 'javascript', 'ruby', 'swift'],
+    message: "%{topic} is invalid" }
   
   has_many :products_topics
   has_many :products, through: :products_topics
