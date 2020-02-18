@@ -25,7 +25,7 @@ class Profile extends React.Component {
       return (404)
     }
 
-    const { username, id, upvote_ids, review_ids, product_ids, products } = this.props.user;
+    const { username, id, upvote_ids, review_ids, product_ids, products, upvoted_products, upvoted_product_ids } = this.props.user;
 
     const display = (username) ? (
       <section className='profile'>
@@ -72,8 +72,8 @@ class Profile extends React.Component {
               <h1>{upvote_ids.length} Upvote{upvote_ids.length === 1 ? '' : 's'}</h1>
               {/* item lists */}
               {
-                product_ids.length > 0 ? product_ids.map((product_id,i) => {
-                  let p = products[i][product_id];
+                upvoted_product_ids.length > 0 ? upvoted_product_ids.map((product_id,i) => {
+                  let p = upvoted_products[i][product_id];
               
                   return (
                     <FeedListItem 
