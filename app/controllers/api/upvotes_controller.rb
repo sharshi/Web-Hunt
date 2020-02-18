@@ -3,9 +3,9 @@ class Api::UpvotesController < ApplicationController
   def upvote
     @upvote = Upvote.new(upvote_params)
     if @upvote.save
-      return json: true
+      render json: true
     else
-      return json: false
+      render json: false
     end
   end
 
@@ -13,9 +13,9 @@ class Api::UpvotesController < ApplicationController
     @upvote = Upvote.find_by(id: params[:id])
     if @upvote
       @upvote.destroy
-      return json: true
+      render json: true
     else
-      return json: false
+      render json: false
     end
   end
 
