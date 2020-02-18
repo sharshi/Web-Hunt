@@ -18,10 +18,12 @@ const receiveUser = user => ({
   user
 })
 
-const receiveUserProfile = user => ({
+const receiveUserProfile = user => {
+  debugger
+  return({
   type: RECEIVE_USER_PROFILE,
   user
-})
+})}
 
 const removeUser = userId => ({
   type: REMOVE_USER,

@@ -7,16 +7,26 @@ class Profile extends React.Component {
     this.props.fetchUsername(this.props.username)
   }
 
+  componentDidUpdate() {
+    debugger
+    if  (this.props.profileNotFound) {
+
+    } else if (this.props.username !== this.props.user.username) {
+      this.props.fetchUsername(this.props.username)
+    } 
+  }
+
   componentWillUnmount() {
     this.props.clearErrors();
   }
 
   render() {
-    // if (this.props.profileNotFound) {
-    //   return (404)
-    // }
-    const { username, id, upvotes, upvoted_product_ids, review_ids, product_ids } = this.props.user;
+    if (this.props.profileNotFound) {
+      return (404)
+    }
 
+    const { username, id, upvotes, upvoted_product_ids, review_ids, product_ids } = this.props.user;
+    debugger
     const display = (username) ? (
       <>
         {/* hello { this.props.user.username } */}

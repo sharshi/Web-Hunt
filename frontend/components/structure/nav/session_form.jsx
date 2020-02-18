@@ -103,7 +103,7 @@ class SessionForm extends React.Component {
           </section>
         </form>
 
-        <p className='other-session-link'>Did you want to {<Link onClick={() => this.props.openModal(otherForm)}>{otherForm}</Link>}?</p>
+        <p className='other-session-link'>Did you want to {<a onClick={() => this.props.openModal(otherForm)}>{otherForm}</a>}?</p>
       </span>
     )
   }
