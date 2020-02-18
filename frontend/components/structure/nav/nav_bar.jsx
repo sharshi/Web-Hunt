@@ -29,11 +29,12 @@ class NavBar extends React.Component {
         <span className='bell'>
           <i className="fas fa-bell fa-sm"></i>
         </span>
-        <section alt='user' className={`logo pastel-color-${color} usermenu-logo`}>{currentUserName[0]}
-          <ul className="usermenu">
-            <li><Link to={`/@${currentUserName}`} >User Profile</Link></li>
-            <li><a onClick={this.handleLogout}>Logout</a></li>
-          </ul>
+        <section 
+          onClick={this.props.openUserMenu} 
+          alt='user' 
+          className={`logo pastel-color-${color} usermenu-logo`}
+        >
+          {currentUserName[0]}
         </section>
       </> 
     ) : (
@@ -44,25 +45,44 @@ class NavBar extends React.Component {
     );
 
     return (
-      <nav className="nav-bar">
-        <main>
-          <section alt='home' onClick={() => window.location.hash = "#/"} className="logo">
-            w
-          </section>
-          <Search />
-          <section className="userMenu">
-            {sessionButtons}
-            {/* <Route 
-              path='/login' 
-              render={() => (currentUserId ? <Redirect to="/"/> : <SessionFormContainer />) }
-            />
-            <Route
-              path='/signup' 
-              render={() => (currentUserId ? <Redirect to="/" />  : <UserFormContainer />)}
-            /> */}
-          </section>
-        </main>
-      </nav>
+      <>
+        <nav className="nav-bar">
+          <main>
+            <section alt='home' onClick={() => window.location.hash = "#/"} className="logo">
+              w
+            </section>
+            <Search />
+            <section className="userMenu">
+              {sessionButtons}
+              {/* <Route 
+                path='/login' 
+                render={() => (currentUserId ? <Redirect to="/"/> : <SessionFormContainer />) }
+              />
+              <Route
+                path='/signup' 
+                render={() => (currentUserId ? <Redirect to="/" />  : <UserFormContainer />)}
+              /> */}
+            </section>
+          </main>
+        </nav>
+        <Route
+          path='/'
+          render={() => this.props.userMenuStatus ? (
+            <section onClick={
+              this.props.closeUserMenu
+              // e => e.stopPropagation()
+            
+            } className="user-menu-modal">
+              <span>
+                <ul className="usermenu">
+                  <li><Link to={`/@${currentUserName}`} >User Profile</Link></li>
+                  <li><a onClick={this.handleLogout}>Logout</a></li>
+                </ul>
+              </span>
+            </section>
+          ) : (null)}
+        />
+      </>
     )
   }
 }

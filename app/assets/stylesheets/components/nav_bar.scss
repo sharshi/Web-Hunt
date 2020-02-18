@@ -137,39 +137,58 @@
 
 section.usermenu-logo {
   position: relative;
-
-  ul.usermenu {
-    position: absolute;
-    display: none;
-    width: 120px;
-    background-color: $white;
-    border: 1px solid $lightgray;
-    font-size: 13px;
-    color: $gray;
-    list-style: none;
-    left: -35px;
-    top: 52px;
-    text-transform: uppercase;
-    border-radius: 5px;
-
-    li {
-      height: 20px;
-      line-height: normal;
-      padding: 10px;
-      font-weight: bold;
-
-      a {
+}
 
 
-      }
+.user-menu-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 10;
 
-      a:hover {
-        color: $web-hunt-green;
+  span {
+    margin: 0 auto;
+    width: 1100px;
+    position: relative;
+    display: block;
+
+    ul.usermenu {
+      position: absolute;
+      // display: none;
+      width: 120px;
+      background-color: $white;
+      border: 1px solid $lightgray;
+      font-size: 13px;
+      color: $gray;
+      list-style: none;
+      right: -30px;
+      top: 75px;
+      text-transform: uppercase;
+      border-radius: 5px;
+      z-index: 11;
+
+      li {
+        height: 20px;
+        line-height: normal;
+        padding: 10px;
+        font-weight: bold;
+
+        a {
+
+
+        }
+
+        a:hover {
+          color: $web-hunt-green;
+        }
       }
     }
   }
 }
 
 section.usermenu-logo:hover ul.usermenu {
-  display: block;
+  // display: block;
 }
