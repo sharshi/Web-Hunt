@@ -31,7 +31,7 @@ class NavBar extends React.Component {
         </span>
         <section alt='user' className={`logo pastel-color-${color} usermenu-logo`}>{currentUserName[0]}
           <ul className="usermenu">
-            <li><Link to='/profile' >User Profile</Link></li>
+            <li><Link to={`/@${currentUserName}`} >User Profile</Link></li>
             <li><a onClick={this.handleLogout}>Logout</a></li>
           </ul>
         </section>
