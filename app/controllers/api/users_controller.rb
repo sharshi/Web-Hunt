@@ -19,7 +19,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show_name
-    @user = User.includes(:products, :upvoted_products, :reviews).find_by(username: params[:username])
+    @user = User.includes(:products, :upvotes, :upvoted_products, :reviews).find_by(username: params[:username])
     if @user
       render :show_full_user
     else

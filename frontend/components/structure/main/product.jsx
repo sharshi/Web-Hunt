@@ -4,9 +4,16 @@ import ReviewInput from './review_input';
 import { Link } from 'react-router-dom';
 
 class Product extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      prevHash: window.location.hash
+    }
+  }
+
   componentWillUnmount() {
     if (this.props.inModal && !window.location.hash.includes('@')) {
-      window.location.hash = "#/";
+      window.location.hash = this.state.prevHash;
     }
     
     const body = document.getElementsByTagName('body')[0]
@@ -15,7 +22,6 @@ class Product extends React.Component {
 
   componentDidMount() {
     const { productId } = this.props;
-
     if (this.props.inModal) {
       const body = document.getElementsByTagName('body')[0]
       body.classList.add('no-scroll')

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FeedListItem from "./feed_list_items";
 
 class Profile extends React.Component {
 
@@ -24,14 +25,14 @@ class Profile extends React.Component {
       return (404)
     }
 
-    const { username, id, upvotes, upvoted_product_ids, review_ids, product_ids } = this.props.user;
+    const { username, id, upvote_ids, review_ids, product_ids, products } = this.props.user;
 
     const display = (username) ? (
-      <>
+      <section className='profile'>
         {/* hello { this.props.user.username } */}
         <header>
-          <span>profile picture</span>
-          <section>
+          <span className='profile-picture profile-picture-round'></span>
+          <section className='user-info'>
             <div>
               <h1>{username}</h1>
               {username === this.props.currentUser ? (
@@ -41,7 +42,7 @@ class Profile extends React.Component {
               )}
             </div>
             <div>
-              <p>{id}</p>
+              <p className='profile-id'>{id}</p>
               <p>@{username}</p>
             </div>
             <div>
@@ -49,22 +50,47 @@ class Profile extends React.Component {
               <Link to='/'>{product_ids.length} Product{product_ids.length === 1 ? '' : 's'}</Link>
             </div>
           </section>
-          <main>
-            <section className="left-bar">
+        </header>
+        <main className='profile-container'>
+          <section className="left-bar">
+            <ul>
+              <li>
+                <Link to='/'>{upvote_ids.length} Upvote{upvote_ids.length === 1 ? '' : 's'}</Link>
+              </li>
+              <li>
+                <Link to='/'>{review_ids.length} Review{review_ids.length === 1 ? '' : 's'}</Link>
+              </li>
+              <li>
+                <Link to='/'>{product_ids.length} Product{product_ids.length === 1 ? '' : 's'} Created</Link>
+              </li>
+            </ul>
+          </section>
+          <section className="profile-details">
 
-            </section>
-            <section className="profile-details">
+            <section className="upvoted-products">
+              
+              <h1>{upvote_ids.length} Upvote{upvote_ids.length === 1 ? '' : 's'}</h1>
+              {/* item lists */}
               {
-                upvotes ? `${upvoted_product_ids.length} upvotes` : 'no upvotes'
+                product_ids.length > 0 ? product_ids.map((product_id,i) => {
+                  let p = products[i][product_id];
+              
+                  return (
+                    <FeedListItem 
+                      key={`${p.id}-${p.title}`} 
+                      openModal={this.props.openModal} 
+                      product={p} 
+                    />
+                  )
+                }) : 'no upvotes'
               }
             </section>
-            <section className="right-bar">
+          </section>
+          <section className="right-bar">
+          </section>
 
-            </section>
-
-          </main>
-        </header>
-      </>
+        </main>
+      </section>
     ) : (this.props.errors.length > 0) ? (
       <>
         404 profile {this.props.user.username} not found
@@ -80,5 +106,6 @@ class Profile extends React.Component {
     )
   }
 }
+
 
 export default Profile;

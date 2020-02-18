@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import Profile from './profile';
 import { fetchUsername, clearErrors } from "../../../actions/session_actions";
+import { openModal } from '../../../actions/modal_actions';
+
 
 const mapStateToProps = (state, ownProps) => {
   return ({
@@ -14,7 +16,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchUsername: username => dispatch(fetchUsername(username)),
-  clearErrors: () => dispatch(clearErrors())
+  clearErrors: () => dispatch(clearErrors()),
+  openModal: (modal, id) => dispatch(openModal(modal, id))
 })
 
 export default connect(

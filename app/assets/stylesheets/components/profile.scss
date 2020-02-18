@@ -1,0 +1,102 @@
+main.main-content {
+
+  section.profile {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    
+    header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      background-color: $web-hunt-green;
+      border-radius: 4px;
+
+      span.profile-picture {
+        width: 120px;
+        height: 120px;
+        margin: 30px;
+      }
+
+      section.user-info {
+        display: flex;
+        // align-items: center;
+        flex-direction: column;
+
+        div {
+          display: inherit;
+          flex-direction: row;
+          align-items: inherit;
+          margin: 5px;
+          color: white;
+
+          button {
+            margin: 0;
+          }
+
+          h1, p, a {
+            margin-right: 10px;
+          }
+
+          p.profile-id:before {
+            content: '#';
+          }
+
+          h1 {
+            font-weight: bold;
+            text-transform: capitalize;
+            font-size: 22px;
+          }
+        }
+      }
+    }
+
+    main.profile-container {
+      margin-top: 20px;
+      display: flex;
+
+      section.left-bar {
+        min-width: 200px;
+        box-sizing: border-box;
+        color: gray;
+        font-size: 13px;
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          line-height: 20px;
+
+          li {
+            list-style: none;
+            
+          }
+        }
+      }
+
+      section.profile-details {
+        flex-grow: 1;
+
+        h1 {
+          padding-left: 20px;
+          padding-top: 20px;
+          font-size: 20px;
+        }
+
+        section.upvoted-products {
+          background-color: $white;
+
+
+          li.feed-list-item {
+            list-style: none;
+            background-color: $white;
+            border-radius: 5px;
+          }
+        }
+      }
+
+      section.right-bar {
+        min-width: 200px;
+      }
+    }
+  }
+}

@@ -13,3 +13,5 @@
 class Upvote < ApplicationRecord
   belongs_to :upvoteable, polymorphic: true
 end
+
+# Upvote.create(upvoteable: ,user_id: )

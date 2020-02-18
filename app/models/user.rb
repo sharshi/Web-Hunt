@@ -23,11 +23,18 @@ class User < ApplicationRecord
 
   has_many :products, 
     foreign_key: :hunter_id
+    
   has_many :reviews, 
     foreign_key: :reviewer_id
-  has_many :upvoted_products,
+
+  has_many :upvotes,
     foreign_key: :user_id,
     class_name: :Upvote
+
+  has_many :upvoted_products,
+    through: :upvotes,
+    source: :upvoteable,
+    source_type: "Product"
 
   has_one_attached :profile_picture
 
