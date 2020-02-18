@@ -16,6 +16,7 @@ class Api::UpvotesController < ApplicationController
       return json: true
     else
       return json: false
+    end
   end
 
   private
