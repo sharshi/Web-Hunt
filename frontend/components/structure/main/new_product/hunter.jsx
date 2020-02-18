@@ -29,7 +29,6 @@ class Hunter extends React.Component {
           value={this.props.review}
           onChange={this.props.handleChange}
         ></textarea> */}
-        <button>Submit!</button>
       </section>
     )
   }

@@ -30,7 +30,7 @@ class Gallery extends React.Component {
     return (
       <section className="form-group">
         <section className="screenshots-section">
-          <label htmlFor="screenshots">Screenshots <span>- at least one required</span></label>
+          <label htmlFor="screenshots">Screenshots <span>- at least one required</span></label><br/>
           <input
             className='form-control screenshots'
             type="file"
@@ -42,7 +42,7 @@ class Gallery extends React.Component {
             required
           />
           <span className='product-form-gallery-preview' >
-            {previewImages.length ? previewImages : <img/>  }
+            {previewImages.length ? previewImages : null }
           </span>
           
         </section>

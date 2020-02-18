@@ -30,7 +30,7 @@ class Product extends React.Component {
     if (!this.props.product) {
       return null;
     }
-    const { id, title, tagline, website, logoUrl, launch_date, description, status, hunter_id, topics, screenshotUrls, reviews, youtube, hunter } = this.props.product;
+    const { id, title, tagline, website, logoUrl, launch_date, description, status, hunter_id, topics, screenshotUrls, reviews, youtube, hunter, upvote_ids } = this.props.product;
 
     if (!screenshotUrls) {
       return null; 
@@ -83,7 +83,7 @@ class Product extends React.Component {
           </main>
           <aside className='product'>
             <div className='upvote-section'>
-              <span className="upvote-button">▲ UPVOTE <div>123</div></span>
+              <span className="upvote-button">▲ UPVOTE <div>{upvote_ids.length}</div></span>
               <div className='product-upvoters'>
                 <span className='ppr upvoter-picture'>
                 </span>

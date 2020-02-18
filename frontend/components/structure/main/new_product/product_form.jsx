@@ -29,10 +29,10 @@ class ProductForm extends React.Component {
     let product = this.state.product;
     let screenshot_preview_urls = this.state.screenshot_preview_urls;
     if (name === 'youtube') {
-      debugger
-      let reg = /^.*(youtu.be\/|v\/|e\/|u\/\w+\/|embed\/|v=)([^#\&\?]*).*/i;
-      let match = value.match(reg);
-      product[name] = match ? match[match.length - 1] : value; 
+      // let reg = /^.*(youtu.be\/|v\/|e\/|u\/\w+\/|embed\/|v=)([^#\&\?]*).*/i;
+      // let match = value.match(reg);
+      // product[name] = match ? match[match.length - 1] : value; 
+      product[name] = value; 
     } else if ( name === 'logo' ) {
       product[name] = e.target.files[0]
     } else if ( name === 'screenshots' ) {
@@ -187,6 +187,10 @@ class ProductForm extends React.Component {
           onClick={clickAction}>
           NEXT
         </button>
+      )
+    } else if (currentStep === 4) {
+      return (
+        <button>SUBMIT</button>
       )
     }
 

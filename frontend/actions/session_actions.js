@@ -19,7 +19,6 @@ const receiveUser = user => ({
 })
 
 const receiveUserProfile = user => {
-  debugger
   return({
   type: RECEIVE_USER_PROFILE,
   user

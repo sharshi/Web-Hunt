@@ -8,8 +8,7 @@ class Profile extends React.Component {
   }
 
   componentDidUpdate() {
-    debugger
-    if  (this.props.profileNotFound) {
+    if (this.props.profileNotFound) {
 
     } else if (this.props.username !== this.props.user.username) {
       this.props.fetchUsername(this.props.username)
@@ -26,7 +25,7 @@ class Profile extends React.Component {
     }
 
     const { username, id, upvotes, upvoted_product_ids, review_ids, product_ids } = this.props.user;
-    debugger
+
     const display = (username) ? (
       <>
         {/* hello { this.props.user.username } */}
