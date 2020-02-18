@@ -8,8 +8,8 @@ class Product extends React.Component {
     if (this.props.inModal && !window.location.hash.includes('@')) {
       window.location.hash = "#/";
       const body = document.getElementsByTagName('body')[0]
-      body.classList.remove('no-scroll')
     }
+    body.classList.remove('no-scroll')
   }
 
   componentDidMount() {
