@@ -53,12 +53,10 @@ class ProductForm extends React.Component {
     
     const { website, title, tagline, logo, status, topics, screenshots, youtube, description, twitter, review, hunter_id } = this.state.product;
 
-    website = this.cleanUrl(website);
-
     const formData = new FormData();
     formData.append('product[launch_date]', new Date());
     formData.append('product[hunter_id]', hunter_id);
-    formData.append('product[website]', website);
+    formData.append('product[website]', this.cleanUrl(website));
     formData.append('product[title]', title);
     formData.append('product[tagline]', tagline);
     formData.append('product[logo]', logo);
