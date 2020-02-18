@@ -3,9 +3,7 @@ import FeedListItem from "./feed_list_items";
 
 class FeedList extends React.Component {
   componentDidMount() {
-    setTimeout( () => 
-      this.props.fetchPopularProducts(), 
-    1000);
+    this.props.fetchPopularProducts()
   }
 
   render() {

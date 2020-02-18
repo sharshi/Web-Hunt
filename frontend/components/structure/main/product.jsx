@@ -99,7 +99,7 @@ class Product extends React.Component {
             <section className="hunter-link">
               <h4>Hunter</h4>
               <span className="profile-picture-round"></span>
-              <a href={`/api/users/${hunter_id}`} target="_blank">{hunter.username}</a>
+              <a href={`#/@${hunter.username}`} target="_blank">@{hunter.username}</a>
             </section>
           </aside>
         </section>

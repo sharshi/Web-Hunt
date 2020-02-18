@@ -53,3 +53,13 @@ export const logout = () => (
     url: `api/session/`
   })
 )
+
+/**
+ * #getUser:username
+ * returns users by username
+ */
+export const getUsername = username => (
+  $.ajax({
+    url: `api/username/${username}`
+  })
+)

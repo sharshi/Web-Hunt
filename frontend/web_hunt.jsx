@@ -13,6 +13,9 @@ import {
 import {
   urlProduct
 } from "./utils/products_api_util";
+import {
+  getUsername
+} from "./utils/auth_api_util";
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -25,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.updateProduct = updateProduct;
   window.deleteProduct = deleteProduct;
   window.urlProduct = urlProduct;
+  window.getUsername = getUsername;
   // DEV
 
   if (window.currentUser) {

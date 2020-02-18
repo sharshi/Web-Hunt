@@ -1,7 +1,8 @@
-import { getUsers, getUser, login, logout, signup } from '../utils/auth_api_util'
+import { getUsers, getUser, login, logout, signup, getUsername } from '../utils/auth_api_util'
 
 export const RECEIVE_USERS = 'RECEIVE_USERS';
 export const RECEIVE_USER = 'RECEIVE_USER';
+export const RECEIVE_USER_PROFILE = 'RECEIVE_USER_PROFILE';
 export const REMOVE_USER = 'REMOVE_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
@@ -14,6 +15,11 @@ const receiveUsers = users => ({
 
 const receiveUser = user => ({
   type: RECEIVE_USER,
+  user
+})
+
+const receiveUserProfile = user => ({
+  type: RECEIVE_USER_PROFILE,
   user
 })
 
@@ -46,6 +52,13 @@ export const fetchUsers = () => dispatch => {
 export const fetchUser = id => dispatch => {
   getUser(id).then(
     user => dispatch(receiveUser(user)),
+    errors => dispatch(receiveErrors(errors.responseJSON))
+  )
+}
+
+export const fetchUsername = username => dispatch => {
+  getUsername(username).then(
+    user => dispatch(receiveUserProfile(user)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
 }

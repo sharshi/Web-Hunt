@@ -8,9 +8,15 @@ const _default = {
 const errorsReducer = (state = _default, action) => {
   switch (action.type) {
     case RECEIVE_SESSION_ERRORS:
-      return { "login": action.errors };
+      return { 
+        "login": action.errors, 
+        "product":[] 
+      };
     case RECEIVE_PRODUCT_ERRORS:
-      return { "product": action.errors };
+      return { 
+        "login": [], 
+        "product": action.errors 
+      };
     case RECEIVE_USER:
       return _default;
     case CLEAR_ERRORS:
