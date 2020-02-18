@@ -3,7 +3,9 @@ import FeedListItem from "./feed_list_items";
 
 class FeedList extends React.Component {
   componentDidMount() {
-    this.props.fetchPopularProducts()
+    if (this.props.products.recentIds.length === 0) {
+      this.props.fetchPopularProducts()
+    }
   }
 
   render() {
@@ -33,8 +35,10 @@ class FeedList extends React.Component {
       window.location.hash = "#/newest"
     }
 
+    const products = this.props.products;
+    console.log(products);
     const feedListItems = this.props.sort.map(sortedid => {
-      const product = this.props.products[sortedid];
+      const product = products[sortedid];
       const { title, id } = product;
       if (!title) return null;
       return <FeedListItem key={`${id}-${title}`} openModal={this.props.openModal} product={product} />

@@ -1,7 +1,7 @@
 class Api::ProductsController < ApplicationController
   def index
     # adjust this to show all
-    @products = Product.limit(20)
+    @products = Product.all #.limit(20)
     @popular = Product.get_popular_product_ids
     render :index
   end 

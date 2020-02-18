@@ -33,6 +33,7 @@ class Product < ApplicationRecord
   has_many :topics, through: :products_topics
 
   def self.get_popular_product_ids(num = 20)
-    Product.limit(num).pluck(:id)
+    # Product.limit(num).pluck(:id)
+    Product.all.pluck(:id)
   end
 end
