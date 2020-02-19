@@ -17,6 +17,9 @@
         <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
       </script>
     <% end %>
+    <script>
+      window.pp = "<%= image_url('user.png') %>"
+    </script>
 
     <script src="https://kit.fontawesome.com/88924c6e5b.js" crossorigin="anonymous"></script>
 

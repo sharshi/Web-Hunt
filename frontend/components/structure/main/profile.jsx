@@ -25,20 +25,20 @@ class Profile extends React.Component {
       return (404)
     }
 
-    const { username, id, upvote_ids, review_ids, product_ids, products, upvoted_products, upvoted_product_ids } = this.props.user;
+    const { username, id, upvote_ids, review_ids, product_ids, products, upvoted_products, upvoted_product_ids, profilePictureUrl } = this.props.user;
 
     const display = (username) ? (
       <section className='profile'>
         {/* hello { this.props.user.username } */}
         <header>
-          <span className='profile-picture profile-picture-round'></span>
+          <img src={profilePictureUrl ? profilePictureUrl : window.pp} className='profile-picture profile-picture-round' />
           <section className='user-info'>
             <div>
               <h1>{username}</h1>
               {username === this.props.currentUser ? (
-                <button>Edit</button>
+                <Link to=''>Edit</Link>
               ) : (
-                <button>Follow</button>
+                <a onClick={() => {}}>Follow</a>
               )}
             </div>
             <div>
@@ -82,7 +82,12 @@ class Profile extends React.Component {
                       product={p} 
                     />
                   )
-                }) : 'no upvotes'
+                }) :  (
+                  <li className="feed-list-item" >
+                      <a className='feed-list-item-container'>
+                          no upvotes 😉
+                      </a>
+                  </li>)
               }
             </section>
           </section>

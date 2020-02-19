@@ -10,6 +10,28 @@ leah = User.create(username: 'leah', password: 'leah55', email: 'leah@gmail.html
 berel = User.create(username: 'berel', password: 'berel55', email: 'berel@gmail.html')
 demo = User.create(username: 'demo', password: 'demo55', email: 'demo@gmail.html')
 
+default_pp = open('https://web-hunt-seeds.s3.amazonaws.com/user.png')
+
+default_pp1 = open('https://web-hunt-seeds.s3.amazonaws.com/user.png')
+
+default_pp2 = open('https://web-hunt-seeds.s3.amazonaws.com/user.png')
+
+default_pp3 = open('https://web-hunt-seeds.s3.amazonaws.com/user.png')
+
+default_pp4 = open('https://web-hunt-seeds.s3.amazonaws.com/user.png')
+
+default_pp5 = open('https://web-hunt-seeds.s3.amazonaws.com/user.png')
+
+# [sharshi, mushky, rivky, leah, berel, demo].each { |u, i| u.profile_picture.attach(io: default_pp, filename: "#{i}_user.png") }
+
+sharshi.profile_picture.attach(io: default_pp, filename: "user.png")
+mushky.profile_picture.attach(io: default_pp1, filename: "1user.png")
+rivky.profile_picture.attach(io: default_pp2, filename: "2user.png")
+leah.profile_picture.attach(io: default_pp3, filename: "3user.png")
+berel.profile_picture.attach(io: default_pp4, filename: "4user.png")
+demo.profile_picture.attach(io: default_pp5, filename: "5user.png")
+
+
 slack = Product.create!(launch_date: DateTime.new(2013,8) , title: 'Slack' , tagline: 'where work happens' , description: 'Teamwork in Slack happens in channels — a single place for messaging, tools and files — helping everyone save time and collaborate together.' , website: 'slack.com/' , thumbnail: '' , status: true , youtube: '' , twitter: '' , hunter_id: sharshi.id)
 vs_code = Product.create!(launch_date: DateTime.new(5015,11,18) , title: 'Visual Studio Code' , tagline: 'Free. Built on open source. Runs everywhere.' , description: 'Visual Studio Code is a source-code editor developed by Microsoft for Windows, Linux and macOS. It includes support for debugging, embedded Git control and GitHub, syntax highlighting, intelligent code completion, snippets, and code refactoring.' , website: 'code.visualstudio.com/' , thumbnail: '' , status: true , youtube: '' , twitter: '' , hunter_id: mushky.id)
 
@@ -45,7 +67,6 @@ react_logo = open('https://web-hunt-seeds.s3.amazonaws.com/react.png')
 so_logo = open('https://web-hunt-seeds.s3.amazonaws.com/so.png')
 atom_logo = open('https://web-hunt-seeds.s3.amazonaws.com/atom.png')
 sublime_logo = open('https://web-hunt-seeds.s3.amazonaws.com/sublime.jpg')
-
 
 
 slack.logo.attach(io: slack_logo, filename: "slack_logo.png")

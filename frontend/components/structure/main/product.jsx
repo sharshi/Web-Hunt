@@ -104,14 +104,15 @@ class Product extends React.Component {
 
             <section className="website-link">
               <h4>Website</h4>
-              <a href={website} target="_blank">{website}</a>
+              <a href={website.toLowerCase().startsWith('http') ? website : `http://${website}`}  target="_blank">{website}</a>
             </section>
 
             <hr />
 
             <section className="hunter-link">
               <h4>Hunter</h4>
-              <span className="profile-picture-round"></span>
+              {/* <ProfilePicture id={hunter_id} /> */}
+              <img src={window.pp} className="profile-picture-round"/>
               <Link to={`/@${hunter.username}`}>@{hunter.username}</Link>
             </section>
           </aside>

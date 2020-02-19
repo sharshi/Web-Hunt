@@ -13,7 +13,7 @@
 
 class User < ApplicationRecord
   validates :email, :password_digest, :session_token, presence: true
-  validates :email, uniqueness: true
+  validates :email, :username, uniqueness: true
   validates :username, format: { with: /\A(?=.*[a-z])[a-z\d]+\Z/i,
     message: "can only be alphanumeric."  }, exclusion: { in: %w(settings app profile index),
     message: "%{value} is reserved." }, presence: true
@@ -37,7 +37,6 @@ class User < ApplicationRecord
     source_type: "Product"
 
   has_one_attached :profile_picture
-
 
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)

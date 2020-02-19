@@ -16,7 +16,7 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const { currentUserId, currentUserName } = this.props;
+    const { currentUserId, currentUserName, profilePictureUrl } = this.props;
     const colors = ['red', 'orange', 'yellow', 'green', 'blue'];
     const color = colors[Math.floor(Math.random() * colors.length)  ]
 
@@ -29,13 +29,21 @@ class NavBar extends React.Component {
         <span className='bell'>
           <i className="fas fa-bell fa-sm"></i>
         </span>
-        <section 
+        {profilePictureUrl ? (
+        <img 
+          src={profilePictureUrl}
           onClick={this.props.openUserMenu} 
-          alt='user' 
+          alt={currentUserName[0]}
           className={`logo pastel-color-${color} usermenu-logo`}
-        >
-          {currentUserName[0]}
-        </section>
+          />
+        ) : (
+          <img
+            src={window.pp}
+            onClick={this.props.openUserMenu}
+            alt={currentUserName[0]}
+            className={`logo pastel-color-${color} usermenu-logo`}
+          />
+        )}
       </> 
     ) : (
       <>

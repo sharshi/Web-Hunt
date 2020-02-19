@@ -28,8 +28,8 @@ class SessionForm extends React.Component {
   handleDemoSubmit(e) {
     e.preventDefault();
     this.props.loginUser({
-      username: 'sharshi',
-      password: 'sharshi55'
+      username: 'demo',
+      password: 'demo55'
     });
   }
 

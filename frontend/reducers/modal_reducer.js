@@ -15,7 +15,12 @@ const modalReducer = (state = [], action) => {
     case CLOSE_MODAL:
       return [];
     case RECEIVE_USER_PROFILE:
-      return [];
+      debugger
+      state[0] !== 'product' ? (
+        []
+      ) : (
+        Object.assign({},state)
+      )
     case RECEIVE_USER:
       return [];
     default:

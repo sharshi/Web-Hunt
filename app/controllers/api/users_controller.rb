@@ -4,7 +4,7 @@ class Api::UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new(user_params) 
     if @user.save
       log_in(@user)
       render :show
@@ -14,12 +14,12 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.with_attached_profile_picture.find(params[:id])
     render :show
   end
 
   def show_name
-    @user = User.includes(:products, :upvotes, :upvoted_products, :reviews).find_by(username: params[:username])
+    @user = User.with_attached_profile_picture.includes(:products, :upvotes, :upvoted_products, :reviews).find_by(username: params[:username])
     if @user
       render :show_full_user
     else
@@ -28,7 +28,7 @@ class Api::UsersController < ApplicationController
   end
 
   def redirect_to_profile
-    @user = User.find_by(username: params[:username])
+    @user = User.with_attached_profile_picture.find_by(username: params[:username])
     if @user
       redirect_to "/#/@#{params[:username]}"
     else
@@ -39,7 +39,7 @@ class Api::UsersController < ApplicationController
   private 
 
   def user_params
-    params.require(:user).permit(:username, :email, :password)
+    params.require(:user).permit(:username, :email, :password, :profile_picture)
   end
 end
 
