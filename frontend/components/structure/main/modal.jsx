@@ -12,7 +12,7 @@ function Modal({ modal, closeModal }) {
   let component;
   switch (modal) {
     case 'product':
-      component = <ProductContainer />
+      component = <ProductContainer fromModal={true} />
       break;
     case 'login':
       component = <SessionFormContainer />
@@ -34,6 +34,7 @@ function Modal({ modal, closeModal }) {
 }
 
 const mapStateToProps = state => ({
+  
   modal: state.ui.modal[0]
 });
 

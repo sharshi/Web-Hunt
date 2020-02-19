@@ -3,14 +3,15 @@ import { closeModal } from '../../../actions/modal_actions';
 import { fetchProduct } from '../../../actions/products_actions';
 import Product from './product';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+  debugger
   const stringFromHash = location.hash.split('products/')[1];
   const idFromHash = stringFromHash ? stringFromHash.split('?')[0] : stringFromHash;
   let productId = idFromHash ? idFromHash : state.ui.modal[1];
   return ({
     product: state.entities.products[productId],
     productId,
-    inModal: state.ui.modal.length > 0
+    inModal: ownProps.fromModal
 })}
 
 const mapDispatchToProps = dispatch => ({
