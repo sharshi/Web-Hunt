@@ -49,7 +49,7 @@ class Product extends React.Component {
             <section className='main-info'>
               <img src={logoUrl} alt="" />
               <section className='title-tagline'>
-                <a href={website} target="_blank">
+                <a href={website.toLowerCase().startsWith('http') ? website : `http://${website}`} target="_blank">
                   <h3 className='title' >{title}</h3>
                   <i className="fas fa-external-link-alt"></i>
                 </a>

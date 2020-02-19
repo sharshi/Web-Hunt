@@ -22,7 +22,7 @@ class GalleryDisplay extends React.Component {
 
     const mainDisplay = (this.props.screenshots && this.props.screenshots.length > 0) ?  (this.getId(this.props.youtube)) ?(
         <span className='main-image'>
-          <iframe width="560" height="315" src={`https://www.youtube.com/embed/${this.getId(this.props.youtube)}?controls=0`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="100%" height="100%" src={`https://www.youtube.com/embed/${this.getId(this.props.youtube)}?controls=0`} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </span>
     ) : (
         <span className='main-image'>

@@ -3,12 +3,12 @@ require 'open-uri'
 User.delete_all
 Product.delete_all
 
+demo = User.create(username: 'demo', password: 'demo55', email: 'demo@gmail.html')
 sharshi = User.create(username: 'sharshi', password: 'sharshi55', email: 'sharshi@gmail.html')
 mushky = User.create(username: 'mushky', password: 'mushky55', email: 'mushky@gmail.html')
 rivky = User.create(username: 'rivky', password: 'rivky55', email: 'rivky@gmail.html')
 leah = User.create(username: 'leah', password: 'leah55', email: 'leah@gmail.html')
 berel = User.create(username: 'berel', password: 'berel55', email: 'berel@gmail.html')
-demo = User.create(username: 'demo', password: 'demo55', email: 'demo@gmail.html')
 
 default_pp = open('https://web-hunt-seeds.s3.amazonaws.com/user.png')
 
@@ -41,6 +41,8 @@ react = Product.create!(launch_date: DateTime.new(2013,5,29) , title: 'React' , 
 stack_overflow = Product.create!(launch_date: DateTime.new(2008,9,15) , title: 'Stack Overflow' , tagline: 'Helping write the script of the future by serving developers and technical workers.' , description: 'Founded in 2008, Stack Overflow is the largest, most trusted online community for anyone that codes to learn, share their knowledge, and build their careers. More than 50 million unique visitors come to Stack Overflow each month to help solve coding problems, develop new skills, and find job opportunities.' , website: 'stackoverflow.com/' , thumbnail: '' , status: true , youtube: '' , twitter: '' , hunter_id: sharshi.id)
 atom = Product.create!(launch_date: DateTime.new(2015,2,26) , title: 'Atom' , tagline: 'A hackable text editor for the 21st Century' , description: 'Atom is a hackable text editor for the 21st century, built on Electron, and based on everything we love about our favorite editors. We designed it to be deeply customizable, but still approachable using the default configuration.' , website: 'atom.io/' , thumbnail: '' , status: true , youtube: '' , twitter: '' , hunter_id: sharshi.id)
 sublime_text = Product.create!(launch_date: DateTime.new(2008,1,18) , title: 'Sublime text' , tagline: 'A sophisticated text editor for code, markup and prose' , description: 'Sublime Text is a shareware cross-platform source code editor with a Python application programming interface (API). It natively supports many programming languages and markup languages, and functions can be added by users with plugins, typically community-built and maintained under free-software licenses.' , website: 'www.sublimetext.com/' , thumbnail: '' , status: true , youtube: '' , twitter: '' , hunter_id: leah.id)
+mongodb = Product.create!(launch_date: DateTime.new(2009,2,11) , title: 'MongoDB' , tagline: 'The database for
+modern applications' , description: 'MongoDB is a cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schema. MongoDB is developed by MongoDB Inc. and licensed under the Server Side Public License (SSPL).' , website: 'www.mongodb.com' , thumbnail: '' , status: true , youtube: 'https://www.youtube.com/watch?v=EE8ZTQxa0AM' , twitter: 'MongoDB' , hunter_id: leah.id)
 
 
 # swifty = Product.create!(launch_date: DateTime.new(2013,8) , title: 'Swifty' , tagline: '' , description: '' , website: 'https://' , thumbnail: '' , status: true , youtube: '' , twitter: '' , hunter_id: sharshi.id)
@@ -67,6 +69,26 @@ react_logo = open('https://web-hunt-seeds.s3.amazonaws.com/react.png')
 so_logo = open('https://web-hunt-seeds.s3.amazonaws.com/so.png')
 atom_logo = open('https://web-hunt-seeds.s3.amazonaws.com/atom.png')
 sublime_logo = open('https://web-hunt-seeds.s3.amazonaws.com/sublime.jpg')
+mongodb_logo = open('https://web-hunt-seeds.s3.amazonaws.com/mongodb_logo.jpg')
+
+vs_ss2 = open('https://web-hunt-seeds.s3.amazonaws.com/vs-ss2.png')
+st_ss1 = open('https://web-hunt-seeds.s3.amazonaws.com/st-ss1.png')
+st_ss2 = open('https://web-hunt-seeds.s3.amazonaws.com/st-ss2.png')
+at_ss2 = open('https://web-hunt-seeds.s3.amazonaws.com/at-ss2.png')
+at_ss1 = open('https://web-hunt-seeds.s3.amazonaws.com/at-ss1.png')
+so_ss2 = open('https://web-hunt-seeds.s3.amazonaws.com/so-ss2.png')
+so_ss1 = open('https://web-hunt-seeds.s3.amazonaws.com/so-ss1.png')
+ra_ss1 = open('https://web-hunt-seeds.s3.amazonaws.com/ra-ss1.png')
+ra_ss2 = open('https://web-hunt-seeds.s3.amazonaws.com/ra-ss2.png')
+vs_ss1 = open('https://web-hunt-seeds.s3.amazonaws.com/vs-ss1.png')
+sl_ss2 = open('https://web-hunt-seeds.s3.amazonaws.com/sl-ss2.png')
+sl_ss1 = open('https://web-hunt-seeds.s3.amazonaws.com/sl-ss1.png')
+mo_ss2 = open('https://web-hunt-seeds.s3.amazonaws.com/mo-ss2.png')
+mo_ss1 = open('https://web-hunt-seeds.s3.amazonaws.com/mo-ss1.png')
+re_ss2 = open('https://web-hunt-seeds.s3.amazonaws.com/re-ss2.png')
+re_ss1 = open('https://web-hunt-seeds.s3.amazonaws.com/re-ss1.png')
+redux_ss_2 = open('https://web-hunt-seeds.s3.amazonaws.com/redux-ss-2.png')
+redux_ss_1 = open('https://web-hunt-seeds.s3.amazonaws.com/redux-ss-1.png')
 
 
 slack.logo.attach(io: slack_logo, filename: "slack_logo.png")
@@ -77,4 +99,32 @@ react.logo.attach(io: react_logo, filename: "react_logo.png")
 stack_overflow.logo.attach(io: so_logo, filename: "so_logo.png")
 atom.logo.attach(io: atom_logo, filename: "atom_logo.png")
 sublime_text.logo.attach(io: sublime_logo, filename: "sublime_logo.png")
+mongodb.logo.attach(io: mongodb_logo, filename: "mongodb_logo.png")
 
+
+slack.screenshots.attach(io: sl_ss1, filename: "sl_ss1.png")
+slack.screenshots.attach(io: sl_ss2, filename: "sl_ss2.png")
+
+vs_code.screenshots.attach(io: vs_ss1, filename: "vs_ss1.png")
+vs_code.screenshots.attach(io: vs_ss2, filename: "vs_ss2.png")
+
+ruby_on_rails.screenshots.attach(io: ra_ss1, filename: "ra_ss1.png")
+ruby_on_rails.screenshots.attach(io: ra_ss2, filename: "ra_ss2.png")
+
+redux.screenshots.attach(io: redux_ss_1, filename: "redux_ss_1.png")
+redux.screenshots.attach(io: redux_ss_2, filename: "redux_ss_2.png")
+
+react.screenshots.attach(io: re_ss1, filename: "re_ss1.png")
+react.screenshots.attach(io: re_ss2, filename: "re_ss2.png")
+
+stack_overflow.screenshots.attach(io: so_ss1, filename: "so_ss1.png")
+stack_overflow.screenshots.attach(io: so_ss2, filename: "so_ss2.png")
+
+atom.screenshots.attach(io: at_ss1, filename: "at_ss1.png")
+atom.screenshots.attach(io: at_ss2, filename: "at_ss2.png")
+
+sublime_text.screenshots.attach(io: st_ss1, filename: "st_ss1.png")
+sublime_text.screenshots.attach(io: st_ss2, filename: "st_ss2.png")
+
+mongodb.screenshots.attach(io: mo_ss1, filename: "mo_ss1.png")
+mongodb.screenshots.attach(io: mo_ss2, filename: "mo_ss2.png")
