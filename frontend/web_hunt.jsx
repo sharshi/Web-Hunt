@@ -14,7 +14,7 @@ import {
   urlProduct
 } from "./utils/products_api_util";
 import {
-  getUsername
+  getUsername,
 } from "./utils/auth_api_util";
 
 document.addEventListener('DOMContentLoaded', () => {

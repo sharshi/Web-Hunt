@@ -13,13 +13,27 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def update
+    if current_user.id != Integer( params[:id])
+      render json: ['please edit your own profile'], status: 404
+    else 
+      # @user = User.find(params[:id])
+      if current_user.update(update_params)
+        @user = current_user
+        render :show
+      else
+        render json: @user.errors.full_messages, status: 422
+      end
+    end
+  end
+
   def show
-    @user = User.with_attached_profile_picture.find(params[:id])
+    @user = User.find(params[:id])
     render :show
   end
 
   def show_name
-    @user = User.with_attached_profile_picture.includes(:products, :upvotes, :upvoted_products, :reviews).find_by(username: params[:username])
+    @user = User.includes(:products, :upvotes, :upvoted_products, :reviews).find_by(username: params[:username])
     if @user
       render :show_full_user
     else
@@ -39,7 +53,11 @@ class Api::UsersController < ApplicationController
   private 
 
   def user_params
-    params.require(:user).permit(:username, :email, :password, :profile_picture)
+    params.require(:user).permit(:username, :email, :password, :profile_picture, :profile_header)
+  end
+
+  def update_params
+    params.require(:user).permit( :email, :profile_picture, :profile_header, :name)
   end
 end
 

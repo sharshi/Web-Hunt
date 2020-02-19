@@ -19,6 +19,7 @@ export const getUser = id => (
   })
 )
 
+
 /**
  * #signup:user
  * signs up and returns user
@@ -63,3 +64,20 @@ export const getUsername = username => (
     url: `api/username/${username}`
   })
 )
+
+
+
+/**
+ * #updateUser:user
+ * updates user by id
+ */
+export const updateUserUtil = (user, id) => {
+  return (
+  $.ajax({
+    method: 'patch',
+    url: `api/users/${id}`,
+    data: user,
+    contentType: false,
+    processData: false
+  })
+)}

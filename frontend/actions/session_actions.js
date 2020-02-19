@@ -1,4 +1,4 @@
-import { getUsers, getUser, login, logout, signup, getUsername } from '../utils/auth_api_util'
+import { getUsers, getUser, login, logout, signup, getUsername, updateUserUtil } from '../utils/auth_api_util'
 
 export const RECEIVE_USERS = 'RECEIVE_USERS';
 export const RECEIVE_USER = 'RECEIVE_USER';
@@ -66,6 +66,14 @@ export const fetchUsername = username => dispatch => {
 
 export const createUser = user => dispatch => {
   signup(user).then(
+    user => dispatch(receiveUser(user)),
+    errors => dispatch(receiveErrors(errors.responseJSON))
+  )
+}
+
+
+export const updateUser = (user, id) => dispatch => {
+  updateUserUtil(user, id).then(
     user => dispatch(receiveUser(user)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )

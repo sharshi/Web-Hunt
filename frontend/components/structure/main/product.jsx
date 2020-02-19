@@ -31,6 +31,13 @@ class Product extends React.Component {
     this.props.fetchProduct(productId)
   }
 
+  cleanUrl(url) {
+    if (url[ url.length - 1] === '/') {
+      url = url.toLowerCase().substring(0, url.length - 1)
+    }
+    return url;
+  }
+
   render() {
 
     if (!this.props.product) {
@@ -104,7 +111,7 @@ class Product extends React.Component {
 
             <section className="website-link">
               <h4>Website</h4>
-              <a href={website.toLowerCase().startsWith('http') ? website : `http://${website}`}  target="_blank">{website}</a>
+              <a href={website.toLowerCase().startsWith('http') ? website : `http://${website}`} target="_blank">{this.cleanUrl(website)}</a>
             </section>
 
             <hr />

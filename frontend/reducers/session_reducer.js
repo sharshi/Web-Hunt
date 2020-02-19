@@ -25,9 +25,3 @@ const sessionReducer = (state = defaultState, action) => {
 }
 
 export default sessionReducer;
-
-// "session": {
-//   "currentUser": {
-//     "id": 25,
-//       "name": "heyo cool"
-//   }

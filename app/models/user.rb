@@ -37,6 +37,7 @@ class User < ApplicationRecord
     source_type: "Product"
 
   has_one_attached :profile_picture
+  has_one_attached :profile_header
 
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)

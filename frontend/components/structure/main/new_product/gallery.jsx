@@ -7,17 +7,6 @@ class Gallery extends React.Component {
       return null;
     }
 
-    // let previewImage = new Array(this.props.screenshots.length);
-    // let previewImages;
-    // if (previewImage.length > 0 ) {
-    //   previewImages = this.props.screenshots.map((i) => {
-    //     const url = URL.createObjectURL(i[0]);
-    //     return <img key={url} src={url} />
-    //   });
-    // } else {
-    //   previewImages = []
-    // }
-
     let previewImages;
     if (this.props.screenshot_preview_urls.length > 0) {
       previewImages = this.props.screenshot_preview_urls.map(url => {

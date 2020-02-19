@@ -11,16 +11,22 @@ leah = User.create(username: 'leah', password: 'leah55', email: 'leah@gmail.html
 berel = User.create(username: 'berel', password: 'berel55', email: 'berel@gmail.html')
 
 default_pp = open('https://web-hunt-seeds.s3.amazonaws.com/user.png')
+default_hp = open('https://web-hunt-seeds.s3.amazonaws.com/header.png')
 
 default_pp1 = open('https://web-hunt-seeds.s3.amazonaws.com/user.png')
+default_hp1 = open('https://web-hunt-seeds.s3.amazonaws.com/header.png')
 
 default_pp2 = open('https://web-hunt-seeds.s3.amazonaws.com/user.png')
+default_hp2 = open('https://web-hunt-seeds.s3.amazonaws.com/header.png')
 
 default_pp3 = open('https://web-hunt-seeds.s3.amazonaws.com/user.png')
+default_hp3 = open('https://web-hunt-seeds.s3.amazonaws.com/header.png')
 
 default_pp4 = open('https://web-hunt-seeds.s3.amazonaws.com/user.png')
+default_hp4 = open('https://web-hunt-seeds.s3.amazonaws.com/header.png')
 
 default_pp5 = open('https://web-hunt-seeds.s3.amazonaws.com/user.png')
+default_hp5 = open('https://web-hunt-seeds.s3.amazonaws.com/header.png')
 
 # [sharshi, mushky, rivky, leah, berel, demo].each { |u, i| u.profile_picture.attach(io: default_pp, filename: "#{i}_user.png") }
 
@@ -31,6 +37,12 @@ leah.profile_picture.attach(io: default_pp3, filename: "3user.png")
 berel.profile_picture.attach(io: default_pp4, filename: "4user.png")
 demo.profile_picture.attach(io: default_pp5, filename: "5user.png")
 
+sharshi.profile_header.attach(io: default_hp, filename: "header.png")
+mushky.profile_header.attach(io: default_hp1, filename: "1header.png")
+rivky.profile_header.attach(io: default_hp2, filename: "2header.png")
+leah.profile_header.attach(io: default_hp3, filename: "3header.png")
+berel.profile_header.attach(io: default_hp4, filename: "4header.png")
+demo.profile_header.attach(io: default_hp5, filename: "5header.png")
 
 slack = Product.create!(launch_date: DateTime.new(2013,8) , title: 'Slack' , tagline: 'where work happens' , description: 'Teamwork in Slack happens in channels — a single place for messaging, tools and files — helping everyone save time and collaborate together.' , website: 'slack.com/' , thumbnail: '' , status: true , youtube: '' , twitter: '' , hunter_id: sharshi.id)
 vs_code = Product.create!(launch_date: DateTime.new(5015,11,18) , title: 'Visual Studio Code' , tagline: 'Free. Built on open source. Runs everywhere.' , description: 'Visual Studio Code is a source-code editor developed by Microsoft for Windows, Linux and macOS. It includes support for debugging, embedded Git control and GitHub, syntax highlighting, intelligent code completion, snippets, and code refactoring.' , website: 'code.visualstudio.com/' , thumbnail: '' , status: true , youtube: '' , twitter: '' , hunter_id: mushky.id)

@@ -25,18 +25,18 @@ class Profile extends React.Component {
       return (404)
     }
 
-    const { username, id, upvote_ids, review_ids, product_ids, products, upvoted_products, upvoted_product_ids, profilePictureUrl } = this.props.user;
+    const { username, id, upvote_ids, review_ids, product_ids, products, upvoted_products, upvoted_product_ids, profilePictureUrl, profileHeaderUrl } = this.props.user;
 
     const display = (username) ? (
       <section className='profile'>
-        {/* hello { this.props.user.username } */}
+        <img src={profileHeaderUrl ? profileHeaderUrl : window.hp} alt="" className="header"/>
         <header>
           <img src={profilePictureUrl ? profilePictureUrl : window.pp} className='profile-picture profile-picture-round' />
           <section className='user-info'>
             <div>
               <h1>{username}</h1>
               {username === this.props.currentUser ? (
-                <Link to=''>Edit</Link>
+                <Link to={`/@${username}/edit`}>Edit</Link>
               ) : (
                 <a onClick={() => {}}>Follow</a>
               )}
