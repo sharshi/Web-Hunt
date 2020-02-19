@@ -34,7 +34,6 @@ function Modal({ modal, closeModal }) {
 }
 
 const mapStateToProps = state => ({
-  
   modal: state.ui.modal[0]
 });
 

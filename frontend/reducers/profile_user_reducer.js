@@ -1,4 +1,4 @@
-import { RECEIVE_USER_PROFILE } from "../actions/session_actions";
+import { RECEIVE_USER_PROFILE, RECEIVE_UPDATED_USER } from "../actions/session_actions";
 
 
 

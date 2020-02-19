@@ -35,11 +35,7 @@ class Profile extends React.Component {
           <section className='user-info'>
             <div>
               <h1>{username}</h1>
-              {username === this.props.currentUser ? (
-                <Link to={`/@${username}/edit`}>Edit</Link>
-              ) : (
-                <a onClick={() => {}}>Follow</a>
-              )}
+              
             </div>
             <div>
               <p className='profile-id'>{id}</p>
@@ -50,6 +46,17 @@ class Profile extends React.Component {
               <Link to='/'>{product_ids.length} Product{product_ids.length === 1 ? '' : 's'}</Link>
             </div>
           </section>
+          {username === this.props.currentUser ? (
+              <Link 
+                className='edit-follow' 
+                to={`/@${username}/edit`}
+              >Edit</Link>
+            ) : (
+              <a 
+                className='edit-follow' 
+                onClick={() => { }}
+              >Follow</a>
+            )}
         </header>
         <main className='profile-container'>
           <section className="left-bar">

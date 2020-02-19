@@ -1,4 +1,8 @@
-json.extract! user, :id, :username, :review_ids, :product_ids, :upvote_ids, :upvoted_product_ids, :email, :name
+json.extract! user, :id, :username, :review_ids, :product_ids, :upvote_ids, :upvoted_product_ids, :email
+if user.name.present?
+  json.name user.name
+end
+
 json.products user.products.each do |product|
   json.set! product.id  do
     json.partial! '/api/products/product', product: product

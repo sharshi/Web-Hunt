@@ -7,6 +7,7 @@ export const REMOVE_USER = 'REMOVE_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const OPEN_MODAL = 'OPEN_MODAL';
+export const RECEIVE_UPDATED_USER = 'RECEIVE_UPDATED_USER';
 
 const receiveUsers = users => ({
   type: RECEIVE_USERS,
@@ -43,6 +44,11 @@ export const openModal = modal => ({
   modal
 });
 
+export const receiveUpdatedUser = user => ({
+  type: RECEIVE_UPDATED_USER,
+  user
+});
+
 export const fetchUsers = () => dispatch => {
   getUsers().then(
       users => dispatch(receiveUsers(users)),
@@ -74,7 +80,8 @@ export const createUser = user => dispatch => {
 
 export const updateUser = (user, id) => dispatch => {
   updateUserUtil(user, id).then(
-    user => dispatch(receiveUser(user)),
+    user => dispatch(receiveUpdatedUser(user)),
+    // user => dispatch(receiveUser(user)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
 }

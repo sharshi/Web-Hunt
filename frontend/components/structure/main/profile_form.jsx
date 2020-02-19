@@ -62,7 +62,6 @@ class ProfileForm extends React.Component {
       user[name] = value;
     }
 
-    debugger
     this.setState({
       user
     });
@@ -70,7 +69,7 @@ class ProfileForm extends React.Component {
 
   render() {
     const { username, profile_picture, profile_header, email, profilePictureUrl, profileHeaderUrl} = this.state.user;
-    debugger
+  
     const previewProfilePicture = (profile_picture) ? (
         <img className='ppr' src={URL.createObjectURL(profile_picture)} />
     ) : (profilePictureUrl) ? (
