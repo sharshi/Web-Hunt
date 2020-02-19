@@ -75,6 +75,11 @@ class ProductForm extends React.Component {
     // formData.append('product[review]', review);
 
     this.props.createProduct(formData)
+      .then((user)=> {
+        // debugger
+        // this.props.history.push(`/@${user.user.username}`)
+        // return user
+      })
   }
 
   _next(e) {

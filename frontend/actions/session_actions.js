@@ -79,9 +79,14 @@ export const createUser = user => dispatch => {
 
 
 export const updateUser = (user, id) => dispatch => {
-  updateUserUtil(user, id).then(
-    user => dispatch(receiveUpdatedUser(user)),
-    // user => dispatch(receiveUser(user)),
+ return updateUserUtil(user, id).then(
+    // user => {
+    //   debugger
+    //  return  dispatch(receiveUpdatedUser(user))
+    // },
+    user => {
+      debugger 
+      return dispatch(receiveUser(user))},
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
 }

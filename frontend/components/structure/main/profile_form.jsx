@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { withRouter } from "react-router-dom";
 class ProfileForm extends React.Component {
   constructor(props) {
     super(props);
@@ -46,7 +46,11 @@ class ProfileForm extends React.Component {
     
     formData.append('user[email]', email);
 
-    this.props.updateUser(formData, id)
+    this.props.updateUser(formData, id).then((user)=> {
+      debugger
+      this.props.history.push(`/@${user.user.username}`)
+
+    })
 
   }
 
@@ -219,4 +223,4 @@ class ProfileForm extends React.Component {
 }
 
 
-export default ProfileForm;
+export default withRouter(ProfileForm);

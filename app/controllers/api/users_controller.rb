@@ -20,7 +20,7 @@ class Api::UsersController < ApplicationController
       # @user = User.find(params[:id])
       if current_user.update(update_params)
         @user = current_user
-        render :show
+        render :show_full_user
       else
         render json: @user.errors.full_messages, status: 422
       end

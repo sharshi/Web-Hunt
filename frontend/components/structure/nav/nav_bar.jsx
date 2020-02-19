@@ -16,6 +16,7 @@ class NavBar extends React.Component {
   }
 
   render() {
+    debugger
     const { currentUserId, currentUserName, profilePictureUrl } = this.props;
     
     const colors = ['red', 'orange', 'yellow', 'green', 'blue'];
