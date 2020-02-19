@@ -83,6 +83,7 @@ class NavBar extends React.Component {
             } className="user-menu-modal">
               <span>
                 <ul className="usermenu">
+                <div className="arrow-up"></div>
                   <li><Link to={`/@${currentUserName}`} >User Profile</Link></li>
                   <li><a onClick={this.handleLogout}>Logout</a></li>
                 </ul>

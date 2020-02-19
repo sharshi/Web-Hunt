@@ -15,7 +15,6 @@ const modalReducer = (state = [], action) => {
     case CLOSE_MODAL:
       return [];
     case RECEIVE_USER_PROFILE:
-      debugger
       state[0] !== 'product' ? (
         []
       ) : (
