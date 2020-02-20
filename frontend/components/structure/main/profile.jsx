@@ -25,7 +25,7 @@ class Profile extends React.Component {
       return (404)
     }
 
-    const { username, id, upvote_ids, review_ids, product_ids, products, upvoted_products, upvoted_product_ids, profilePictureUrl, profileHeaderUrl, } = this.props.user;
+    const { username, id, upvote_ids, review_ids, product_ids, products, upvoted_products, upvoted_product_ids, profilePictureUrl, profileHeaderUrl, name } = this.props.user;
     
     const display = (username) ? (
       <section className='profile'>
@@ -34,7 +34,7 @@ class Profile extends React.Component {
           <img src={profilePictureUrl ? profilePictureUrl : window.pp} className='profile-picture profile-picture-round' />
           <section className='user-info'>
             <div>
-              <h1>{username}</h1>
+              <h1>{name ? name : username}</h1>
             </div>
             <div>
               <p className='profile-id'>{id}</p>

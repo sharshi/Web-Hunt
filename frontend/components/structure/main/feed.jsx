@@ -25,7 +25,7 @@ class Feed extends React.Component {
     return (
       <section className="feed">
         <span className='feed-title'>
-          <h1>Trending ech Resources</h1>
+          <h1>Trending Tech Tools</h1>
           {sortButtons}
         </span>
         <FeedListContainer />

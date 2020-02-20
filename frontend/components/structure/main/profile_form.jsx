@@ -33,20 +33,20 @@ class ProfileForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    const {id, username, profile_picture, profile_header, email, name} = this.props.user;
+    const {id, profile_picture, profile_header, email, name} = this.props.user;
 
     debugger
 
     const formData = new FormData();
 
     name ? 
-      formData.append('user[username]', name): null;
+      formData.append('user[name]', name): null;
     profile_picture ?
       formData.append('user[profile_picture]', profile_picture): null;
     profile_header ?
       formData.append('user[profile_header]', profile_header): null;
-    
-    formData.append('user[email]', email);
+    email ?
+      formData.append('user[email]', email) : null;
 
     this.props.updateUser(formData, id).then(({user})=> {
       this.props.history.push(`/@${user.username}`)
@@ -65,6 +65,7 @@ class ProfileForm extends React.Component {
     } else {
       user[name] = value;
     }
+    
 
     this.setState({
       user
@@ -72,7 +73,7 @@ class ProfileForm extends React.Component {
   }
 
   render() {
-    const { username, profile_picture, profile_header, email, profilePictureUrl, profileHeaderUrl} = this.state.user;
+    const { username, profile_picture, profile_header, email, profilePictureUrl, profileHeaderUrl, name} = this.state.user;
   
     const previewProfilePicture = (profile_picture) ? (
         <img className='ppr' src={URL.createObjectURL(profile_picture)} />
@@ -90,88 +91,21 @@ class ProfileForm extends React.Component {
           <img className='header-preview' src={window.hp} />
         ); 
 
-    const form = (username) ? (
-      <section className='profile-edit'>
-        <h1>Settings</h1>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="name">Name </label>
-          <input
-            className='form-control name'
-            type="text"
-            id="name"
-            name='name'
-            value={name}
-            onChange={this.handleChange}
-          />
-          {/* <label htmlFor="username">Username</label>
-          <input
-            className='form-control username'
-            type="text"
-            id="username"
-            name='username'
-            value={username}
-            onChange={this.handleChange}
-            required
-          /> */}
-          <label htmlFor="profile-picture">Profile Picture</label>
-          <input
-            className='form-control profile-picture'
-            type="file"
-            id="profile-picture"
-            name='profile-picture'
-            file={profile_picture}
-            accept="image/jpeg, image/png"
-            onChange={this.handleChange} 
-          />
-          {previewProfilePicture}
-          <label htmlFor="email">Email</label>
-          <input
-            className='form-control email'
-            type="text"
-            id="email"
-            name='email'
-            value={email}
-            onChange={this.handleChange}
-            required
-          />
-          <label htmlFor="profile-header">Profile Header</label>
-          <input
-            className='form-control profile-header'
-            type="file"
-            id="profile-header"
-            name='profile-header'
-            file={profile_header}
-            accept="image/jpeg, image/png"
-            onChange={this.handleChange}
-          />
-          {previewProfileHeader}
-          <button>Update</button>
-        </form>
-      </section>
-    ) : (this.props.errors.length > 0) ? (
-      <>
-        404 profile {this.props.user.username} not found
-      </>
-    ) : (
-          null
-        )
-
     return (
       <>
         {<section className='profile-edit'>
           <h1>Settings</h1>
           <form onSubmit={this.handleSubmit}>
-            {/* <label htmlFor="name">Name</label>
-          <input
-            className='form-control name'
-            type="text"
-            id="name"
-            name='name'
-            value={this.state.name}
-            onChange={this.handleChange}
-            required
-          /> */}
-            <label htmlFor="username">Username</label>
+            <label htmlFor="name">Name</label>
+            <input
+              className='form-control name'
+              type="text"
+              id="name"
+              name='name'
+              value={name}
+              onChange={this.handleChange}
+            />
+            {/* <label htmlFor="username">Username</label>
             <input
               className='form-control username'
               type="text"
@@ -180,7 +114,7 @@ class ProfileForm extends React.Component {
               value={username}
               onChange={this.handleChange}
               required
-            />
+            /> */}
             <label htmlFor="profile-picture">Profile Picture</label>
             <input
               className='form-control profile-picture'
