@@ -35,15 +35,22 @@ class Profile extends React.Component {
           <section className='user-info'>
             <div>
               <h1>{username}</h1>
-              
             </div>
             <div>
               <p className='profile-id'>{id}</p>
               <p>@{username}</p>
             </div>
             <div>
-              <Link to={`/@${username}/reviews`}>{review_ids.length} Review{review_ids.length === 1 ? '' : 's'}</Link>
-              <Link to={`/@${username}/products`}>{product_ids.length} Product{product_ids.length === 1 ? '' : 's'}</Link>
+              <Link to={`/@${username}/reviews`}>
+                {review_ids.length} Review{
+                  review_ids.length === 1 ? '' : 's'
+                }
+              </Link>
+              <Link to={`/@${username}/products`}>
+                {product_ids.length} Product{
+                  product_ids.length === 1 ? '' : 's'
+                }
+              </Link>
             </div>
           </section>
           {username === this.props.currentUser ? (
