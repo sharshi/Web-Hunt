@@ -92,7 +92,7 @@ class Profile extends React.Component {
                 }) :  (
                   <li className="feed-list-item" >
                       <a className='feed-list-item-container'>
-                          no upvotes 😉
+                          no upvotes 🎉
                       </a>
                   </li>)
               }

@@ -55,7 +55,7 @@ export const createProduct = product => dispatch => (
 
 export const updateProduct = product => dispatch => (
   ProductsUtil.updateProduct(product).then(
-    product => dispatch(receiveNewProduct(product)),
+    product => dispatch(receiveProduct(product)),
     errors => dispatch(productErrors(errors.responseJSON))
   )
 )

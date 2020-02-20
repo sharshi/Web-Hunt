@@ -25,8 +25,6 @@ const productsReducer = (state = preState, action) => {
       return newS;
     case RECEIVE_PRODUCT:
       return Object.assign({}, state, { [action.product.id]: action.product })
-    case RECEIVE_NEW_PRODUCT:
-      return Object.assign({}, state, { [action.product.id]: action.product })
     case REMOVE_PRODUCT:
       newS = Object.assign({}, state)
       delete newS[action.productId]

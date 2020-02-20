@@ -46,10 +46,8 @@ class ProfileForm extends React.Component {
     
     formData.append('user[email]', email);
 
-    this.props.updateUser(formData, id).then((user)=> {
-      debugger
-      this.props.history.push(`/@${user.user.username}`)
-
+    this.props.updateUser(formData, id).then(({user})=> {
+      this.props.history.push(`/@${user.username}`)
     })
 
   }

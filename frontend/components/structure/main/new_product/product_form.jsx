@@ -5,6 +5,7 @@ import Gallery from './gallery';
 import Hunter from './hunter';
 import ProductPreview from "./product_preview";
 import {urlProduct} from '../../../../utils/products_api_util';
+import { withRouter } from "react-router-dom";
 
 class ProductForm extends React.Component {
   constructor(props) {
@@ -29,9 +30,6 @@ class ProductForm extends React.Component {
     let product = this.state.product;
     let screenshot_preview_urls = this.state.screenshot_preview_urls;
     if (name === 'youtube') {
-      // let reg = /^.*(youtu.be\/|v\/|e\/|u\/\w+\/|embed\/|v=)([^#\&\?]*).*/i;
-      // let match = value.match(reg);
-      // product[name] = match ? match[match.length - 1] : value; 
       product[name] = value; 
     } else if ( name === 'logo' ) {
       product[name] = e.target.files[0]
@@ -75,10 +73,8 @@ class ProductForm extends React.Component {
     // formData.append('product[review]', review);
 
     this.props.createProduct(formData)
-      .then((user)=> {
-        // debugger
-        // this.props.history.push(`/@${user.user.username}`)
-        // return user
+      .then(({ product })=> {
+        this.props.history.push(`/products/${product.id}`)
       })
   }
 
@@ -301,4 +297,4 @@ class ProductForm extends React.Component {
   }
 }
 
-export default ProductForm;
+export default withRouter(ProductForm);

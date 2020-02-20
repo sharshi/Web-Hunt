@@ -36,7 +36,6 @@ class FeedList extends React.Component {
     }
 
     const products = this.props.products;
-    console.log(products);
     const feedListItems = this.props.sort.map(sortedid => {
       const product = products[sortedid];
       const { title, id } = product;

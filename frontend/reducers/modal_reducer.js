@@ -10,8 +10,6 @@ const modalReducer = (state = [], action) => {
       } else {
         return [action.modal];
       }
-    case RECEIVE_NEW_PRODUCT:
-      return ['product', action.product.id];
     case CLOSE_MODAL:
       return [];
     case RECEIVE_USER_PROFILE:
