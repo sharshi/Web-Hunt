@@ -1,13 +1,14 @@
 import React from 'react';
 import GalleryDisplay from './gallery_display';
 import ReviewInput from './review_input';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class Product extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      prevHash: window.location.hash
+      prevHash: window.location.hash,
+      loaded: false
     }
   }
 
@@ -22,13 +23,13 @@ class Product extends React.Component {
 
   componentDidMount() {
     const { productId } = this.props;
-    if (this.props.inModal) {
-      const body = document.getElementsByTagName('body')[0]
-      body.classList.add('no-scroll')
-      window.location.hash = `#/products/${productId}?from-feed`
-    }
-
     this.props.fetchProduct(productId)
+    if (this.props.inModal && !this.state.loaded) {
+      const body = document.getElementsByTagName('body')[0];
+      body.classList.add('no-scroll');
+      this.setState({loaded: true});
+      // this.props.history.replace(`/products/${productId}`);
+    }
   }
 
   upVote() {
@@ -47,11 +48,10 @@ class Product extends React.Component {
   }
 
   render() {
-
     if (!this.props.product) {
       return null;
     }
-    const { id, title, tagline, website, logoUrl, launch_date, description, status, hunter_id, topics, screenshotUrls, reviews, youtube, hunter, upvote_ids } = this.props.product;
+    const { id, title, tagline, website, logoUrl, launch_date, description, status, hunter_id, topics, screenshotUrls, reviews, youtube, hunter, upvote_ids, review_ids } = this.props.product;
 
     if (!screenshotUrls) {
       return null; 
@@ -75,6 +75,9 @@ class Product extends React.Component {
                   <li>TAG 2</li>
                 </ul>
               </section>
+              <section className="link">
+                {/* <Link to={`/products/${id}`} >Open product page <i class="fas fa-external-link-alt"></i></Link> */}
+              </section>
             </section>
           </header>
           <main>
@@ -96,8 +99,14 @@ class Product extends React.Component {
               </section>
               <span className='reviews'>
                 <ul>
-                  <li>Review 1</li>
-                  <li>Review 2</li>
+                  {review_ids.map(id => {
+                    return (
+                      <li key={id}>Review - {id}</li>
+                      )
+                  })}
+                  {review_ids.length === 0 ? (
+                    "no reviews yet"
+                  ) : (null)}
                 </ul>
               </span>
             </section>
@@ -110,12 +119,12 @@ class Product extends React.Component {
                   {upvote_ids.length}</div>
               </span>
               <div className='product-upvoters'>
-                <span className='ppr upvoter-picture'>
-                </span>
-                <span className='ppr upvoter-picture'>
-                </span>
-                <span className='ppr upvoter-picture'>
-                </span>
+                {upvote_ids.map(id => {
+
+                  return  (<span key={id} className='ppr upvoter-picture'>
+                    {id}
+                  </span>)
+                })}
               </div>
             </div>
 
@@ -141,4 +150,4 @@ class Product extends React.Component {
   }
 }
   
-export default Product
+export default withRouter(Product);

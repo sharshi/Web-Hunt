@@ -20,12 +20,14 @@ class Main extends React.Component {
         <main className='main-content'>
           <Switch>
             {/* dont show products page if already in modal */}
-            {this.props.allow ? (
+            {/* {this.props.allow ? ( */}
             <Route
               path={'/products/:id'}
-              render={() => <ProductContainer /> }
-            />
-            ) : (null)}
+                render={() => {
+                  return <ProductContainer />
+                }}            
+              />
+            {/* ) : (null)} */}
             <ProtectedRoute
               path='/posts/new'
               component={() => <ProductFormContainer />}

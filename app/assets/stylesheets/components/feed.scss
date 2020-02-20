@@ -153,7 +153,7 @@ section.links {
     font-size: 12px;
     height: 20px;
     width: fit-content;
-    border: 1px solid $lightgray;
+    border: 1px solid #e7e7e7;
     border-radius: 3px;
     color: $gray;
     padding: 3px;
@@ -163,7 +163,7 @@ section.links {
   a.website-link {
     height: 20px;
     width: 20px;
-    border: 1px solid $lightgray;
+    border: 1px solid #e7e7e7;
     border-radius: 3px;
     text-align: center;
     display: none;
@@ -180,7 +180,7 @@ section.links {
   }
 
   a:hover {
-    background-color: $lightlightgray;
+    background-color: #e7e7e7;
   }
 
   a.first-topic:hover {

@@ -70,15 +70,27 @@ main.main-content {
       }
 
       a.edit-follow {
-        padding: 8px;
-        background-color: $white;
+        background-color: $web-hunt-green;
         cursor: pointer;
-        color: gray;
-        font-size: 14px;
+        color: $white;
         text-transform: uppercase;
         align-self: flex-end;
         margin: 20px;
+        width: 70px;
+        border-radius: 3px;
+        padding: 7px 2px;
+        font-weight: 500;
+        font-size: 11px;
+        text-align: center;
+        transition: background-color 0.5s, color 0.5s;
       }
+      
+      a.edit-follow:hover {
+        color: black;
+        border-color: black;
+
+      }
+
     }
 
     main.profile-container {
@@ -94,11 +106,22 @@ main.main-content {
         ul {
           display: flex;
           flex-direction: column;
-          line-height: 20px;
+          line-height: 15px;
 
           li {
             list-style: none;
             
+            a {
+              padding: 5px;
+              display: block;
+              width: fit-content;
+            }
+
+            a.active {
+              color: black;
+              background-color: $lightgray;
+              border-radius: 3px;
+            }
           }
         }
       }
@@ -169,5 +192,15 @@ section.profile-edit {
       }
     }
 
+    button:hover {
+      color: black;
+    }
+
   }
+}
+
+
+.feed-list-item-container.no-hover:hover {
+  background-color: inherit;
+  cursor: inherit;
 }

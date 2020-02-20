@@ -2,15 +2,18 @@ import { connect } from 'react-redux';
 import Profile from './profile';
 import { fetchUsername, clearErrors } from "../../../actions/session_actions";
 import { openModal } from '../../../actions/modal_actions';
+import { withRouter } from 'react-router-dom';
 
 
 const mapStateToProps = (state, ownProps) => {
+  const username = ownProps.url.split('/')[0];
   return ({
-    username: ownProps.url,
+    username: username,
     profileNotFound: state.errors.login.length > 0,
     user: state.ui.profileUser,
     errors: state.errors.login,
-    currentUser: state.session.currentUser.username
+    currentUser: state.session.currentUser.username,
+    currentUserId: state.session.currentUser.id
   })
 }
 
@@ -20,7 +23,9 @@ const mapDispatchToProps = dispatch => ({
   openModal: (modal, id) => dispatch(openModal(modal, id))
 })
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Profile);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Profile)
+);

@@ -6,7 +6,7 @@ button {
   color: $white;
   border-radius: 4px;
   height: 25px;
-  transition: color 0.5s;
+  transition: color .3s, border-color .3s;
 }
 
 input {

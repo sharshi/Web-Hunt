@@ -237,6 +237,11 @@ section.product-main {
 
       a {
         margin-left: 10px;
+        transition: color .3s;
+
+        &:hover {
+          color: $web-hunt-green;
+        }
       }
     }
   }

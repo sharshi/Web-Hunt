@@ -186,18 +186,17 @@ section.usermenu-logo {
       }
 
       li {
-        height: 20px;
         line-height: normal;
-        padding: 10px;
         font-weight: bold;
         text-align: center;
-
+        
         a {
-
-
+          height: 20px;
+          padding: 10px;
+          display: block;
         }
 
-        a:hover {
+        a.active, a:hover {
           color: $web-hunt-green;
         }
       }

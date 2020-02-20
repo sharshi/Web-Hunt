@@ -2,7 +2,7 @@ import React from 'react';
 import Search from './search';
 import SessionFormContainer from './session_form_container';
 import UserFormContainer from './user_form_container';
-import { Route, Link, Redirect } from 'react-router-dom';
+import { Route, Link, Redirect, NavLink } from 'react-router-dom';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -85,7 +85,7 @@ class NavBar extends React.Component {
               <span>
                 <ul className="usermenu">
                 <div className="arrow-up"></div>
-                  <li><Link to={`/@${currentUserName}`} >User Profile</Link></li>
+                  <li><NavLink activeClassName="active" to={`/@${currentUserName}`} >User Profile</NavLink></li>
                   <li><a onClick={this.handleLogout}>Logout</a></li>
                 </ul>
               </span>

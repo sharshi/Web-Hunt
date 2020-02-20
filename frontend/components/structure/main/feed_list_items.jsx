@@ -27,7 +27,6 @@ class FeedListItem extends React.Component {
       logoUrlPreview = logoUrl
     }
 
-
     const upvoted = upvote_ids ? upvote_ids.includes(this.props.loggedIn) : true
     
     return (
