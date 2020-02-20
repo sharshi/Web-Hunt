@@ -33,12 +33,14 @@ class ProfileForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    const {id, username, profile_picture, profile_header, email } = this.props.user;
+    const {id, username, profile_picture, profile_header, email, name} = this.props.user;
+
+    debugger
 
     const formData = new FormData();
-    // formData.append('user[id]', id);
-    username ? 
-      formData.append('user[username]', username): null;
+
+    name ? 
+      formData.append('user[username]', name): null;
     profile_picture ?
       formData.append('user[profile_picture]', profile_picture): null;
     profile_header ?
@@ -92,17 +94,16 @@ class ProfileForm extends React.Component {
       <section className='profile-edit'>
         <h1>Settings</h1>
         <form onSubmit={this.handleSubmit}>
-          {/* <label htmlFor="name">Name</label>
+          <label htmlFor="name">Name </label>
           <input
             className='form-control name'
             type="text"
             id="name"
             name='name'
-            value={this.state.name}
+            value={name}
             onChange={this.handleChange}
-            required
-          /> */}
-          <label htmlFor="username">Username</label>
+          />
+          {/* <label htmlFor="username">Username</label>
           <input
             className='form-control username'
             type="text"
@@ -111,7 +112,7 @@ class ProfileForm extends React.Component {
             value={username}
             onChange={this.handleChange}
             required
-          />
+          /> */}
           <label htmlFor="profile-picture">Profile Picture</label>
           <input
             className='form-control profile-picture'
