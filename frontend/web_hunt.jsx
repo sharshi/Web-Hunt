@@ -13,9 +13,11 @@ import {
 import {
   urlProduct
 } from "./utils/products_api_util";
+
 import {
-  getUsername,
-} from "./utils/auth_api_util";
+  upvote,
+  unvote
+} from "./utils/vote_util";
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -28,7 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.updateProduct = updateProduct;
   window.deleteProduct = deleteProduct;
   window.urlProduct = urlProduct;
-  window.getUsername = getUsername;
+  window.upvote = upvote;
+  window.unvote = unvote;
   // DEV
 
   if (window.currentUser) {

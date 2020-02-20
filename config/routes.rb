@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :products, only: [:create, :index, :show, :update, :destroy]
     get 'username/:username', to: 'users#show_name'
+
+    resources :upvotes, only: [:create, :destroy]
   end
   get '@:username', to: 'api/users#redirect_to_profile', defaults: { format: :json } 
 

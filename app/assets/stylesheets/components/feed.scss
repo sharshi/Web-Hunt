@@ -208,6 +208,11 @@ span.upvote {  position: absolute;
   padding: 15px;
   box-sizing: border-box;
   cursor: pointer;
+
+  &.active {
+    border: 2px solid $web-hunt-green;
+    color: $web-hunt-green;
+  }
 }
 
 span.upvote:hover {

@@ -31,6 +31,14 @@ class Product extends React.Component {
     this.props.fetchProduct(productId)
   }
 
+  upVote() {
+    !!this.props.loggedIn ? (
+      null
+    ) : (
+      this.props.openModal('login')
+    )
+  }
+
   cleanUrl(url) {
     if (url[ url.length - 1] === '/') {
       url = url.toLowerCase().substring(0, url.length - 1)
@@ -96,7 +104,11 @@ class Product extends React.Component {
           </main>
           <aside className='product'>
             <div className='upvote-section'>
-              <span className="upvote-button">▲ UPVOTE <div>{upvote_ids.length}</div></span>
+              <span 
+                onClick={this.upVote.bind(this)} 
+                className="upvote-button">▲ UPVOTE <div>
+                  {upvote_ids.length}</div>
+              </span>
               <div className='product-upvoters'>
                 <span className='ppr upvoter-picture'>
                 </span>

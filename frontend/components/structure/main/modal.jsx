@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import ProductContainer from "./product_container";
 import SessionFormContainer from "../nav/session_form_container";
 import UserFormContainer from "../nav/user_form_container";
+import { withRouter} from 'react-router-dom';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -41,7 +42,9 @@ const mapDispatchToProps = dispatch => ({
   closeModal: () => dispatch(closeModal())
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Modal)
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Modal)
+)

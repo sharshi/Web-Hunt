@@ -11,7 +11,6 @@
 #
 
 class Upvote < ApplicationRecord
+  validates :upvoteable_id, uniqueness: { scope: [:user_id, :upvoteable_type] }
   belongs_to :upvoteable, polymorphic: true
 end
-
-# Upvote.create(upvoteable: ,user_id: )

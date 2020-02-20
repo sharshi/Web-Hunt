@@ -40,7 +40,7 @@ class FeedList extends React.Component {
       const product = products[sortedid];
       const { title, id } = product;
       if (!title) return null;
-      return <FeedListItem key={`${id}-${title}`} openModal={this.props.openModal} product={product} />
+      return <FeedListItem loggedIn={this.props.loggedIn} key={`${id}-${title}`} openModal={this.props.openModal} product={product} />
     })
 
     return (

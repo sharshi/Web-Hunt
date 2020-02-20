@@ -1,15 +1,16 @@
 class Api::UpvotesController < ApplicationController
 
-  def upvote
+  def create
     @upvote = Upvote.new(upvote_params)
-    if @upvote.save
+    if @upvote.valid? && @upvote.save
+
       render json: true
     else
       render json: false
     end
   end
 
-  def unvote
+  def delete
     @upvote = Upvote.find_by(id: params[:id])
     if @upvote
       @upvote.destroy
@@ -21,7 +22,7 @@ class Api::UpvotesController < ApplicationController
 
   private
 
-  def upvote_params
+  def upvote_params 
     params.require(:upvote).permit(:upvoteable_type, :upvoteable_id, :user_id)
   end
 end

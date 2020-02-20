@@ -9,6 +9,14 @@ class FeedListItem extends React.Component {
     }
   }
 
+  upVote() {
+    !!this.props.loggedIn ? (
+      null
+    ) : (
+      this.props.openModal('login')
+    )
+  }
+
   render() {
     const { id, title, tagline, website, logoUrl, upvote_ids, review_ids, topics } = this.props.product;
     
@@ -19,6 +27,9 @@ class FeedListItem extends React.Component {
       logoUrlPreview = logoUrl
     }
 
+
+    const upvoted = upvote_ids ? upvote_ids.includes(this.props.loggedIn) : true
+    
     return (
       <li className="feed-list-item" >
         <a className='feed-list-item-container' onClick={this.clickHandler.bind(this)} >
@@ -37,7 +48,7 @@ class FeedListItem extends React.Component {
           <a className="website-link" target="_blank" href={website}><i className="fas fa-external-link-alt fa-xs"></i></a>
           <a className="first-topic">{topics && topics.length > 0 ? topics[0] : 'Technology'}</a>
         </section>
-        <span className="upvote">
+        <span onClick={this.upVote.bind(this)} className={upvoted ? "upvote active" : "upvote"}>
           ▲
           <br/>
           {upvote_ids && upvote_ids.length >= 0 ? upvote_ids.length : 74 }

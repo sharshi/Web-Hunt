@@ -7,7 +7,8 @@ const mapStateToProps = state => {
   return ({
     products: state.entities.products,
     sort: state.entities.products[state.ui.feedSort],
-    order: state.ui.feedSort
+    order: state.ui.feedSort,
+    loggedIn: state.session.currentUser.id
 })}
 
 const mapDispatchToProps = dispatch => ({
