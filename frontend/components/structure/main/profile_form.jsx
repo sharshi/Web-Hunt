@@ -35,8 +35,6 @@ class ProfileForm extends React.Component {
 
     const {id, profile_picture, profile_header, email, name} = this.props.user;
 
-    debugger
-
     const formData = new FormData();
 
     name ? 
@@ -55,7 +53,6 @@ class ProfileForm extends React.Component {
   }
 
   handleChange(e) {
-    
     const { name, value } = e.target;
     let user = this.state.user;
     if (name === 'profile-picture' ) {

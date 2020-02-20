@@ -67,7 +67,7 @@ class Details extends React.Component {
           type="checkbox" 
           id="status"
           name='status'
-          value={!this.props.submit}
+          value={!this.props.status}
           onChange={this.props.handleChange}
         /><p className='status'>This tool hasn't been released yet</p>
       </section>

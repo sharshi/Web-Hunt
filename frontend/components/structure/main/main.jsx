@@ -4,8 +4,9 @@ import FeedContainer from "./feed_container";
 import SideBar from "./sidebar";
 import ProductContainer from "./product_container";
 
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import ProductFormContainer from './new_product/product_form_container';
+import EditProductFormContainer from './new_product/edit_product_form_container';
 
 import { connect } from "react-redux";
 import { MineRoute, ProtectedRoute } from '../../../utils/route_util';
@@ -15,6 +16,7 @@ import EditProfileContainer from "./edit_profile_container";
 
 class Main extends React.Component {
   render() {
+
     return (
       <>
         <main className='main-content'>
@@ -22,11 +24,17 @@ class Main extends React.Component {
             {/* dont show products page if already in modal */}
             {/* {this.props.allow ? ( */}
             <Route
+              path={'/products/:id/edit'}
+              render={() => {
+                return <EditProductFormContainer />
+              }}
+            />
+            <Route
               path={'/products/:id'}
-                render={() => {
-                  return <ProductContainer />
-                }}            
-              />
+              render={() => {
+                return <ProductContainer />
+              }}
+            />
             {/* ) : (null)} */}
             <ProtectedRoute
               path='/posts/new'
@@ -71,7 +79,7 @@ const mapStateToProps = state => {
 // })
 
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   // mapDispatchToProps
-)(Main);
+)(Main));
