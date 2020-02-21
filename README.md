@@ -1,4 +1,3 @@
-
 <h1 align="center">Web Hunt</h1>
 
 <!-- ![web-hunt logo](app/assets/images/w-logo.png) -->
@@ -9,24 +8,22 @@
 </p>
 
 ## Introduction
-Web Hunt, a Product Hunt clone, allows creators to share their products and receive feedback from tech enthusiasts.
+Web Hunt, is a single page web application inspired by Product Hunt. It allow creators to share their products and receive feedback from developers and tech enthusiasts.
 
 Live site: <a href='https://webhunt.dev'>https://webhunt.dev</a>
 
 ## Features 
- - Ability to upload your favorite coding tools
+ - Ability to upload your favorite coding tools using a multi-step form
  - View popular Tech tools uploaded by fellow developers
  - View user profiles to see their activity
- - Live preview shows what your productt will look like as you are entering the product data
+ - Live preview shows what your product will look like as you are entering the product data
  - Custom vanity urls based on your username
 
-
-
-
-
 ## Live preview
-![gif](app/assets/images/live-preview.gif)
 
+The preview component shown below is the same as the one on the home feed and user profiles.
+
+![gif](app/assets/images/live-preview.gif)
 
 ## Vanity urls
 Vanity urls use your username as your handle.
@@ -47,10 +44,27 @@ Vanity urls use your username as your handle.
   end
 ```
 
-
 ## Technologies 
-
+ - React
+ - Redux
+ - Rails
+ - Heroku
+ - AWS - for image hosting
+ - SCSS
 
 ## Feedback
 
 Feel free to [email](mailto:sborisute@webhunt.dev) me or [file an issue](https://github.com/sharshi/Web-Hunt/issues/new).
+
+## Acknowledgments
+
+ - Font Awesome by Dave Gandy - [http://fontawesome.io](http://fontawesome.io )
+ - [stackoverflow.com/a/3809435](https://stackoverflow.com/a/3809435/2140793) for url detection regular expression
+ - Search icon made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+
+## Todo
+
+ - Search
+ - Upvotes (in progress)
+ - Reviews
+ - Sidebar content (featured tools etc.)
