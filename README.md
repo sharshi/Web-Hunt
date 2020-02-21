@@ -1,9 +1,13 @@
-<center>
-<h1>Web Hunt</h1>
+
+<h1 align="center">Web Hunt</h1>
 
 <!-- ![web-hunt logo](app/assets/images/w-logo.png) -->
-<img src="https://i.imgur.com/uoAl0Fc.png" />
-</center>
+<p align="center">
+  <a href='https://webhunt.dev'>
+    <img src="https://i.imgur.com/uoAl0Fc.png" />
+  </a>
+</p>
+
 ## Introduction
 Web Hunt, a Product Hunt clone, allows creators to share their products and receive feedback from tech enthusiasts.
 
