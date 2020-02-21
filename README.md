@@ -1,12 +1,13 @@
+<center>
+<h1>Web Hunt</h1>
 
-Live site: [https://webhunt.dev](webhunt.dev/)
-
-# Web Hunt
-
-![web-hunt logo](app/assets/images/w-logo.png)
-
+<!-- ![web-hunt logo](app/assets/images/w-logo.png) -->
+<img src="https://i.imgur.com/uoAl0Fc.png" />
+</center>
 ## Introduction
 Web Hunt, a Product Hunt clone, allows creators to share their products and receive feedback from tech enthusiasts.
+
+Live site: <a href='https://webhunt.dev'>https://webhunt.dev</a>
 
 ## Features 
  - Ability to upload your favorite coding tools
@@ -34,4 +35,4 @@ Vanity urls use your username as your handle.
 
 ## Feedback
 
-Feel free to [email](mailto:sborisute@webhunt.dev) me or [file an issue](/issues/new).
+Feel free to [email](mailto:sborisute@webhunt.dev) me or [file an issue](https://github.com/sharshi/Web-Hunt/issues/new).
