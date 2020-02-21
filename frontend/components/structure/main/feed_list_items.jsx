@@ -22,6 +22,10 @@ class FeedListItem extends React.Component {
 
   }
 
+  mine() {
+    return this.props.loggedIn == this.props.product.hunter_id && this.props.fromProfile
+  }
+
   render() {
     const { id, title, tagline, website, logoUrl, upvote_ids, review_ids, topics } = this.props.product;
     
@@ -34,7 +38,7 @@ class FeedListItem extends React.Component {
 
     const upvoted = upvote_ids ? upvote_ids.includes(this.props.loggedIn) : true
     
-    const editDelete = (true) ? (
+    const editDelete = (this.mine()) ? (
       <>
         <Link className="edit-link" to={`/products/${id}/edit`}><i className="far fa-edit fa-sm"></i></Link>
         <a className="delete-link" onClick={() => this.handleDelete()}><i className="far fa-trash-alt fa-sm"></i></a>

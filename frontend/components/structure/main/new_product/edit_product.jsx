@@ -40,7 +40,7 @@ class EditProduct extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    const { website, title, tagline, logo, status, topics, screenshots, youtube, description, twitter, review } = this.state;
+    const { id, website, title, tagline, logo, status, topics, screenshots, youtube, description, twitter, review } = this.state;
 
     const formData = new FormData();
 
@@ -60,17 +60,16 @@ class EditProduct extends React.Component {
     // formData.append('product[topics]', topics);
     screenshots ? 
       screenshots.forEach(screenshot => {
-        formData.append("product[screenshots][]", screenshot[i][0])
+        formData.append("product[screenshots][]", screenshot[0])
       }) : (null)
     
-    formData.append('product[youtube]', youtube);
     formData.append('product[description]', description);
-    formData.append('product[twitter]', twitter);
     // formData.append('product[review]', review);
 
+    formData.append('id', id);
     this.props.updateProduct(formData)
       .then(({ product }) => {
-        this.props.history.push(`/products/${product.id}`)
+        this.props.history.push(`/products/${id}`)
       })
   }
 
@@ -84,10 +83,14 @@ class EditProduct extends React.Component {
 
   render() {
 
-    
+
     if (!this.state) {
       return null
     }
+    if (!this.state.screenshotUrls) {
+      return null
+    }
+    debugger
     // this.state.product should be valid
     const { website, title, tagline, topics, logoUrl, screenshotUrls, status, description } = this.state;
 

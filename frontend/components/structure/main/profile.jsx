@@ -101,6 +101,7 @@ class Profile extends React.Component {
                               openModal={this.props.openModal}
                               product={p}
                               loggedIn={this.props.currentUserId}
+                              fromProfile={true}
                             />
                           )
                         }) : (
