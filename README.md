@@ -3,7 +3,7 @@
 
 <!-- ![web-hunt logo](app/assets/images/w-logo.png) -->
 <p align="center">
-  <a href='https://webhunt.dev'>
+  <a href="https://webhunt.dev" target="_blank">
     <img src="https://i.imgur.com/uoAl0Fc.png" />
   </a>
 </p>
