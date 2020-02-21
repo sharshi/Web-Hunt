@@ -9,6 +9,7 @@ class Profile extends React.Component {
   }
 
   componentDidUpdate() {
+    debugger
     if (this.props.profileNotFound) {
 
     } else if (this.props.username !== this.props.user.username) {
@@ -18,6 +19,13 @@ class Profile extends React.Component {
 
   componentWillUnmount() {
     this.props.clearErrors();
+  }
+
+  handleDelete(e) {
+    return this.props.deleteProduct(e.currentTarget.id).then(() =>{
+      this.props.fetchUsername(this.props.username)
+    }
+    )
   }
 
   render() {
@@ -102,6 +110,7 @@ class Profile extends React.Component {
                               product={p}
                               loggedIn={this.props.currentUserId}
                               fromProfile={true}
+                              handleDelete={this.handleDelete.bind(this)}
                             />
                           )
                         }) : (

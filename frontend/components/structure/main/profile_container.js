@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import Profile from './profile';
 import { fetchUsername, clearErrors } from "../../../actions/session_actions";
 import { openModal } from '../../../actions/modal_actions';
+import { deleteProduct } from '../../../actions/products_actions';
 import { withRouter } from 'react-router-dom';
 
 
@@ -19,6 +20,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchUsername: username => dispatch(fetchUsername(username)),
+  deleteProduct: id => dispatch(deleteProduct(id)),
   clearErrors: () => dispatch(clearErrors()),
   openModal: (modal, id) => dispatch(openModal(modal, id))
 })

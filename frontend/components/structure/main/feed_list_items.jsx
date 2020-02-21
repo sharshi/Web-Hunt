@@ -18,10 +18,6 @@ class FeedListItem extends React.Component {
     )
   }
 
-  handleDelete() {
-
-  }
-
   mine() {
     return this.props.loggedIn == this.props.product.hunter_id && this.props.fromProfile
   }
@@ -41,7 +37,7 @@ class FeedListItem extends React.Component {
     const editDelete = (this.mine()) ? (
       <>
         <Link className="edit-link" to={`/products/${id}/edit`}><i className="far fa-edit fa-sm"></i></Link>
-        <a className="delete-link" onClick={() => this.handleDelete()}><i className="far fa-trash-alt fa-sm"></i></a>
+        <a id={id} className="delete-link" onClick={this.props.handleDelete}><i className="far fa-trash-alt fa-sm"></i></a>
       </>
     ) : (null)
 

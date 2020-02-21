@@ -39,7 +39,6 @@ export const createProduct = product => {
 
 
 // update product
-
 export const updateProduct = product => (
   $.ajax({
     method: 'patch',
@@ -51,7 +50,6 @@ export const updateProduct = product => (
 )
 
 // delete product
-
 export const deleteProduct = productId => (
   $.ajax({
     method: 'delete',
