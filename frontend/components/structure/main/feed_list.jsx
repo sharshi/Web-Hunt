@@ -4,7 +4,8 @@ import FeedListItem from "./feed_list_items";
 class FeedList extends React.Component {
   componentDidMount() {
     if (this.props.products.recentIds.length === 0) {
-      this.props.fetchPopularProducts()
+      // make a .then if there are no remaining products - should not load forever
+      this.props.fetchPopularProducts();
     }
   }
 
@@ -22,8 +23,8 @@ class FeedList extends React.Component {
         </li>
       )
     })
-    
-    if (this.props.products.popularIds.length <= 2) return (
+    debugger
+    if (this.props.products.popularIds.length === 0) return (
       <ul className="feed-list">
         <section>
           {placeholders}
@@ -38,9 +39,11 @@ class FeedList extends React.Component {
     const products = this.props.products;
     const feedListItems = this.props.sort.map(sortedid => {
       const product = products[sortedid];
-      const { title, id } = product;
-      if (!title) return null;
-      return <FeedListItem loggedIn={this.props.loggedIn} key={`${id}-${title}`} openModal={this.props.openModal} product={product} />
+      if (product) {
+        const { title, id } = product;
+        if (!title) return null;
+        return <FeedListItem loggedIn={this.props.loggedIn} key={`${id}-${title}`} openModal={this.props.openModal} product={product} />
+      }
     })
 
     return (
