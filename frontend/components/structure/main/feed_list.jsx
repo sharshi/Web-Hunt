@@ -23,7 +23,7 @@ class FeedList extends React.Component {
         </li>
       )
     })
-    debugger
+    
     if (this.props.products.popularIds.length === 0) return (
       <ul className="feed-list">
         <section>

@@ -10,22 +10,22 @@ rivky = User.create(username: 'rivky', password: 'rivky55', email: 'rivky@gmail.
 leah = User.create(username: 'leah', password: 'leah55', email: 'leah@gmail.html')
 berel = User.create(username: 'berel', password: 'berel55', email: 'berel@gmail.html')
 
-default_pp = open('https://web-hunt-seeds.s3.amazonaws.com/user.png')
+default_pp = open('https://web-hunt-seeds.s3.amazonaws.com/user-2.png')
 default_hp = open('https://web-hunt-seeds.s3.amazonaws.com/header.png')
 
-default_pp1 = open('https://web-hunt-seeds.s3.amazonaws.com/user.png')
+default_pp1 = open('https://web-hunt-seeds.s3.amazonaws.com/user-2.png')
 default_hp1 = open('https://web-hunt-seeds.s3.amazonaws.com/header.png')
 
-default_pp2 = open('https://web-hunt-seeds.s3.amazonaws.com/user.png')
+default_pp2 = open('https://web-hunt-seeds.s3.amazonaws.com/user-2.png')
 default_hp2 = open('https://web-hunt-seeds.s3.amazonaws.com/header.png')
 
-default_pp3 = open('https://web-hunt-seeds.s3.amazonaws.com/user.png')
+default_pp3 = open('https://web-hunt-seeds.s3.amazonaws.com/user-2.png')
 default_hp3 = open('https://web-hunt-seeds.s3.amazonaws.com/header.png')
 
-default_pp4 = open('https://web-hunt-seeds.s3.amazonaws.com/user.png')
+default_pp4 = open('https://web-hunt-seeds.s3.amazonaws.com/user-2.png')
 default_hp4 = open('https://web-hunt-seeds.s3.amazonaws.com/header.png')
 
-default_pp5 = open('https://web-hunt-seeds.s3.amazonaws.com/user.png')
+default_pp5 = open('https://web-hunt-seeds.s3.amazonaws.com/user-2.png')
 default_hp5 = open('https://web-hunt-seeds.s3.amazonaws.com/header.png')
 
 # [sharshi, mushky, rivky, leah, berel, demo].each { |u, i| u.profile_picture.attach(io: default_pp, filename: "#{i}_user.png") }

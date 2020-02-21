@@ -26,7 +26,10 @@ class GalleryDisplay extends React.Component {
         </span>
     ) : (
         <span className='main-image'>
-          <img className='carousel-main' src={this.props.screenshots[0]} alt="" />
+
+          {this.props.screenshots.map(screenshot => {
+            return <img key={`scr-${screenshot}`} className='carousel-main' src={screenshot} alt="" />
+          })}
         </span>
       ) : (
         <span className='main-image'>
