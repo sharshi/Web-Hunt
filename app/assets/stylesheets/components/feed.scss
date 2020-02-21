@@ -179,6 +179,14 @@ section.links {
     padding-bottom: 2px;
   }
 
+  a.edit-link {
+    color: #5b33c7
+  }
+
+  a.delete-link {
+    color: #bb3535
+  }
+
   a:hover {
     background-color: #e7e7e7;
   }

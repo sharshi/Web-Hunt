@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class FeedListItem extends React.Component {
   
@@ -17,6 +18,10 @@ class FeedListItem extends React.Component {
     )
   }
 
+  handleDelete() {
+
+  }
+
   render() {
     const { id, title, tagline, website, logoUrl, upvote_ids, review_ids, topics } = this.props.product;
     
@@ -29,6 +34,13 @@ class FeedListItem extends React.Component {
 
     const upvoted = upvote_ids ? upvote_ids.includes(this.props.loggedIn) : true
     
+    const editDelete = (true) ? (
+      <>
+        <Link className="edit-link" to={`/products/${id}/edit`}><i className="far fa-edit fa-sm"></i></Link>
+        <a className="delete-link" onClick={() => this.handleDelete()}><i className="far fa-trash-alt fa-sm"></i></a>
+      </>
+    ) : (null)
+
     return (
       <li className="feed-list-item" >
         <a className='feed-list-item-container' onClick={this.clickHandler.bind(this)} >
@@ -44,8 +56,10 @@ class FeedListItem extends React.Component {
           <a className="comments"><i className="fas fa-comment"></i> {
             review_ids && review_ids.length >= 0 ? review_ids.length : 8
           }</a>
-          <a className="website-link" target="_blank" href={website}><i className="fas fa-external-link-alt fa-xs"></i></a>
+          <a className="website-link" target="_blank" href={`https://${website}`}><i className="fas fa-external-link-alt fa-xs"></i></a>
           <a className="first-topic">{topics && topics.length > 0 ? topics[0] : 'Technology'}</a>
+
+          {editDelete}
         </section>
         <span onClick={this.upVote.bind(this)} className={upvoted ? "upvote active" : "upvote"}>
           ▲

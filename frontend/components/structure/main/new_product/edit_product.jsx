@@ -58,15 +58,17 @@ class EditProduct extends React.Component {
         : null
     formData.append('product[status]', status);
     // formData.append('product[topics]', topics);
-    for (let i = 0; i < screenshots.length; i++) {
-      formData.append("product[screenshots][]", screenshots[i][0]);
-    }
+    screenshots ? 
+      screenshots.forEach(screenshot => {
+        formData.append("product[screenshots][]", screenshot[i][0])
+      }) : (null)
+    
     formData.append('product[youtube]', youtube);
     formData.append('product[description]', description);
     formData.append('product[twitter]', twitter);
     // formData.append('product[review]', review);
 
-    this.props.createProduct(formData)
+    this.props.updateProduct(formData)
       .then(({ product }) => {
         this.props.history.push(`/products/${product.id}`)
       })
@@ -74,6 +76,11 @@ class EditProduct extends React.Component {
 
 
 
+
+  cleanUrl(url) {
+    url = url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "");
+    return url;
+  }
 
   render() {
 
@@ -103,20 +110,20 @@ class EditProduct extends React.Component {
     return (
       <section className="product-edit">
         <h1>Edit {title}</h1>
-        <form>
-          <label htmlFor="website">Website <span>- required</span></label>
+        <form onSubmit={this.handleSubmit.bind(this)}>
+          <label htmlFor="website">Website</label>
           <input
             className='form-control'
             id='website'
             type='url'
             name='website'
             placeholder='Website of the tool'
-            value={`https://${website}`}
+            value={`https://${this.cleanUrl(website)}`}
             onChange={this.handleChange}
             pattern="https://.*"
-            required
+            
           />
-          <label htmlFor="title">Name of the tool <span>- required</span></label>
+          <label htmlFor="title">Name of the tool</label>
           <input
             className='form-control'
             id='title'
@@ -125,9 +132,9 @@ class EditProduct extends React.Component {
             placeholder='Name of the tool'
             value={title}
             onChange={this.handleChange}
-            required
+            
           />
-          <label htmlFor="tagline">Tagline <span>- required</span></label>
+          <label htmlFor="tagline">Tagline</label>
           <input
             className='form-control'
             id='tagline'
@@ -136,7 +143,7 @@ class EditProduct extends React.Component {
             placeholder='Short catchy tagline for the tool'
             value={tagline}
             onChange={this.handleChange}
-            required
+            
           />
           <label htmlFor="topics">Topics <span></span></label>
           <input
@@ -149,7 +156,7 @@ class EditProduct extends React.Component {
             onChange={this.handleChange}
           />
           <section className="logo-section">
-            <label htmlFor="logo">Logo Upload <span>- required</span></label>
+            <label htmlFor="logo">Logo Upload</label>
             <input
               className='form-control logo'
               type="file"
@@ -173,7 +180,7 @@ class EditProduct extends React.Component {
             onChange={this.handleChange}
           /><p className='status'>Pre-launch</p>
           <section className="screenshots-section">
-            <label htmlFor="screenshots">Screenshots <span>- at least one required</span></label><br />
+            <label htmlFor="screenshots">Screenshots</label><br />
             <input
               className='form-control screenshots'
               type="file"
@@ -181,7 +188,7 @@ class EditProduct extends React.Component {
               name='screenshots'
               onChange={this.handleChange}
               accept="image/gif, image/jpeg, image/png"
-              required
+              
             />
             <span className='product-form-gallery-preview' >
               {previewImages.length ? previewImages : null}
@@ -189,7 +196,7 @@ class EditProduct extends React.Component {
 
           </section>
 
-          <label htmlFor="description">Description <span>- required</span></label>
+          <label htmlFor="description">Description</label>
           <DescriptionInput
             description={description}
             handleChange={this.handleChange}
