@@ -3,7 +3,7 @@
 
 <!-- ![web-hunt logo](app/assets/images/w-logo.png) -->
 <p align="center">
-  <a href="https://webhunt.dev" target="_blank">
+  <a href="https://webhunt.dev">
     <img src="https://i.imgur.com/uoAl0Fc.png" />
   </a>
 </p>
@@ -32,6 +32,20 @@ Live site: <a href='https://webhunt.dev'>https://webhunt.dev</a>
 Vanity urls use your username as your handle.
 [webhunt.dev/@sharshi](https://webhunt.dev/@sharshi)
 
+```ruby
+  # config/routes.rb
+  get '@:username', to: 'api/users#redirect_to_profile', defaults: { format: :json } 
+
+  # app/controllers/api/users_controller.rb
+  def redirect_to_profile
+    @user = User.with_attached_profile_picture.find_by(username: params[:username])
+    if @user
+      redirect_to "/#/@#{params[:username]}"
+    else
+      render json: ['username not found'], status: 404
+    end
+  end
+```
 
 
 ## Technologies 
