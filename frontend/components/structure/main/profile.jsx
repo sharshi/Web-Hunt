@@ -22,9 +22,10 @@ class Profile extends React.Component {
   }
 
   handleDelete(e) {
-    return this.props.deleteProduct(e.currentTarget.id).then(() =>{
-      this.props.fetchUsername(this.props.username)
-    }
+    return this.props.deleteProduct(e.currentTarget.id)
+      .then(() =>{
+        this.props.fetchUsername(this.props.username)
+      }
     )
   }
 
