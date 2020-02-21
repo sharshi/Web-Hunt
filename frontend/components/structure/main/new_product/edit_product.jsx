@@ -90,7 +90,7 @@ class EditProduct extends React.Component {
     if (!this.state.screenshotUrls) {
       return null
     }
-    debugger
+
     // this.state.product should be valid
     const { website, title, tagline, topics, logoUrl, screenshotUrls, status, description } = this.state;
 

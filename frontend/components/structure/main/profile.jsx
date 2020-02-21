@@ -9,7 +9,6 @@ class Profile extends React.Component {
   }
 
   componentDidUpdate() {
-    debugger
     if (this.props.profileNotFound) {
 
     } else if (this.props.username !== this.props.user.username) {
