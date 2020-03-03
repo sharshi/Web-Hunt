@@ -10,9 +10,12 @@
 
         main {
           width: inherit;
+          
+          section.searchField {
 
-          form {
-            width: fit-content;
+            form {
+              width: fit-content;
+            }
           }
         }
       }
@@ -77,5 +80,51 @@
 }
 
 @media (max-width: 768px) {
+  body {
 
+    section#root {
+
+      nav.nav-bar {
+
+        main {
+
+          section.searchField {
+
+            form {
+
+              input {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+
+      main {
+
+        aside {
+          display: none;
+        }
+        
+        section.profile main.profile-container {
+          display: block;
+
+          section.left-bar > ul {
+            flex-direction: row;
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+  } 
+
+  li.feed-list-item > a.feed-list-item-container {
+    section {
+      p.tagline {
+        padding-bottom: 20px;
+      }
+    }
+  }
 }
+
+
