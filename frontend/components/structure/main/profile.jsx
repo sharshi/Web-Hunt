@@ -37,8 +37,16 @@ class Profile extends React.Component {
     
     const display = (username) ? (
       <section className='profile'>
-        <img src={profileHeaderUrl ? profileHeaderUrl : window.hp} alt="" className="header"/>
-        <header>
+        {/* <img src={profileHeaderUrl ? profileHeaderUrl : window.hp} alt="" className="header"/> */}
+        {/* 
+
+
+
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("{profileHeaderUrl ? profileHeaderUrl : window.hp}");
+        
+        
+        */}
+        <header style={{ backgroundImage:  `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(${profileHeaderUrl ? profileHeaderUrl : window.hp})` }}>
           <img src={profilePictureUrl ? profilePictureUrl : window.pp} className='profile-picture profile-picture-round' />
           <section className='user-info'>
             <div>
