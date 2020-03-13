@@ -33,8 +33,16 @@ class Product extends React.Component {
   }
 
   upVote() {
+    const vote = {
+      upvoteable_type: 'Product',
+      upvoteable_id: this.props.productId,
+      user_id: this.props.loggedIn
+    }
+
     !!this.props.loggedIn ? (
-      null
+      this.props.vote(vote).then(() => {
+        this.props.fetchProduct(this.props.productId)
+      })
     ) : (
       this.props.openModal('login')
     )
@@ -51,11 +59,13 @@ class Product extends React.Component {
     if (!this.props.product) {
       return null;
     }
-    const { id, title, tagline, website, logoUrl, launch_date, description, status, hunter_id, topics, screenshotUrls, reviews, youtube, hunter, upvote_ids, review_ids } = this.props.product;
+    const { id, title, tagline, website, logoUrl, launch_date, description, status, hunter_id, topics, screenshotUrls, reviews, youtube, hunter, upvote_ids, review_ids, upvoters} = this.props.product;
 
     if (!screenshotUrls) {
       return null; 
     }
+
+    const upvoted = upvote_ids ? upvote_ids.includes(this.props.loggedIn) : true;
 
     return (
       <>
@@ -71,8 +81,8 @@ class Product extends React.Component {
                 <p className='tagline'>{tagline}</p>
 
                 <ul>
-                  <li>TAG 1</li>
-                  <li>TAG 2</li>
+                  {/* <li>TAG 1</li>
+                  <li>TAG 2</li> */}
                 </ul>
               </section>
               <section className="link">
@@ -115,15 +125,12 @@ class Product extends React.Component {
             <div className='upvote-section'>
               <span 
                 onClick={this.upVote.bind(this)} 
-                className="upvote-button">▲ UPVOTE <div>
+                className="upvote-button">{(upvoted) ? `▲ UPVOTED  ` : `▲ UPVOTE   ` }<div>
                   {upvote_ids.length}</div>
               </span>
               <div className='product-upvoters'>
-                {upvote_ids.map(id => {
-
-                  return  (<span key={id} className='ppr upvoter-picture'>
-                    {id}
-                  </span>)
+                {Object.values(upvoters).map((user,idx) => {
+                  return (idx < 3) ? (<img key={user.id} className='ppr upvoter-picture' src={user.profilePictureUrl} />) : null;
                 })}
               </div>
             </div>

@@ -14,25 +14,9 @@ import {
   urlProduct
 } from "./utils/products_api_util";
 
-import {
-  upvote,
-  unvote
-} from "./utils/vote_util";
-
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   let store;
-
-  // DEV
-  window.fetchPopularProducts = fetchPopularProducts;
-  window.fetchProduct = fetchProduct;
-  window.createProduct = createProduct;
-  window.updateProduct = updateProduct;
-  window.deleteProduct = deleteProduct;
-  window.urlProduct = urlProduct;
-  window.upvote = upvote;
-  window.unvote = unvote;
-  // DEV
 
   if (window.currentUser) {
     const preloadedState = {

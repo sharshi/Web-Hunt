@@ -60,7 +60,8 @@ class NavBar extends React.Component {
             <section alt='home' onClick={() => window.location.hash = "#/"} className="logo">
               w
             </section>
-            <Search />
+            {/* <Search /> */}
+            <h1>Webhunt</h1>
             <section className="userMenu">
               {sessionButtons}
               {/* <Route 

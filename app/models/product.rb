@@ -30,7 +30,13 @@ class Product < ApplicationRecord
 
   has_many :reviews,
     foreign_key: :product_id
+
   has_many :upvotes, as: :upvoteable
+
+  has_many :upvoters,
+    through: :upvotes,
+    source: :user
+
   has_many :products_topics
   has_many :topics, through: :products_topics
 

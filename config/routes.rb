@@ -8,8 +8,9 @@ Rails.application.routes.draw do
     resources :products, only: [:create, :index, :show, :update, :destroy]
     get 'username/:username', to: 'users#show_name'
 
-    resources :upvotes, only: [:create, :destroy]
+    post 'upvotes', to: 'upvotes#vote'
   end
+  
   get '@:username', to: 'api/users#redirect_to_profile', defaults: { format: :json } 
 
   root to: 'static_pages#root'

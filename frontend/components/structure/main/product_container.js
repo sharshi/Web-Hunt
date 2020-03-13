@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { closeModal, openModal } from '../../../actions/modal_actions';
-import { fetchProduct } from '../../../actions/products_actions';
+import { fetchProduct } from "../../../actions/products_actions";
+import * as V from "../../../actions/vote_actions";
 import Product from './product';
 
 const mapStateToProps = (state, ownProps) => {
@@ -16,9 +17,10 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   closeModal: () => dispatch(closeModal()),
-  openModal: (type) => dispatch(openModal(type)),
-  fetchProduct: productId => dispatch(fetchProduct(productId))
-})
+  openModal: type => dispatch(openModal(type)),
+  fetchProduct: productId => dispatch(fetchProduct(productId)),
+  vote: vote => dispatch(V.vote(vote)),
+});
 
 export default connect(
   mapStateToProps,
