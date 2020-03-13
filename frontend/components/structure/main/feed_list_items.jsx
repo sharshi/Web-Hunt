@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import * as V from "../../../actions/vote_actions";
+import { fetchProduct } from "../../../actions/products_actions";
 
 class FeedListItem extends React.Component {
   
@@ -11,11 +14,19 @@ class FeedListItem extends React.Component {
   }
 
   upVote() {
+    const vote = {
+      upvoteable_type: 'Product',
+      upvoteable_id: this.props.product.id,
+      user_id: this.props.loggedIn
+    }
+
     !!this.props.loggedIn ? (
-      null
+      this.props.vote(vote).then(() => {
+        this.props.fetchProduct(this.props.product.id)
+      })
     ) : (
-      this.props.openModal('login')
-    )
+        this.props.openModal('login')
+      )
   }
 
   confirmDelete(e) {
@@ -80,4 +91,17 @@ class FeedListItem extends React.Component {
   }
 }
 
-export default FeedListItem;
+
+
+const mdtp = dispatch => {
+  return ({
+    fetchProduct: id => dispatch(fetchProduct(id)),
+    vote: vote => dispatch(V.vote(vote))
+  })
+}
+
+
+export default connect(
+  null,
+  mdtp
+)(FeedListItem);
