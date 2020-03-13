@@ -129,7 +129,7 @@ class Product extends React.Component {
                   {upvote_ids.length}</div>
               </span>
               <div className='product-upvoters'>
-                {Object.values(upvoters).map((user,idx) => {
+                {upvoters && Object.values(upvoters).map((user,idx) => {
                   return (idx < 3) ? (<img key={user.id} className='ppr upvoter-picture' src={user.profilePictureUrl} />) : null;
                 })}
               </div>
