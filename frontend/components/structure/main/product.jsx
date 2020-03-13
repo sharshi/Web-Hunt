@@ -59,7 +59,7 @@ class Product extends React.Component {
     if (!this.props.product) {
       return null;
     }
-    const { id, title, tagline, website, logoUrl, launch_date, description, status, hunter_id, topics, screenshotUrls, reviews, youtube, hunter, upvote_ids, review_ids } = this.props.product;
+    const { id, title, tagline, website, logoUrl, launch_date, description, status, hunter_id, topics, screenshotUrls, reviews, youtube, hunter, upvote_ids, review_ids, upvoters} = this.props.product;
 
     if (!screenshotUrls) {
       return null; 
@@ -129,10 +129,8 @@ class Product extends React.Component {
                   {upvote_ids.length}</div>
               </span>
               <div className='product-upvoters'>
-                {upvote_ids.map((id,idx) => {
-                  return (idx < 3)? (<span key={id} className='ppr upvoter-picture'>
-                    {null}
-                  </span>) : null;
+                {Object.values(upvoters).map((user,idx) => {
+                  return (idx < 3) ? (<img key={user.id} className='ppr upvoter-picture' src={user.profilePictureUrl} />) : null;
                 })}
               </div>
             </div>
