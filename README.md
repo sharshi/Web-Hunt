@@ -16,6 +16,7 @@ Live site: <a href='https://webhunt.dev'>https://webhunt.dev</a>
  - Ability to upload your favorite coding tools using a multi-step form
  - View popular Tech tools uploaded by fellow developers
  - View user profiles to see their activity
+ - Users can Upvote their favorite tools 
  - Live preview shows what your product will look like as you are entering the product data
  - Custom vanity urls based on your username
 
@@ -65,6 +66,5 @@ Feel free to [email](mailto:sborisute@webhunt.dev) me or [file an issue](https:/
 ## Todo
 
  - Search
- - Upvotes (in progress)
  - Reviews
  - Sidebar content (featured tools etc.)
