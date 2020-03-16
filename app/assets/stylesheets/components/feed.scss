@@ -52,11 +52,11 @@ li.feed-list-item > a.feed-list-item-container {
   display: flex;
   padding: 20px;
   border-bottom: 1px solid $lightgray;
-  align-content: stretch;
   cursor: pointer;
 
   img {
-    width: 80px;
+    min-width: 80px;
+    max-width: 80px;
     height: 80px;
     margin-right: 10px;
     background: white image-url('Mountain.png') ;

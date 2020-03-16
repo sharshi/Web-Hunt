@@ -1,4 +1,72 @@
 
+@media (max-width: 768px) {
+  body {
+
+    section#root {
+
+      nav.nav-bar {
+
+        main {
+
+          section.searchField {
+
+            form {
+
+              input {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+
+      main {
+
+        aside {
+          display: none;
+        }
+        
+        section.profile main.profile-container {
+          display: block;
+
+          section.left-bar > ul {
+            flex-direction: row;
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+  } 
+
+  li.feed-list-item > a.feed-list-item-container {
+    section {
+      p.tagline {
+        padding-bottom: 20px;
+      }
+    }
+  }
+
+  .modal-background {
+
+    .modal-child {
+
+      .product-main {
+        width: 100vw;      
+        flex-direction: column;    
+
+        main {
+          width: 100% !important;
+          order: 3;
+        }
+
+        aside { 
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 1099px) {
   body {
     section#root {
@@ -78,51 +146,44 @@
       }
     }
   }
-}
 
-@media (max-width: 768px) {
-  body {
 
-    section#root {
 
-      nav.nav-bar {
 
-        main {
 
-          section.searchField {
+  main.product-form {
+    width: 100%;
+    // flex-direction: ;
 
-            form {
+    section.input {
+    
+      form {
+        width: 80vw !important;
+    
+        .form-group {
 
-              input {
-                display: none;
-              }
+          .logo-section {
+
+            p {
+              padding-left: 100px;
+              top: 92px;
             }
+    
+            img {
+              top: 46px;
+            }
+
+          }
+    
+          p.status {
+            top: 455px;
+            left: 26px;
           }
         }
-      }
+    
+        section.schedule-notice {
 
-      main {
-
-        aside {
-          display: none;
         }
-        
-        section.profile main.profile-container {
-          display: block;
-
-          section.left-bar > ul {
-            flex-direction: row;
-            justify-content: space-between;
-          }
-        }
-      }
-    }
-  } 
-
-  li.feed-list-item > a.feed-list-item-container {
-    section {
-      p.tagline {
-        padding-bottom: 20px;
       }
     }
   }

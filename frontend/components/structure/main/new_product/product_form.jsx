@@ -26,7 +26,6 @@ class ProductForm extends React.Component {
   
   handleChange(e) {
     const { name, value } = e.target;
-
     let product = this.state.product;
     let screenshot_preview_urls = this.state.screenshot_preview_urls;
     if (name === 'youtube') {
@@ -194,8 +193,6 @@ class ProductForm extends React.Component {
         <button>SUBMIT</button>
       )
     }
-
-    //shouldnt we call handleSubmit?
     return null;
   }
   
@@ -212,8 +209,6 @@ class ProductForm extends React.Component {
         </section>
       )
     }
-
-    //shouldnt we call handleSubmit?
     return null;
   }
 
