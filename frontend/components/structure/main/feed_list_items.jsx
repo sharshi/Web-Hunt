@@ -14,19 +14,21 @@ class FeedListItem extends React.Component {
   }
 
   upVote() {
-    const vote = {
-      upvoteable_type: 'Product',
-      upvoteable_id: this.props.product.id,
-      user_id: this.props.loggedIn
-    }
+     if (!this.props.fromPreview) {
+       const vote = {
+         upvoteable_type: "Product",
+         upvoteable_id: this.props.product.id,
+         user_id: this.props.loggedIn
+       };
 
-    !!this.props.loggedIn ? (
-      this.props.vote(vote).then(() => {
-        this.props.fetchProduct(this.props.product.id)
-      })
-    ) : (
-        this.props.openModal('login')
+      !!this.props.loggedIn ? (
+        this.props.vote(vote).then(() => {
+          this.props.fetchProduct(this.props.product.id)
+        })
+      ) : (
+          this.props.openModal('login')
       )
+    }
   }
 
   confirmDelete(e) {
@@ -41,6 +43,7 @@ class FeedListItem extends React.Component {
   }
 
   render() {
+    
     const { id, title, tagline, website, logoUrl, upvote_ids, review_ids, topics } = this.props.product;
     
     let logoUrlPreview;
@@ -90,15 +93,19 @@ class FeedListItem extends React.Component {
     )
   }
 }
-
-
+// export default FeedListItem;
+// const mstp = (state, ownProps) => {
+//   return {
+//     product: ownProps.product
+//   };
+// }
 
 const mdtp = dispatch => {
-  return ({
+  return {
     fetchProduct: id => dispatch(fetchProduct(id)),
     vote: vote => dispatch(V.vote(vote))
-  })
-}
+  };
+};
 
 
 export default connect(
