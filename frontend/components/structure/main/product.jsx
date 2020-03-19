@@ -116,7 +116,7 @@ class Product extends React.Component {
               </section>
               <span className='reviews'>
                 <ul>
-                  {review_ids.map(id => {
+                  {review_ids.slice(0).reverse().map(id => {
                     return (
                       <Review key={`review-${id}`} id={id} />
                       )

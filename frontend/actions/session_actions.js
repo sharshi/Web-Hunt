@@ -2,7 +2,8 @@ import { getUsers, getUser, login, logout, signup, getUsername, updateUserUtil }
 
 export const RECEIVE_USERS = 'RECEIVE_USERS';
 export const RECEIVE_USER = 'RECEIVE_USER';
-export const RECEIVE_USER_PROFILE = 'RECEIVE_USER_PROFILE';
+export const RECEIVE_USER_PROFILE = "RECEIVE_USER_PROFILE";
+export const RECEIVE_USER_SIGNIN = "RECEIVE_USER_SIGNIN";
 export const REMOVE_USER = 'REMOVE_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
@@ -17,7 +18,12 @@ const receiveUsers = users => ({
 const receiveUser = user => ({
   type: RECEIVE_USER,
   user
-})
+});
+
+const receiveUserSignin = user => ({
+  type: RECEIVE_USER_SIGNIN,
+  user
+});
 
 const receiveUserProfile = user => {
   return({
@@ -72,9 +78,9 @@ export const fetchUsername = username => dispatch => {
 
 export const createUser = user => dispatch => {
   signup(user).then(
-    user => dispatch(receiveUser(user)),
+    user => dispatch(receiveUserSignin(user)),
     errors => dispatch(receiveErrors(errors.responseJSON))
-  )
+  );
 }
 
 
@@ -88,9 +94,9 @@ export const updateUser = (user, id) => dispatch => {
 
 export const loginUser = user => dispatch => {
   login(user).then(
-    user => dispatch(receiveUser(user)),
+    user => dispatch(receiveUserSignin(user)),
     errors => dispatch(receiveErrors(errors.responseJSON))
-  )
+  );
 }
 
 export const logoutUser = user => dispatch => {
