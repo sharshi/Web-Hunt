@@ -55,17 +55,25 @@ class ReviewInput extends React.Component {
   }
 
   render() {
+    debugger
+
     return ( 
-      <>
-        <span className="profile-picture-round"></span>
-        <form onSubmit={this.handleSubmit}>
-          {/* <section> */}
+      
+       this.props.profilePictureUrl ? (
+        <>
+          <img className="profile-picture-round" src={this.props.profilePictureUrl} />
+          <form onSubmit={this.handleSubmit}>
+            {/* <section> */}
             <input onChange={this.handleChange} name="title" placeholder='enter a title' value={this.state.title} />
-          <textarea onChange={this.handleChange} name="body" placeholder='enter a review' value={this.state.body}></textarea>
-          {/* </section> */}
-          <button>POST</button>
-        </form>
-      </>
+            <textarea onChange={this.handleChange} name="body" placeholder='enter a review' value={this.state.body}></textarea>
+            {/* </section> */}
+            <button>POST</button>
+          </form>
+        </>
+      ) : (
+          <p>Please log in to post a review.</p>
+        )
+      
      )
   }
 }

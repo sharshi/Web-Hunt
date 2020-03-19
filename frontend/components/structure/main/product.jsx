@@ -112,7 +112,8 @@ class Product extends React.Component {
                     reviewer_id: this.props.loggedIn,
                     parent_review_id: null
                   }
-                }/>
+                } profilePictureUrl={this.props.profilePictureCurrentUser}
+                />
               </section>
               <span className='reviews'>
                 <ul>

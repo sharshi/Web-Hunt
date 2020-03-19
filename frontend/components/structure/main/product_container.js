@@ -13,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
     productId,
     inModal: ownProps.fromModal,
     loggedIn: state.session.currentUser.id,
-    reviews: state.entities.reviews
+    reviews: state.entities.reviews,
+    profilePictureCurrentUser: state.session.currentUser.profilePictureUrl
   };}
 
 const mapDispatchToProps = dispatch => ({
