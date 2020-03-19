@@ -55,8 +55,6 @@ class ReviewInput extends React.Component {
   }
 
   render() {
-    debugger
-
     return ( 
       
        this.props.profilePictureUrl ? (

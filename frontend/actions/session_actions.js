@@ -63,7 +63,7 @@ export const fetchUsers = () => dispatch => {
 }
 
 export const fetchUser = id => dispatch => {
-  getUser(id).then(
+  return getUser(id).then(
     user => dispatch(receiveUser(user)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )

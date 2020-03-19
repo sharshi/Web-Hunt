@@ -5,7 +5,7 @@ import { fetchUser } from "../../../actions/session_actions";
 const mstp = (state, ownProps) => {
   return {
     review: state.entities.reviews[ownProps.id],
-    reviewer: state.entities.users[() => this.review.reviewer_id]
+    reviewer: state.entities.users[()=>this.review.reviewer_id]
   };
 }
 
@@ -20,18 +20,24 @@ class Review extends React.Component {
   componentDidMount() {
     this.props.fetchReview(this.props.id).then(
       ({review}) => {
-        
-        this.props.fetchUser(review.reviewer_id)
+        this.props.fetchUser(review.reviewer_id).then(user => {
+          this.setState({...user})
+        })
       }
     )
   }
 
   render() {
-    if (this.props.review === undefined && this.props.reviewer === undefined ) return null;
+    if ( !this.props.review ) return null;
+    if ( !this.state ) return null;
+
     const {title, body} = this.props.review;
+    const { profilePictureUrl, username } = this.state.user;
     return (
       <article className='review'>
+        <img className='ppr' src={profilePictureUrl} alt=""/>
         <h3>{title}</h3>
+        <small>Author: {username}</small>
         <p>{body}</p>
       </article>
     )
