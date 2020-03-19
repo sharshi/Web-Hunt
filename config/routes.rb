@@ -5,9 +5,11 @@ Rails.application.routes.draw do
     get 'products/hasurl', to: 'products#hasurl'
     resources :users, only: [:index, :create, :show, :update]
     resource :session, only: [:create, :destroy]
+    
     resources :products, only: [:create, :index, :show, :update, :destroy]
-    get 'username/:username', to: 'users#show_name'
+    resources :reviews, only: [:create, :index, :show]
 
+    get 'username/:username', to: 'users#show_name'
     post 'upvotes', to: 'upvotes#vote'
   end
   

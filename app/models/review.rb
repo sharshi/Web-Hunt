@@ -17,6 +17,6 @@ class Review < ApplicationRecord
 
   belongs_to :reviewer, class_name: :User
   belongs_to :product
-  belongs_to :parent_review
+  belongs_to :parent_review, optional: true
   has_many :upvotes, as: :upvoteable
 end

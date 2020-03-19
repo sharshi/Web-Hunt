@@ -101,7 +101,7 @@ class Product extends React.Component {
               </p>
             </section>
 
-            {/* itterate through all reviews  */}
+            {/* iterate through all reviews  */}
             <h4>REVIEWS</h4>
             <section className="discussion">
               <section className="review-input">
@@ -147,7 +147,7 @@ class Product extends React.Component {
             <section className="hunter-link">
               <h4>Hunter</h4>
               {/* <ProfilePicture id={hunter_id} /> */}
-              <img src={window.pp} className="profile-picture-round"/>
+              <img src={hunter.profilePictureUrl} className="profile-picture-round"/>
               <Link to={`/@${hunter.username}`}>@{hunter.username}</Link>
             </section>
           </aside>
