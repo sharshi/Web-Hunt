@@ -3,16 +3,10 @@ import ReactDOM from "react-dom";
 import Root from "./components/root";
 import configureStore from "./store/store";
 import {
-  fetchPopularProducts,
-  fetchProduct,
-  createProduct,
-  updateProduct,
-  deleteProduct
-} from "./actions/products_actions";
-
-import {
-  urlProduct
-} from "./utils/products_api_util";
+  fetchReview,
+  fetchReviews,
+  createReview
+} from "./actions/review_actions";
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -40,6 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // DEV
   window.dispatch = store.dispatch;
+  window.fetchReview = fetchReview;
+  window.fetchReviews = fetchReviews;
+  window.createReview = createReview;
   // DEV
 
   ReactDOM.render(<Root store={store}/>, root);
