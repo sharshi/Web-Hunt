@@ -1,6 +1,7 @@
 import React from 'react';
 import GalleryDisplay from './gallery_display';
 import ReviewInput from './review_input';
+import Review from './review';
 import { Link, withRouter } from 'react-router-dom';
 
 class Product extends React.Component {
@@ -23,7 +24,7 @@ class Product extends React.Component {
 
   componentDidMount() {
     const { productId } = this.props;
-    this.props.fetchProduct(productId)
+    this.props.fetchProduct(productId);
     if (this.props.inModal && !this.state.loaded) {
       const body = document.getElementsByTagName('body')[0];
       body.classList.add('no-scroll');
@@ -105,13 +106,19 @@ class Product extends React.Component {
             <h4>REVIEWS</h4>
             <section className="discussion">
               <section className="review-input">
-                <ReviewInput />
+                <ReviewInput review={
+                  { 
+                    product_id: id, 
+                    reviewer_id: this.props.loggedIn,
+                    parent_review_id: null
+                  }
+                }/>
               </section>
               <span className='reviews'>
                 <ul>
                   {review_ids.map(id => {
                     return (
-                      <li key={id}>Review - {id}</li>
+                      <Review key={`review-${id}`} id={id} />
                       )
                   })}
                   {review_ids.length === 0 ? (
