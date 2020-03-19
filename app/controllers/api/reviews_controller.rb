@@ -14,7 +14,7 @@ class Api::ReviewsController < ApplicationController
     # get reviews for specific product
     @reviews = Product.find(params[:productId]).reviews
     if @reviews
-      render json: @reviews
+      render :index
     else
       render json: ['reviews not found', [404]], status: 404
     end
