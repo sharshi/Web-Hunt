@@ -80,7 +80,7 @@ class FeedListItem extends React.Component {
             review_ids && review_ids.length >= 0 ? review_ids.length : 8
           }</a>
           <a className="website-link" target="_blank" href={`https://${website}`}><i className="fas fa-external-link-alt fa-xs"></i></a>
-          <a className="first-topic">{topics && topics.length > 0 ? topics[0] : 'Technology'}</a>
+          <a className="first-topic">{topics && topics.length > 0 ? topics[0] : ''}</a>
 
           {editDelete}
         </section>
