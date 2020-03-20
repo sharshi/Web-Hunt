@@ -21,8 +21,6 @@ class Main extends React.Component {
       <>
         <main className='main-content'>
           <Switch>
-            {/* dont show products page if already in modal */}
-            {/* {this.props.allow ? ( */}
             <Route
               path={'/products/:id/edit'}
               render={() => {
@@ -35,7 +33,6 @@ class Main extends React.Component {
                 return <ProductContainer />
               }}
             />
-            {/* ) : (null)} */}
             <ProtectedRoute
               path='/posts/new'
               component={() => <ProductFormContainer />}
@@ -59,7 +56,6 @@ class Main extends React.Component {
               />
 
           </Switch>
-
         </main>
       </>
     )
@@ -81,5 +77,6 @@ const mapStateToProps = state => {
 
 export default withRouter(connect(
   mapStateToProps,
+  null
   // mapDispatchToProps
 )(Main));

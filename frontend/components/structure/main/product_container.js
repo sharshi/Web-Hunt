@@ -8,12 +8,14 @@ const mapStateToProps = (state, ownProps) => {
   const stringFromHash = location.hash.split('products/')[1];
   const idFromHash = stringFromHash ? stringFromHash.split('?')[0] : stringFromHash;
   let productId = idFromHash ? idFromHash : state.ui.modal[1];
-  return ({
+  return {
     product: state.entities.products[productId],
     productId,
     inModal: ownProps.fromModal,
-    loggedIn: state.session.currentUser.id
-})}
+    loggedIn: state.session.currentUser.id,
+    reviews: state.entities.reviews,
+    profilePictureCurrentUser: state.session.currentUser.profilePictureUrl
+  };}
 
 const mapDispatchToProps = dispatch => ({
   closeModal: () => dispatch(closeModal()),

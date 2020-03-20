@@ -1,6 +1,7 @@
 import React from 'react';
 import GalleryDisplay from './gallery_display';
 import ReviewInput from './review_input';
+import Review from './review';
 import { Link, withRouter } from 'react-router-dom';
 
 class Product extends React.Component {
@@ -23,7 +24,7 @@ class Product extends React.Component {
 
   componentDidMount() {
     const { productId } = this.props;
-    this.props.fetchProduct(productId)
+    this.props.fetchProduct(productId);
     if (this.props.inModal && !this.state.loaded) {
       const body = document.getElementsByTagName('body')[0];
       body.classList.add('no-scroll');
@@ -101,17 +102,24 @@ class Product extends React.Component {
               </p>
             </section>
 
-            {/* itterate through all reviews  */}
+            {/* iterate through all reviews  */}
             <h4>REVIEWS</h4>
             <section className="discussion">
               <section className="review-input">
-                <ReviewInput />
+                <ReviewInput review={
+                  { 
+                    product_id: id, 
+                    reviewer_id: this.props.loggedIn,
+                    parent_review_id: null
+                  }
+                } profilePictureUrl={this.props.profilePictureCurrentUser}
+                />
               </section>
               <span className='reviews'>
                 <ul>
-                  {review_ids.map(id => {
+                  {review_ids.slice(0).reverse().map(id => {
                     return (
-                      <li key={id}>Review - {id}</li>
+                      <Review key={`review-${id}`} id={id} />
                       )
                   })}
                   {review_ids.length === 0 ? (
@@ -147,7 +155,7 @@ class Product extends React.Component {
             <section className="hunter-link">
               <h4>Hunter</h4>
               {/* <ProfilePicture id={hunter_id} /> */}
-              <img src={window.pp} className="profile-picture-round"/>
+              <img src={hunter.profilePictureUrl} className="profile-picture-round"/>
               <Link to={`/@${hunter.username}`}>@{hunter.username}</Link>
             </section>
           </aside>
