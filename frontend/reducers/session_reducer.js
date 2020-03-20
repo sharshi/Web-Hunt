@@ -10,7 +10,6 @@ const defaultState = {"currentUser": {
 const sessionReducer = (state = defaultState, action) => {
   switch (action.type) {
     case RECEIVE_USER_SIGNIN:
-      debugger
       return {
         currentUser: {
           id: action.user.id,
