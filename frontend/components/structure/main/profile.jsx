@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, NavLink, Route, Switch } from 'react-router-dom';
 import FeedListItem from "./feed_list_items";
+import Review from './review';
 
 class Profile extends React.Component {
 
@@ -138,12 +139,18 @@ class Profile extends React.Component {
                   <>
                     <section className="upvoted-products">
                       <h1>{review_ids.length} Review{review_ids.length === 1 ? '' : 's'}</h1>
+
+
                       {
-                        <li className="feed-list-item" >
-                          <a className='feed-list-item-container no-hover'>
-                            no reviews 🎉
-                          </a>
-                        </li>
+                        review_ids.length > 0 ? review_ids.map((review_id, i) => {
+                          return <Review key={`review-${review_id}`} id={review_id} fromProfile={true} />
+                        }
+                        ) : (
+                            <li className="feed-list-item" >
+                              <a className='feed-list-item-container no-hover'>
+                                no reviews 🎉
+                              </a>
+                            </li>)
                       }
                     </section>
                   </>

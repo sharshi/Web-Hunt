@@ -1,4 +1,8 @@
-import { RECEIVE_SESSION_ERRORS, RECEIVE_USER, CLEAR_ERRORS } from "../actions/session_actions"; import { RECEIVE_PRODUCT_ERRORS } from "../actions/products_actions";
+import {
+  RECEIVE_SESSION_ERRORS,
+  RECEIVE_USER_SIGNIN,
+  CLEAR_ERRORS
+} from "../actions/session_actions"; import { RECEIVE_PRODUCT_ERRORS } from "../actions/products_actions";
 
 const _default = {
   "login": [],
@@ -17,7 +21,7 @@ const errorsReducer = (state = _default, action) => {
         "login": [], 
         "product": action.errors 
       };
-    case RECEIVE_USER:
+    case RECEIVE_USER_SIGNIN:
       return _default;
     case CLEAR_ERRORS:
       return _default;

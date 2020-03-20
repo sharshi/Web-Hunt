@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchUser } from "../../../actions/session_actions";
+import { Link } from 'react-router-dom';
 
 const mstp = (state, ownProps) => {
   return {
@@ -36,9 +37,12 @@ class Review extends React.Component {
     return (
       <article className='review'>
         <img className='ppr' src={profilePictureUrl} alt=""/>
-        <h3>{title}</h3>
-        <small>Author: {username}</small>
-        <p>{body}</p>
+        <section className='review-body'>
+          {this.props.fromProfile ? <a>(product link)</a> : null}
+          <h3>{title}</h3>
+          <small>Author: <Link to={`@${username}/reviews`} >@{username}</Link></small>
+          <p>{body}</p>
+        </section>
       </article>
     )
   }

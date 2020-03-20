@@ -11,7 +11,6 @@ import {
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   let store;
-
   if (window.currentUser) {
     const preloadedState = {
       entities: {
@@ -22,7 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
       session: {
         "currentUser": {
           id: currentUser.id,
-          username: currentUser.username
+          username: currentUser.username,
+          profilePictureUrl: currentUser.profilePictureUrl
         }
       }
     };

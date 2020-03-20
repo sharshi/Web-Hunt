@@ -1,3 +1,21 @@
 article.review {
-  background-color: burlywood;
+  display: flex;
+  padding: 10px;
+
+
+  section.review-body {
+    display: inherit;
+    flex-direction: column;
+    padding-left: 10px;
+    
+    h3 {
+      font-weight: bold;
+    }
+
+    p {
+
+    }
+  }
+
+  
 }
