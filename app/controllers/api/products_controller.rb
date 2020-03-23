@@ -16,7 +16,7 @@ class Api::ProductsController < ApplicationController
     if @product.save
       render :show
     else
-      render json: @product.errors.messages, status: 422
+      render json: @product.errors.full_messages, status: 422
     end
   end
 
@@ -34,7 +34,7 @@ class Api::ProductsController < ApplicationController
     if @product.update(product_params)
       render :show
     else
-      render json: @product.errors.messages, status: 422
+      render json: @product.errors.full_messages, status: 422
     end
   end
 
