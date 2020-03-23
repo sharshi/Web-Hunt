@@ -21,9 +21,9 @@ class Api::ReviewsController < ApplicationController
   end
   
   def show
-    @review = Review.find_by(id: params[:id])
+    @review = Review.includes(:product).find_by(id: params[:id])
     if @review
-      render json: @review
+      render :show
     else
       render json: ['review not found'], status: 404
     end
@@ -32,7 +32,7 @@ class Api::ReviewsController < ApplicationController
   private
 
   def review_params 
-     params.require(:review).permit(:reviewer_id, :product_id, :title, :body, :parent_review_id)
+     params.require(:review).permit(:reviewer_id, :product_id, :body, :parent_review_id)
   end
 
 end

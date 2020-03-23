@@ -32,15 +32,13 @@ class Review extends React.Component {
     if ( !this.props.review ) return null;
     if ( !this.state ) return null;
 
-    const {title, body} = this.props.review;
+    const { body, product_id, product_title } = this.props.review;
     const { profilePictureUrl, username } = this.state.user;
     return (
       <article className='review'>
         <img className='ppr' src={profilePictureUrl} alt=""/>
         <section className='review-body'>
-          {this.props.fromProfile ? <a>(product link)</a> : null}
-          <h3>{title}</h3>
-          <small>Author: <Link to={`@${username}/reviews`} >@{username}</Link></small>
+          <h3>{this.props.fromProfile ? <Link to={`/products/${product_id}`} >{product_title}</Link> : <Link to={`/@${username}/reviews`} >@{username}</Link>}</h3>
           <p>{body}</p>
         </section>
       </article>

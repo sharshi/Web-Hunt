@@ -5,7 +5,6 @@
 #  id               :bigint           not null, primary key
 #  reviewer_id      :integer          not null
 #  product_id       :integer          not null
-#  title            :string           not null
 #  body             :text             not null
 #  parent_review_id :integer
 #  created_at       :datetime         not null
@@ -13,7 +12,7 @@
 #
 
 class Review < ApplicationRecord
-  validates :title, :body, presence: true
+  validates :body, presence: true
 
   belongs_to :reviewer, class_name: :User
   belongs_to :product

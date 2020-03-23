@@ -21,7 +21,6 @@ class ReviewInput extends React.Component {
     const { product_id, reviewer_id, parent_review_id} = this.props.review;
     this.state = {
       body: '',
-      title: '',
       parent_review_id,
       product_id,
       reviewer_id
@@ -47,7 +46,6 @@ class ReviewInput extends React.Component {
     );
 
     let review = this.state;
-    review.title = '';
     review.body = '';
     this.setState({
       ...review
@@ -62,8 +60,7 @@ class ReviewInput extends React.Component {
           <img className="profile-picture-round" src={this.props.profilePictureUrl} />
           <form onSubmit={this.handleSubmit}>
             {/* <section> */}
-            <input onChange={this.handleChange} name="title" placeholder='enter a title' value={this.state.title} />
-            <textarea onChange={this.handleChange} name="body" placeholder='enter a review' value={this.state.body}></textarea>
+            <input onChange={this.handleChange} name="body" placeholder='enter a review' value={this.state.body} />
             {/* </section> */}
             <button>POST</button>
           </form>
