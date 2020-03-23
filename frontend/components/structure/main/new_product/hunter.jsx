@@ -9,7 +9,7 @@ class Hunter extends React.Component {
     // What made you like this tool?
     return (
       <section className="form-group">
-        <label htmlFor="twitter">Tool's Twitter account <span>- required</span></label>
+        <label htmlFor="twitter">Tool's Twitter account</label>
         <input
           className='form-control'
           id='twitter'
