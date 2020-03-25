@@ -1,4 +1,4 @@
-// AustApiUtil
+// AuthApiUtil
 /** 
  * #getUsers
  * returns all users
@@ -81,3 +81,12 @@ export const updateUserUtil = (user, id) => {
     processData: false
   })
 )}
+
+/** 
+ * #getRecentUserIds
+ * returns all user ids that match query
+ */
+export const getRecentUserIds = ({ filter, limit }) =>
+         $.ajax({
+           url: `api/users?filter=${filter}`
+         });

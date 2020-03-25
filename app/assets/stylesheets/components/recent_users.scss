@@ -1,0 +1,31 @@
+aside a {
+  
+  article.recent-user {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+
+    img {
+      margin-left: 10px;
+    }
+
+    a {
+      color: $white;
+      margin-left: 10px;
+    }
+
+    &:hover {
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+aside a:last-child article.recent-user {
+  margin: 0;
+}

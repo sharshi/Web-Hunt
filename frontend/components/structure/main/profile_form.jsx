@@ -70,6 +70,7 @@ class ProfileForm extends React.Component {
   }
 
   render() {
+    if (!this.state.user) return null;
     const { username, profile_picture, profile_header, email, profilePictureUrl, profileHeaderUrl, name} = this.state.user;
   
     const previewProfilePicture = (profile_picture) ? (

@@ -1,4 +1,13 @@
-import { getUsers, getUser, login, logout, signup, getUsername, updateUserUtil } from '../utils/auth_api_util'
+import {
+  getUsers,
+  getUser,
+  login,
+  logout,
+  signup,
+  getUsername,
+  updateUserUtil,
+  getRecentUserIds
+} from '../utils/auth_api_util'
 
 export const RECEIVE_USERS = 'RECEIVE_USERS';
 export const RECEIVE_USER = 'RECEIVE_USER';
@@ -9,6 +18,7 @@ export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const OPEN_MODAL = 'OPEN_MODAL';
 export const RECEIVE_UPDATED_USER = 'RECEIVE_UPDATED_USER';
+export const RECEIVE_RECENT_USER_IDS = "RECEIVE_RECENT_USER_IDS";
 
 const receiveUsers = users => ({
   type: RECEIVE_USERS,
@@ -55,8 +65,13 @@ export const receiveUpdatedUser = user => ({
   user
 });
 
+const receiveUserIds = ids => ({
+  type: RECEIVE_RECENT_USER_IDS,
+  ids
+});
+
 export const fetchUsers = () => dispatch => {
-  getUsers().then(
+  return getUsers().then(
       users => dispatch(receiveUsers(users)),
       errors => dispatch(receiveErrors(errors.responseJSON))
     )
@@ -70,14 +85,14 @@ export const fetchUser = id => dispatch => {
 }
 
 export const fetchUsername = username => dispatch => {
-  getUsername(username).then(
+  return getUsername(username).then(
     user => dispatch(receiveUserProfile(user)),
     errors => dispatch(receiveErrors(errors.responseJSON))
-  )
+  );
 }
 
 export const createUser = user => dispatch => {
-  signup(user).then(
+  return signup(user).then(
     user => dispatch(receiveUserSignin(user)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   );
@@ -93,15 +108,23 @@ export const updateUser = (user, id) => dispatch => {
 }
 
 export const loginUser = user => dispatch => {
-  login(user).then(
+  return login(user).then(
     user => dispatch(receiveUserSignin(user)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   );
 }
 
 export const logoutUser = user => dispatch => {
-  logout(user).then(
+  return logout(user).then(
     user => dispatch(removeUser(user.id)),
     errors => dispatch(receiveErrors(errors.responseJSON))
-  )
+  );
 }
+
+
+export const fetchRecentUserIds = () => dispatch => {
+         return getRecentUserIds({filter: "recent" , limit: 3 }).then(
+           ids => dispatch(receiveUserIds(ids)),
+           errors => dispatch(receiveErrors(errors.responseJSON))
+         );
+       };
