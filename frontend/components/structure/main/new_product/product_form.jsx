@@ -218,7 +218,7 @@ class ProductForm extends React.Component {
       'Tell us more about this tool',
       'Let’s make this tool look nice',
       'Who made this tool?'
-    ][this.state.currentStep - 1]
+    ][this.state.currentStep - 1];
 
     const errors = this.props.errors ? (
       this.props.errors.map(error => {

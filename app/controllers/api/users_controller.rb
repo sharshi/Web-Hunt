@@ -1,6 +1,14 @@
 class Api::UsersController < ApplicationController
   def index
-    @users = User.all
+    if params[:filter] == "recent" 
+      limit_param = params[:limit].to_i
+      limit = limit_param > 0 ? limit_param : 3
+      @users = User.all.order(id: :desc).limit(limit).pluck(:id)
+      render json: @users
+    else
+      @users = User.all
+      render :index
+    end
   end
 
   def create

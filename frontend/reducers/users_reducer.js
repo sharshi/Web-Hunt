@@ -1,4 +1,8 @@
-import { RECEIVE_USERS, RECEIVE_USER } from "../actions/session_actions";
+import {
+  RECEIVE_USERS,
+  RECEIVE_USER,
+  RECEIVE_RECENT_USER_IDS
+} from "../actions/session_actions";
 
 const usersReducer = (state = {}, action) => {
   
@@ -9,6 +13,10 @@ const usersReducer = (state = {}, action) => {
       return Object.assign({}, state, { 
         [action.user.id]: action.user
       });
+      case RECEIVE_RECENT_USER_IDS:
+        return Object.assign({}, state, {
+          recentIds: action.ids
+        });
     default:
       return state;
   }
