@@ -17,16 +17,22 @@ class ProfileForm extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUsername(this.props.currentUser)
+    this.props.fetchUsername(this.props.currentUser).then((res) => {
+      this.setState({
+        user: res.user,
+        loaded: true
+      })
+    });
   }
 
   componentDidUpdate() {
     if (!this.state.loaded) {
       const { user } = this.props;
+
       this.setState({ 
         user,
         loaded: true
-       });
+      });
     }
   }
 
