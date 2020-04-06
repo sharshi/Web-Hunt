@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchUser } from "../../../actions/session_actions";
+import { fetchReview } from "../../../actions/review_actions";
 import { Link } from 'react-router-dom';
 
 const mstp = (state, ownProps) => {

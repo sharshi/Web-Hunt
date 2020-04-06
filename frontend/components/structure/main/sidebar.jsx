@@ -1,22 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchRecentUserIds } from "../../../actions/session_actions";
+import { fetchMostCommentedProductIds } from "../../../actions/products_actions";
 import RecentUser from './recent_user';
+import ProductSmall from './product_small';
+import { Link } from 'react-router-dom';
 
 class SideBar extends React.Component {
 
   componentDidMount() {
     this.props.fetchRecentUserIds();
+    this.props.fetchMostCommentedProductIds();    
   }
 
   render() {
-    const { ids } = this.props;
-    if (!ids ) return null;
+    const { recentUserIds, mostCommentedIds } = this.props;
+    // if (!recentUserIds ) return null;
 
-    const users = ids.map(id => (
+    const users = recentUserIds ? recentUserIds.map(id => (
       <RecentUser key={`recent-user-${id}`} id={id} />
-    ));
-    
+    )) : [];
+
+    const products = mostCommentedIds ? mostCommentedIds.map(id => (
+      <ProductSmall key={`product-small-${id}`} id={id} />
+    )) : [];
+
     return (
       <aside className='feed'>
         <h3>Recent Users</h3>
@@ -25,7 +33,7 @@ class SideBar extends React.Component {
         </section>
         <h3>Most Commented</h3>
         <section>
-          {/* <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda vitae deserunt quas provident. Necessitatibus, earum, fuga, rerum nihil debitis perferendis non quos deleniti atque pariatur vel beatae. Labore, totam! Numquam.</p> */}
+          {products}
         </section>
       </aside>
     )
@@ -33,11 +41,13 @@ class SideBar extends React.Component {
 }
 
 const mstp = state => ({
-  ids: state.entities.users.recentIds
+  recentUserIds: state.entities.users.recentIds,
+  mostCommentedIds: state.entities.products.mostCommentedProductIds
 })
 
 const mdtp = dispatch => ({
-  fetchRecentUserIds: () => dispatch(fetchRecentUserIds())
+  fetchRecentUserIds: () => dispatch(fetchRecentUserIds()),
+  fetchMostCommentedProductIds: (num) => dispatch(fetchMostCommentedProductIds(num))
 })
 
 export default connect(

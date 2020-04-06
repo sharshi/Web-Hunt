@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 class RecentUser extends React.Component {
   componentDidMount() {
-    // if user in undefined fetch user
+    // if user is undefined fetch user
     const { user } = this.props;
 
     if (!user) {
@@ -14,7 +14,7 @@ class RecentUser extends React.Component {
   }
 
   render() {
-    // if user in undefined return null
+    // if user is undefined return null
     const {user} = this.props;
     if (!user) return null;
     const { username, profilePictureUrl, profileHeaderUrl } = user;

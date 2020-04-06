@@ -65,3 +65,11 @@ export const urlProduct = productUrl => (
     url: `api/products/hasurl?url=${productUrl}`,
   })
 )
+
+// fetch most commented product ids
+
+export const getMostCommentedProductIds = (num = 3) =>
+  $.ajax({
+    method: "get",
+    url: `api/products?most_commented=${num}`,
+  });

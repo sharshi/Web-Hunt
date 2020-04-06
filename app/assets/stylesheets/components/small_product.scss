@@ -1,0 +1,42 @@
+a.small-product-link {
+  
+  article.small-product {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid $lightgray;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+    p {
+      flex: 1 0 76%;
+      font-weight: 500;
+    }
+
+    img {
+      flex: 1 0 21%;
+      max-width: 50px;
+    }
+
+    span {
+      display: block;
+      color: $gray;
+      margin-right: 10px;
+      font-size: 12px;
+      height: 20px;
+      width: fit-content;
+      border: 1px solid $lightgray;
+      border-radius: 3px;
+      padding: 3px;
+      box-sizing: border-box;
+    }
+  }
+  
+  &:first-child > article.small-product {
+    padding-top: 0;
+  }
+  
+  &:last-child > article.small-product {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
