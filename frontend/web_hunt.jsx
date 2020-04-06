@@ -8,6 +8,10 @@ import {
   createReview
 } from "./actions/review_actions";
 
+import {
+  fetchMostCommentedProductIds
+} from "./actions/products_actions";
+
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   let store;
@@ -33,10 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
   delete window.currentUser;
 
   // DEV
-  window.dispatch = store.dispatch;
-  window.fetchReview = fetchReview;
-  window.fetchReviews = fetchReviews;
-  window.createReview = createReview;
+  // window.dispatch = store.dispatch;
+  // window.fetchReview = fetchReview;
+  // window.fetchReviews = fetchReviews;
+  // window.createReview = createReview;
+  // window.fetchMostCommentedProductIds = fetchMostCommentedProductIds;
   // DEV
 
   ReactDOM.render(<Root store={store}/>, root);

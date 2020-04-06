@@ -4,7 +4,9 @@ export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
 export const RECEIVE_PRODUCT = 'RECEIVE_PRODUCT';
 export const RECEIVE_NEW_PRODUCT = 'RECEIVE_NEW_PRODUCT';
 export const RECEIVE_PRODUCT_ERRORS = 'RECEIVE_PRODUCT_ERRORS';
-export const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
+export const REMOVE_PRODUCT = "REMOVE_PRODUCT";
+export const RECEIVE_MOST_COMMENTED_PRODUCT_IDS =
+         "RECEIVE_MOST_COMMENTED_PRODUCT_IDS";
 
 
 const receiveProducts = products => ({
@@ -31,6 +33,11 @@ const removeProduct = productId => ({
   type: REMOVE_PRODUCT,
   productId
 })
+
+const receiveMostCommentedProductIds = (productIds) => ({
+  type: RECEIVE_MOST_COMMENTED_PRODUCT_IDS,
+  productIds,
+});
 
 export const fetchPopularProducts = () => dispatch => (
   ProductsUtil.fetchPopularProducts().then(
@@ -66,3 +73,9 @@ export const deleteProduct = productId => dispatch => (
     errors => dispatch(productErrors(errors.responseJSON))
   )
 )
+
+export const fetchMostCommentedProductIds = (num) => (dispatch) =>
+  ProductsUtil.getMostCommentedProductIds(num).then(
+    (productIds) => dispatch(receiveMostCommentedProductIds(productIds)),
+    (errors) => dispatch(productErrors(errors.responseJSON))
+  );

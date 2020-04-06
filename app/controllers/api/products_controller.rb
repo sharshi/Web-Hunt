@@ -1,9 +1,16 @@
 class Api::ProductsController < ApplicationController
   def index
     # adjust this to show all
-    @products = Product.all #.limit(20)
-    @popular = Product.get_popular_product_ids
-    render :index
+
+    if params[:most_commented] 
+      most_commented = params[:most_commented].to_i
+      product_ids = Product.get_most_commented_product_ids(most_commented)
+      render json: product_ids
+    else
+      @products = Product.all #.limit(20)
+      @popular = Product.get_popular_product_ids
+      render :index
+    end
   end 
   
   def create
