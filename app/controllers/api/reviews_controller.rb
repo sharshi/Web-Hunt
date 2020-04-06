@@ -12,7 +12,7 @@ class Api::ReviewsController < ApplicationController
   
   def index
     # get reviews for specific product
-    @reviews = Product.find(params[:productId]).reviews
+    @reviews = Product.find(params[:product_id]).reviews
     if @reviews
       render :index
     else

@@ -6,11 +6,6 @@ class Api::ProductsController < ApplicationController
     render :index
   end 
   
-  # def recent
-  #   @products = Product.limit(20).order(id: :desc)
-  #   render :index
-  # end
-  
   def create
     @product = Product.new(product_params)
     if @product.save

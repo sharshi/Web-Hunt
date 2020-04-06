@@ -6,8 +6,11 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :create, :show, :update]
     resource :session, only: [:create, :destroy]
     
-    resources :products, only: [:create, :index, :show, :update, :destroy]
-    resources :reviews, only: [:create, :index, :show]
+    resources :products, only: [:create, :index, :show, :update, :destroy] do 
+        resources :reviews, only: [:index]
+    end
+    
+    resources :reviews, only: [:create, :show]
 
     get 'username/:username', to: 'users#show_name'
     post 'upvotes', to: 'upvotes#vote'
