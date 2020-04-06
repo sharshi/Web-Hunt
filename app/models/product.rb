@@ -42,6 +42,7 @@ class Product < ApplicationRecord
 
   def self.get_popular_product_ids(num = 20)
     # Product.limit(num).pluck(:id)
-    Product.all.pluck(:id)
+    # Product.all.pluck(:id)
+    Product.joins(:upvotes).group('products.id').order('COUNT(products.id) DESC').pluck(:id)
   end
 end
