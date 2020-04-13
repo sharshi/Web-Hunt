@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchProduct } from "../../../actions/products_actions";
+import { createReview } from "../../../actions/review_actions";
+
 const mstp = (state, ownProps) => {
   return {
     review: ownProps.review
