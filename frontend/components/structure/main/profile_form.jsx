@@ -39,7 +39,7 @@ class ProfileForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    const {id, profile_picture, profile_header, email, name} = this.props.user;
+    const {id, profile_picture, profile_header, email, name} = this.state.user;
 
     const formData = new FormData();
 
