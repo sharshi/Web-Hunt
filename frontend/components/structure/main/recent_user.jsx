@@ -21,7 +21,7 @@ class RecentUser extends React.Component {
     return (
       <Link to={`/@${username}`}>
         <article style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(${profileHeaderUrl ? profileHeaderUrl : window.hp})` }} className='recent-user'>
-          <img className='ppr' src={profilePictureUrl} alt={`click to see @${username}'s profile`}/>
+          <img className='ppr' src={profilePictureUrl ? profilePictureUrl : window.pp} alt={`click to see @${username}'s profile`}/>
           <p>@{username}</p>
         </article>
       </Link>
