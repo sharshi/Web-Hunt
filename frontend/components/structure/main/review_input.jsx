@@ -5,7 +5,8 @@ import { createReview } from "../../../actions/review_actions";
 
 const mstp = (state, ownProps) => {
   return {
-    review: ownProps.review
+    review: ownProps.review,
+    profilePictureCurrentUser: state.session.currentUser.id ? state.entities.users[state.session.currentUser.id].profilePictureUrl : null
   };
 }
 
@@ -57,9 +58,9 @@ class ReviewInput extends React.Component {
   render() {
     return ( 
       
-       this.props.profilePictureUrl ? (
+      this.props.profilePictureCurrentUser ? (
         <>
-          <img className="profile-picture-round" src={this.props.profilePictureUrl} />
+          <img className="profile-picture-round" src={this.props.profilePictureCurrentUser} />
           <form onSubmit={this.handleSubmit}>
             {/* <section> */}
             <input onChange={this.handleChange} name="body" placeholder='enter a review' value={this.state.body} />
