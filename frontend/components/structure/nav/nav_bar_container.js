@@ -4,8 +4,9 @@ import { logoutUser, openModal } from "../../../actions/session_actions";
 import { openUserMenu, closeUserMenu } from "../../../actions/navbar_actions";
 
 const mapStateToProps = state => {
+  
   const pic = state.session.currentUser.id ? state.entities.users[state.session.currentUser.id].profilePictureUrl : null;
-
+  
   return {
     currentUserId: state.session.currentUser.id,
     currentUserName: state.session.currentUser.username,
