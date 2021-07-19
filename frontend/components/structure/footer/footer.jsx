@@ -17,7 +17,9 @@ class Footer extends React.Component {
     return (
       <footer className="footer">
         <section>
-          <p>&copy; 2021 Shersheial Borisute</p> 
+          <p>
+            &copy; 2021 Shersheial Borisute
+          </p> 
           <ul>
             {links}
           </ul>
