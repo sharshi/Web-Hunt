@@ -2,8 +2,8 @@
   "name": "web_hunt",
   "private": true,
   "scripts": {
-    "start": "webpack --mode=development --watch",
-    "postinstall": "webpack"
+    "start": "NODE_OPTIONS=--openssl-legacy-provider webpack --mode=development --watch",
+    "postinstall": "NODE_OPTIONS=--openssl-legacy-provider webpack"
   },
   "description": "Web Hunt, a Product Hunt clone, allows creators to share their products and receive feedback from tech enthusiasts.",
   "version": "1.0.0",
@@ -30,11 +30,11 @@
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
-    "@rails/actioncable": "^6.0.0",
-    "@rails/activestorage": "^6.0.0",
-    "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "4.2.2",
+    "@rails/actioncable": "^7.0.0",
+    "@rails/activestorage": "^7.0.0",
+    "@rails/ujs": "^7.0.0",
     "babel-loader": "^8.0.6",
+    "jquery": "^3.7.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-redux": "^7.1.3",
