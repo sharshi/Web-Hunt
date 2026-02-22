@@ -48,17 +48,6 @@ builder:
   # Uncomment for multi-arch builds (slower but supports ARM64 + AMD64):
   # multiarch: true
 
-# Accessories: long-running services that support the app
-accessories:
-  redis:
-    image: redis:7
-    host: YOUR_SERVER_IP
-    port: "127.0.0.1:6379:6379"
-    directories:
-      - data:/data
-    options:
-      memory: 256m
-
 # Health check to verify the app is running
 healthcheck:
   path: /up
