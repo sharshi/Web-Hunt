@@ -1,30 +1,19 @@
-# PostgreSQL. Versions 9.3 and up are supported.
-#
-# Install the pg driver:
-#   gem install pg
-# On macOS with Homebrew:
-#   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
-#
-# Configure Using Gemfile
-# gem "pg"
+# SQLite. Versions 3.8.0 and up are supported.
+#   gem install sqlite3
 #
 default: &default
-  adapter: postgresql
-  encoding: unicode
+  adapter: sqlite3
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
 
 development:
   <<: *default
-  database: web_hunt_development
+  database: storage/development.sqlite3
 
 test:
   <<: *default
-  database: web_hunt_test
+  database: storage/test.sqlite3
 
 production:
-  primary: &primary_production
-    <<: *default
-    database: web_hunt_production
-    username: web_hunt
-    password: <%= ENV["WEB_HUNT_DATABASE_PASSWORD"] %>
-    url: <%= ENV["DATABASE_URL"] %>
+  <<: *default
+  database: storage/production.sqlite3

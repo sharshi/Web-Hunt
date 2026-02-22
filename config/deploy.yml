@@ -19,6 +19,8 @@ servers:
       - YOUR_SERVER_IP
     options:
       memory: 512m
+    volumes:
+      - "web-hunt-storage:/rails/storage"
 
 # Kamal proxy configuration (replaces Traefik in Kamal 2)
 proxy:
@@ -39,8 +41,6 @@ env:
     RAILS_LOG_TO_STDOUT: "true"
   secret:
     - RAILS_MASTER_KEY
-    - DATABASE_URL
-    - REDIS_URL
 
 # Builder configuration
 builder:
@@ -50,21 +50,6 @@ builder:
 
 # Accessories: long-running services that support the app
 accessories:
-  db:
-    image: postgres:16
-    host: YOUR_SERVER_IP
-    port: "127.0.0.1:5432:5432"
-    env:
-      clear:
-        POSTGRES_DB: web_hunt_production
-        POSTGRES_USER: web_hunt
-      secret:
-        - POSTGRES_PASSWORD
-    directories:
-      - data:/var/lib/postgresql/data
-    options:
-      memory: 512m
-
   redis:
     image: redis:7
     host: YOUR_SERVER_IP

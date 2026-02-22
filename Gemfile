@@ -3,14 +3,14 @@ source "https://rubygems.org"
 ruby "3.3.6"
 
 gem "rails", "~> 8.0"
-gem "pg", "~> 1.5"
+gem "sqlite3", ">= 2.1"
 gem "puma", ">= 6.0"
 gem "propshaft"
 gem "jsbundling-rails"
 gem "cssbundling-rails"
 gem "jbuilder", "~> 2.12"
 gem "bcrypt", "~> 3.1"
-gem "aws-sdk-s3", require: false
+
 gem "bootsnap", require: false
 gem "kamal", require: false
 gem "thruster", require: false
