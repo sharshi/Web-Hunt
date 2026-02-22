@@ -21,8 +21,8 @@ Rails.application.configure do
   # Enable static file serving from the `/public` folder (turn off if using NGINX/Apache).
   config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present? || ENV["RAILS_ENV"] == "production"
 
-  # Store uploaded files on Amazon S3 (see config/storage.yml for options).
-  config.active_storage.service = :amazon_prod
+  # Store uploaded files on the local file system with a persistent volume (see config/storage.yml).
+  config.active_storage.service = :local
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   config.force_ssl = true
