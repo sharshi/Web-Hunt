@@ -1,34 +1,40 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_self
- */
- 
- /* app academy css reset */
- html, body, section, article,
- h1, h2, h3, h4, p,ul, strong, em, a {
-   margin: 0;
-   border: 0;
-   padding: 0;
-   outline: 0;
-   box-sizing: inherit;
-   font: inherit;
-   text-decoration: inherit;
-   text-align: inherit;
-   color: inherit;
-   background: transparent;
-  }
+/* CSS reset */
+html, body, section, article,
+h1, h2, h3, h4, p, ul, strong, em, a {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: inherit;
+  font: inherit;
+  text-decoration: inherit;
+  text-align: inherit;
+  color: inherit;
+  background: transparent;
+}
 
-  @import "base/colors.scss";
-  @import "base/things.scss";
+@import "base/colors";
+@import "base/things";
 
-  @import "components/*";
+@import "api/products";
+@import "api/reviews";
+@import "api/sessions";
+@import "api/upvotes";
+@import "api/users";
+
+@import "components/main";
+@import "components/footer";
+@import "components/feed";
+@import "components/mobile";
+@import "components/nav_bar";
+@import "components/product";
+@import "components/modal";
+@import "components/product_form";
+@import "components/profile";
+@import "components/recent_users";
+@import "components/review";
+@import "components/session_modal";
+@import "components/show_gallery";
+@import "components/small_product";
+@import "components/static_pages";
+@import "components/sidebar";

@@ -1,0 +1,3 @@
+web: bin/rails server -p 3000
+js: npm run build:js -- --watch
+css: npm run build:css -- --watch

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # Health check endpoint for Kamal deployment
+  get "up" => "rails/health#show", as: :rails_health_check
 
   namespace :api, defaults: { format: :json } do
     # get 'products/recent', to: 'products#recent'
