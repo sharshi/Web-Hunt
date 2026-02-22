@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+require "rubygems"
+
+# Ensure thruster is available
+begin
+  gem "thruster"
+rescue Gem::MissingSpecError
+  warn "thruster gem not found, running without it"
+  exec(*ARGV)
+end
+
+load Gem.bin_path("thruster", "thrust")

@@ -5,11 +5,11 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= favicon_link_tag asset_path('favicon-32x32.png') %>
-    <meta name="viewport" content="width=device-width">
+    <%= favicon_link_tag asset_path("favicon-32x32.png") %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application", defer: true %>
 
     <% if logged_in? %>
       <script>
@@ -25,7 +25,7 @@
     <script src="https://kit.fontawesome.com/88924c6e5b.js" crossorigin="anonymous"></script>
 
     <meta property="og:image" content="<%= image_url('wh-screenshot.png') %>">
-	  <meta property="og:description" content="Inspired by Product Hunt, coders can create and share posts about their favorite tech tools.">
+    <meta property="og:description" content="Inspired by Product Hunt, coders can create and share posts about their favorite tech tools.">
   </head>
   <body>
     <%= yield %>

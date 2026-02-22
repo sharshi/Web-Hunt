@@ -2,52 +2,31 @@
   "name": "web_hunt",
   "private": true,
   "scripts": {
-    "start": "webpack --mode=development --watch",
-    "postinstall": "webpack"
+    "build": "npm run build:js && npm run build:css",
+    "build:js": "esbuild app/javascript/application.js --bundle --sourcemap --outfile=app/assets/builds/application.js --loader:.js=jsx",
+    "build:css": "sass app/assets/stylesheets/application.scss:app/assets/builds/application.css --no-source-map --load-path=node_modules"
   },
   "description": "Web Hunt, a Product Hunt clone, allows creators to share their products and receive feedback from tech enthusiasts.",
   "version": "1.0.0",
-  "main": "webpack.config.js",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sharshi/Web-Hunt.git"
   },
-  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sharshi/Web-Hunt/issues"
-  },
-  "homepage": "https://github.com/sharshi/Web-Hunt#readme",
-  "engines": {
-    "node": "12.14.1",
-    "npm": "6.13.4"
-  },
   "dependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4",
-    "@babel/preset-react": "^7.8.3",
-    "@rails/actioncable": "^6.0.0",
-    "@rails/activestorage": "^6.0.0",
-    "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "4.2.2",
-    "babel-loader": "^8.0.6",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-redux": "^7.1.3",
-    "react-router-dom": "^5.1.2",
-    "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0",
-    "turbolinks": "^5.2.0",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.12"
+    "@rails/actioncable": "^8.0.0",
+    "@rails/activestorage": "^8.0.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-redux": "^7.2.9",
+    "react-router-dom": "^5.3.4",
+    "redux": "^4.2.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.2"
   },
   "devDependencies": {
-    "redux-logger": "^3.0.6"
-  },
-  "heroku-run-build-script": true
+    "esbuild": "^0.24.0",
+    "redux-logger": "^3.0.6",
+    "sass": "^1.83.0"
+  }
 }

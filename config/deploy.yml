@@ -1,0 +1,85 @@
+# Kamal deployment configuration for Web Hunt
+# See https://kamal-deploy.org/docs/installation for setup instructions.
+#
+# Prerequisites:
+#   1. Install Kamal: gem install kamal
+#   2. Set environment variables (see "secret" keys below)
+#   3. Have a server with Docker installed and SSH access
+#   4. Have a container registry account (Docker Hub, GitHub Container Registry, etc.)
+
+service: web-hunt
+
+# Name of the container image
+image: your-dockerhub-username/web-hunt
+
+# Deploy to these servers
+servers:
+  web:
+    hosts:
+      - YOUR_SERVER_IP
+    options:
+      memory: 512m
+
+# Kamal proxy configuration (replaces Traefik in Kamal 2)
+proxy:
+  ssl: true
+  host: webhunt.dev
+  app_port: 80
+
+# Container registry credentials
+registry:
+  username: your-dockerhub-username
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+# Environment variables for the app container
+env:
+  clear:
+    RAILS_SERVE_STATIC_FILES: "true"
+    RAILS_LOG_TO_STDOUT: "true"
+  secret:
+    - RAILS_MASTER_KEY
+    - DATABASE_URL
+    - REDIS_URL
+
+# Builder configuration
+builder:
+  arch: amd64
+  # Uncomment for multi-arch builds (slower but supports ARM64 + AMD64):
+  # multiarch: true
+
+# Accessories: long-running services that support the app
+accessories:
+  db:
+    image: postgres:16
+    host: YOUR_SERVER_IP
+    port: "127.0.0.1:5432:5432"
+    env:
+      clear:
+        POSTGRES_DB: web_hunt_production
+        POSTGRES_USER: web_hunt
+      secret:
+        - POSTGRES_PASSWORD
+    directories:
+      - data:/var/lib/postgresql/data
+    options:
+      memory: 512m
+
+  redis:
+    image: redis:7
+    host: YOUR_SERVER_IP
+    port: "127.0.0.1:6379:6379"
+    directories:
+      - data:/data
+    options:
+      memory: 256m
+
+# Health check to verify the app is running
+healthcheck:
+  path: /up
+  port: 80
+  max_attempts: 10
+  interval: 5
+
+# Configure how assets are handled
+asset_path: /rails/public/assets
