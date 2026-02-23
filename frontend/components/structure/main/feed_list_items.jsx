@@ -1,4 +1,5 @@
 import React from "react";
+import { MessageCircle, ExternalLink, Pencil, Trash2 } from 'lucide-react';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import * as V from "../../../actions/vote_actions";
@@ -57,10 +58,10 @@ class FeedListItem extends React.Component {
     
     const editDelete = (this.mine()) ? (
       <>
-        <Link className="edit-link" to={`/products/${id}/edit`}><i className="far fa-edit fa-sm"></i></Link>
+        <Link className="edit-link" to={`/products/${id}/edit`}><Pencil size={14} /></Link>
         <a id={id} className="delete-link" onClick={
           this.confirmDelete.bind(this)
-        }><i className="far fa-trash-alt fa-sm"></i></a>
+        }><Trash2 size={14} /></a>
       </>
     ) : (null)
 
@@ -76,10 +77,10 @@ class FeedListItem extends React.Component {
         </a>
         
         <section className="links">
-          <a className="comments"><i className="fas fa-comment"></i> {
+          <a className="comments"><MessageCircle size={14} /> {
             review_ids && review_ids.length >= 0 ? review_ids.length : 8
           }</a>
-          <a className="website-link" target="_blank" href={`https://${website}`}><i className="fas fa-external-link-alt fa-xs"></i></a>
+          <a className="website-link" target="_blank" href={`https://${website}`}><ExternalLink size={12} /></a>
           <a className="first-topic">{topics && topics.length > 0 ? topics[0] : ''}</a>
 
           {editDelete}

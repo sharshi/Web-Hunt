@@ -1,4 +1,5 @@
 import React from "react";
+import { MessageCircle, ExternalLink } from 'lucide-react';
 import FeedListItem from '../feed_list_items';
 
 
@@ -36,13 +37,13 @@ class ProductPreview extends React.Component {
 
         <section className="links">
           <a className="comments">
-            <i className="fas fa-comment"></i>{" "}
+            <MessageCircle size={14} />{" "}
             {8}
           </a>
           <a
             className="website-link"
           >
-            <i className="fas fa-external-link-alt fa-xs"></i>
+            <ExternalLink size={12} />
           </a>
           <a className="first-topic">
             {/* { "Technology"} */}

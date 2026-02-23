@@ -1,4 +1,5 @@
 import React from 'react';
+import { ExternalLink } from 'lucide-react';
 import GalleryDisplay from './gallery_display';
 import ReviewInput from './review_input';
 import Review from './review';
@@ -77,7 +78,7 @@ class Product extends React.Component {
               <section className='title-tagline'>
                 <a href={website.toLowerCase().startsWith('http') ? website : `http://${website}`} target="_blank">
                   <h3 className='title' >{title}</h3>
-                  <i className="fas fa-external-link-alt"></i>
+                  <ExternalLink size={14} />
                 </a>
                 <p className='tagline'>{tagline}</p>
 
