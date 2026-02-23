@@ -1,4 +1,5 @@
 import React from 'react';
+import { Bell } from 'lucide-react';
 import Search from './search';
 import SessionFormContainer from './session_form_container';
 import UserFormContainer from './user_form_container';
@@ -28,7 +29,7 @@ class NavBar extends React.Component {
           className='new-post-link' 
         >Post</Link>
         <span className='bell'>
-          <i className="fas fa-bell fa-sm"></i>
+          <Bell size={14} />
         </span>
         {profilePictureUrl ? (
         <img 

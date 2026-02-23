@@ -1,4 +1,5 @@
 import React from 'react';
+import { MessageCircle } from 'lucide-react';
 import { connect } from 'react-redux';
 import { fetchProduct } from "../../../actions/products_actions";
 import { Link } from 'react-router-dom';
@@ -25,7 +26,7 @@ class ProductSmall extends React.Component {
           <p>{title}</p>
           <img className='ppjr' src={logoUrl} />
           <span>▲ {upvote_ids.length}</span>
-          <span><i className="fas fa-comment"></i> {review_ids.length}</span>
+          <span><MessageCircle size={14} /> {review_ids.length}</span>
         </article>
       </Link>
     )
