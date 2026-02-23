@@ -4,9 +4,12 @@ import { fetchProduct } from "../../../actions/products_actions";
 import { createReview } from "../../../actions/review_actions";
 
 const mstp = (state, ownProps) => {
+  const currentUserId = state.session.currentUser.id;
+  const currentUserEntity = currentUserId ? state.entities.users[currentUserId] : null;
   return {
     review: ownProps.review,
-    profilePictureCurrentUser: state.session.currentUser.id ? state.entities.users[state.session.currentUser.id].profilePictureUrl : null
+    loggedIn: !!currentUserId,
+    profilePictureCurrentUser: currentUserEntity ? currentUserEntity.profilePictureUrl : null
   };
 }
 
@@ -58,9 +61,9 @@ class ReviewInput extends React.Component {
   render() {
     return ( 
       
-      this.props.profilePictureCurrentUser ? (
+      this.props.loggedIn ? (
         <>
-          <img className="profile-picture-round" src={this.props.profilePictureCurrentUser} />
+          {this.props.profilePictureCurrentUser && <img className="profile-picture-round" src={this.props.profilePictureCurrentUser} />}
           <form onSubmit={this.handleSubmit}>
             {/* <section> */}
             <input onChange={this.handleChange} name="body" placeholder='enter a review' value={this.state.body} />

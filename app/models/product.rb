@@ -41,7 +41,7 @@ class Product < ApplicationRecord
   has_many :topics, through: :products_topics
 
   def self.get_popular_product_ids(num = 20)
-    Product.joins(:upvotes).group('products.id').order('COUNT(products.id) DESC').pluck(:id)
+    Product.left_joins(:upvotes).group('products.id').order('COUNT(upvotes.id) DESC').pluck(:id)
   end
 
   def self.get_most_commented_product_ids(num = 3)
