@@ -18,7 +18,7 @@ class Footer extends React.Component {
       <footer className="footer">
         <section>
           <p>
-            &copy; 2021 Shersheial Borisute
+            &copy; 2026 Shersheial Borisute
           </p> 
           <ul>
             {links}
