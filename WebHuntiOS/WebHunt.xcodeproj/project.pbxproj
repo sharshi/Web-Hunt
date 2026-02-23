@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A10000001 /* WebHuntApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000001; };
-		A10000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000002; };
-		A10000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A20000003; };
-		A10000004 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000004; };
-		A10000005 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000005; };
-		A10000006 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000006; };
-		A10000007 /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000007; };
-		A10000008 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000008; };
-		A10000009 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000009; };
-		A10000010 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010; };
-		A10000011 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000011; };
-		A10000012 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000012; };
-		A10000013 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000013; };
-		A10000014 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000014; };
-		A10000015 /* NewProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000015; };
-		A10000016 /* UpvoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000016; };
-		A10000017 /* ReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000017; };
-		A10000018 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000018; };
+		A10000001 /* WebHuntApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000001 /* WebHuntApp.swift */; };
+		A10000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000002 /* ContentView.swift */; };
+		A10000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A20000003 /* Assets.xcassets */; };
+		A10000004 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000004 /* Models.swift */; };
+		A10000005 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000005 /* APIClient.swift */; };
+		A10000006 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000006 /* AuthViewModel.swift */; };
+		A10000007 /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000007 /* ProductsViewModel.swift */; };
+		A10000008 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000008 /* ProfileViewModel.swift */; };
+		A10000009 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000009 /* LoginView.swift */; };
+		A10000010 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010 /* SignupView.swift */; };
+		A10000011 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000011 /* FeedView.swift */; };
+		A10000012 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000012 /* ProductCardView.swift */; };
+		A10000013 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000013 /* ProductDetailView.swift */; };
+		A10000014 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000014 /* ProfileView.swift */; };
+		A10000015 /* NewProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000015 /* NewProductView.swift */; };
+		A10000016 /* UpvoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000016 /* UpvoteButton.swift */; };
+		A10000017 /* ReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000017 /* ReviewsView.swift */; };
+		A10000018 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000018 /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -392,6 +392,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = NJ2S2U4EN9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -420,6 +421,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = NJ2S2U4EN9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
