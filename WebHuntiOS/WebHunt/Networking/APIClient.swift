@@ -39,6 +39,23 @@ actor APIClient {
         self.session = URLSession(configuration: config)
     }
 
+    /// Fetch the CSRF token from the Rails root page meta tag.
+    /// Called automatically before POST/PATCH/DELETE requests.
+    private func ensureCSRFToken() async throws {
+        if csrfToken != nil { return }
+        guard let url = URL(string: baseURL + "/") else {
+            throw APIError.invalidURL
+        }
+        var request = URLRequest(url: url)
+        request.setValue("text/html", forHTTPHeaderField: "Accept")
+        let (data, _) = try await session.data(for: request)
+        if let html = String(data: data, encoding: .utf8),
+           let range = html.range(of: "csrf-token\" content=\""),
+           let endRange = html[range.upperBound...].range(of: "\"") {
+            csrfToken = String(html[range.upperBound..<endRange.lowerBound])
+        }
+    }
+
     // MARK: - Session / Auth
 
     func login(username: String, password: String) async throws -> SessionResponse {
@@ -66,6 +83,7 @@ actor APIClient {
 
     func logout() async throws {
         _ = try await delete(path: "/api/session")
+        csrfToken = nil
     }
 
     // MARK: - Products
@@ -168,6 +186,7 @@ actor APIClient {
     }
 
     private func post(path: String, body: [String: Any]) async throws -> Data {
+        try await ensureCSRFToken()
         guard let url = URL(string: baseURL + path) else {
             throw APIError.invalidURL
         }
@@ -175,6 +194,9 @@ actor APIClient {
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
+        if let token = csrfToken {
+            request.setValue(token, forHTTPHeaderField: "X-CSRF-Token")
+        }
         request.httpBody = try JSONSerialization.data(withJSONObject: body)
 
         let (data, response) = try await session.data(for: request)
@@ -183,12 +205,16 @@ actor APIClient {
     }
 
     private func delete(path: String) async throws -> Data {
+        try await ensureCSRFToken()
         guard let url = URL(string: baseURL + path) else {
             throw APIError.invalidURL
         }
         var request = URLRequest(url: url)
         request.httpMethod = "DELETE"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
+        if let token = csrfToken {
+            request.setValue(token, forHTTPHeaderField: "X-CSRF-Token")
+        }
 
         let (data, response) = try await session.data(for: request)
         try validateResponse(response, data: data)
@@ -196,6 +222,7 @@ actor APIClient {
     }
 
     private func multipartPost(path: String, fields: [String: String], files: [(fieldName: String, data: Data, filename: String, mimeType: String)]) async throws -> Data {
+        try await ensureCSRFToken()
         guard let url = URL(string: baseURL + path) else {
             throw APIError.invalidURL
         }
@@ -205,6 +232,9 @@ actor APIClient {
         request.httpMethod = "POST"
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
+        if let token = csrfToken {
+            request.setValue(token, forHTTPHeaderField: "X-CSRF-Token")
+        }
 
         var bodyData = Data()
 
